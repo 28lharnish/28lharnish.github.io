@@ -201,6 +201,7 @@ div.socialChoice {
 	justify-content: center;
 	align-items: center;
   	height: 70px;
+	transition: 0.2s ease-in-out background;
 }
 
 div.socialChoice img {
@@ -220,6 +221,10 @@ div.socialChoice a {
 
 div.socialChoice:has(a:hover) img {
 	scale: 1;
+}
+
+div.socialChoice:has(a:hover) {
+	background: var(--hover-bg);
 }
 
 div.socialChoice a:hover {

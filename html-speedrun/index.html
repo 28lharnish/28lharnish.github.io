@@ -4,119 +4,121 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ljharnish</title>
+        <title>macOS For The Web</title>
         <!-- CSS -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+        <link rel="stylesheet" href="./sources/css/styles/finder.css" />
         <link rel="stylesheet" href="./sources/css/style.css" />
     </head>
     <body>
-        <header>
-            <div class="iconName">
-                <img src="https://yt3.googleusercontent.com/O2X7YtZuf4v3MvRwoYKYwtKLv0zMiqKB0-OXPe5q95YZh_qpQsVaZDyDLtH2BUQSYnFOPtWM=s1024-c-k-c0x00ffffff-no-rj" alt="ljharnish logo"/>
-                <h1>ljharnish</h1>
-            </div>
+		<body>
+			<div id="mobileDIb" style="display: none; font-size: xxx-large; width: -webkit-fill-available; width: -moz-available; height: 100vh; background: black; color: white;">you are on mobile, this no work :(</div>
+			
+			<div id="desktop">
+				<!--<div class="icon" ondblclick="newWindow('explorer')">
+					<img draggable="false" src="">
+					<p>File Explorer</p>
+				</div>-->
+			</div>
+	
+			<div id="finder">
+				<div class="functions">
+					<button>
+						<img draggable="false" src="./sources/image/icons/settings/appleicon.png">
+					</button>
+					<button class="boldAppName">
+						Finder
+					</button>
+					<button>
+						File
+					</button>
+					<button>
+						Edit
+					</button>
+					<button>
+						View
+					</button>
+					<button>
+						Go
+					</button>
+					<button>
+						Window
+					</button>
+					<button>
+						Help
+					</button>
+				</div>
 
-			<ul>
-				<li>
-					<a href="#home">Home</a>
-				</li>
-				<li>
-					<a href="#portfolio">Portfolio</a>
-				</li>
-				<li>
-					<a href="#socials">Socials</a>
-				</li>
-			</ul>
-        </header>
-        <main>
-			<div id="home" class="category">
-				<h1>Home</h1>
-				<h2>Who am I?</h2>
-
-				<div class="sidebyside">
-					<div class="sideL">
-						<img src="https://yt3.googleusercontent.com/O2X7YtZuf4v3MvRwoYKYwtKLv0zMiqKB0-OXPe5q95YZh_qpQsVaZDyDLtH2BUQSYnFOPtWM=s1024-c-k-c0x00ffffff-no-rj" alt="">
-					</div>
-					<div class="sideR">
-						<p>some paragrph abt me</p>
-					</div>
+				<div class="finderShowcase">
+					<button>
+						<!--! ADD RIGHT SIDE -->
+					</button>
 				</div>
 			</div>
 
-			<div id="portfolio" class="category">
-				<h1>Portfolio</h1>
-				<h2>What have I made?</h2>
+			<div id="taskbar">
+				<button onclick="newWindow('finder')">
+					<img draggable="false" src="./sources/image/icons/FinderBigSur.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/launchpad.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/safari.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/iMessage.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/mail.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/maps.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/photos.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/facetime.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/contacts.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/calendar.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/reminders.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/notes.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/appletv.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/applemusic.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/podcasts.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/appstroe.png">
+				</button>
+				<button>
+					<img draggable="false" src="./sources/image/icons/settings.png">
+				</button>
 
-				<div class="portfolioGrid">
-					<div class="portfolioEl">
-						<img src="https://yt3.googleusercontent.com/O2X7YtZuf4v3MvRwoYKYwtKLv0zMiqKB0-OXPe5q95YZh_qpQsVaZDyDLtH2BUQSYnFOPtWM=s1024-c-k-c0x00ffffff-no-rj" alt="">
-						<a href="https://pictocord.pages.dev/" target="_blank">Pictocord</a>
-					</div>
-					<div class="portfolioEl">
-						<img src="https://yt3.googleusercontent.com/O2X7YtZuf4v3MvRwoYKYwtKLv0zMiqKB0-OXPe5q95YZh_qpQsVaZDyDLtH2BUQSYnFOPtWM=s1024-c-k-c0x00ffffff-no-rj" alt="">
-						<a href="https://gmailuno.pages.dev/" target="_blank">Uno in Gmail</a>
-					</div>
-					<div class="portfolioEl">
-						<img src="https://yt3.googleusercontent.com/O2X7YtZuf4v3MvRwoYKYwtKLv0zMiqKB0-OXPe5q95YZh_qpQsVaZDyDLtH2BUQSYnFOPtWM=s1024-c-k-c0x00ffffff-no-rj" alt="">
-						<a href="https://ljh-clock.pages.dev/" target="_blank">ljh-clock</a>
-					</div>
-					<div class="portfolioEl">
-						<img src="https://yt3.googleusercontent.com/O2X7YtZuf4v3MvRwoYKYwtKLv0zMiqKB0-OXPe5q95YZh_qpQsVaZDyDLtH2BUQSYnFOPtWM=s1024-c-k-c0x00ffffff-no-rj" alt="">
-						<a href="https://ljh-games.pages.dev/" target="_blank">ljh-games</a>
-					</div>
-					<div class="portfolioEl">
-						<img src="https://yt3.googleusercontent.com/O2X7YtZuf4v3MvRwoYKYwtKLv0zMiqKB0-OXPe5q95YZh_qpQsVaZDyDLtH2BUQSYnFOPtWM=s1024-c-k-c0x00ffffff-no-rj" alt="">
-						<a href="https://rotationrat.pages.dev/" target="_blank">rotationrat</a>
-					</div>
-					<div class="portfolioEl">
-						<img src="https://yt3.googleusercontent.com/O2X7YtZuf4v3MvRwoYKYwtKLv0zMiqKB0-OXPe5q95YZh_qpQsVaZDyDLtH2BUQSYnFOPtWM=s1024-c-k-c0x00ffffff-no-rj" alt="">
-						<a href="https://kahoogle.pages.dev/" target="_blank">kahoogle</a>
-					</div>
-					<div class="portfolioEl">
-						<img src="https://yt3.googleusercontent.com/O2X7YtZuf4v3MvRwoYKYwtKLv0zMiqKB0-OXPe5q95YZh_qpQsVaZDyDLtH2BUQSYnFOPtWM=s1024-c-k-c0x00ffffff-no-rj" alt="">
-						<a href="https://goose-grinders.pages.dev/" target="_blank">goose grinders</a>
-					</div>
-					<div class="portfolioEl">
-						<img src="https://yt3.googleusercontent.com/O2X7YtZuf4v3MvRwoYKYwtKLv0zMiqKB0-OXPe5q95YZh_qpQsVaZDyDLtH2BUQSYnFOPtWM=s1024-c-k-c0x00ffffff-no-rj" alt="">
-						<a href="https://windows-html.pages.dev/" target="_blank">windows in html</a>
-					</div>
-				</div>
+				<div class="taskbarDivider"></div>
 
-				<p>And more!</p>
+				<button class="trash">
+					<img draggable="false" src="./sources/image/icons/trashcan.png">
+				</button>
 			</div>
-
-			<div id="socials" class="category">
-				<h1>Socials</h1>
-				<h2>Where can you find me?</h2>
-
-				<div id='socialdiv'>
-					<div class="socialChoice" style="--hover-bg: red;">
-						<img src="./sources/image/socials/Youtube_logo.png" alt="">
-						<a href="https://www.youtube.com/@ljharnish">YouTube Channel</a>
-					</div>
-					<div class="socialChoice" style="--hover-bg: #8c45f7;">
-						<img src="./sources/image/socials/instagram.webp" alt="">
-						<a href="https://www.twitch.tv/ljharnish">Twitch</a>
-					</div>
-					<div class="socialChoice" style="--hover-bg: rgb(41, 41, 41)">
-						<img src="./sources/image/socials/instagram.webp" alt="">
-						<a href="https://www.github.com/ljharnish">GitHub</a>
-					</div>
-					<div class="socialChoice">
-						<img src="./sources/image/socials/instagram.webp" alt="">
-						<a href="https://www.instagram.com/@ljharnish">Instagram</a>
-					</div>
-				</div>
-
-			</div>
-		</main>
-    </body>
+			<script src="./main.js" async="" defer=""></script>
+		
+	</body>
+	</body>
     <!-- JS -->
 
     <script src="./sources/js/main.js"></script>

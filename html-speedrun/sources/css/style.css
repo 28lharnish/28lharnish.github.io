@@ -2,231 +2,177 @@
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
-	font-family: "Roboto", serif;
 }
 
-:root {
-	--theme-01: #dd5e67;
-	--theme-02: #d181ff;
-	--theme-03: #81b8ff;
-	--theme-04: #793486;
+html, body { margin: 0; overflow: hidden; background-image: url('../image/background.jpg'); background-repeat: no-repeat; background-size: cover; }
+@import url(./sources/fonts/sf-pro-display.css);
 
-	--title-font: 'Bebas Neue', 'Roboto', serif;
+
+p, img {
+    pointer-events: none;
+    -webkit-user-select: none;      
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
 }
 
-a {
-	color: inherit;
+button p {
+    padding: 0;
+    margin: 0;
 }
 
-body {
-	background: #222;
-}
-
-header {
-	background: var(--theme-01);
-	height: 80px;
+#finder {
+	backdrop-filter: blur(5px);
+	display: flex;
+	flex-direction: row;
+	position: absolute;
+	top: 0;
 	width: 100%;
-	padding: 5px 60px;
-	display: flex;
-	box-shadow: 0px 0px 5px black;
+	height: 25px;
+	padding: 0 20px;
+	background: #ffffff65;
 }
 
-header div.iconName {
-	flex: 1 1 auto;
-	height: 100%;
-	display: flex;
-	justify-content: left;
-	align-items: center;
-	font-size: 20px;
-}
- 
-header img {
-	margin-right: 20px;
-	height: 100%;
-	border-radius: 5px;
-	border: 2px solid black;
-}
-
-header ul {
-	list-style: none;
-	display: flex;
-}
-
-header ul li {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 120px;
-	color: black;
-	cursor: pointer;
-	background: var(--theme-02);
-	box-shadow: 0px 0px 5px black;
-	transition: 0.2s ease-in-out background;
-	margin-left: 10px;
-	border-radius: 5px;
-}
-
-header ul li:hover {
-	background: var(--theme-03);
-}
-
-header ul li::after {
-	content: '';
-	background: black;
-	height: 3px;
-	border-radius: 90px;
-	margin-top: 2px;
-	width: 0px;
-	transition: 0.2s ease-in-out width;
-}
-
-header ul li:hover::after {
-	width: 55%;
-}
-
-header ul li a {
-	color: black;
-	text-decoration: none;
-}
-
-main {
-	width: 100%;
-	height: 100vh;
-	padding: 0 50px;
-}
-
-div.category {
-	color: white;
-	width: 100%;
-	min-height: 200px;
-	margin-bottom: 50px;
-	padding-bottom: 50px;
-	border-bottom: 5px solid var(--theme-01);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-top: 20px;
-}
-
-div.category h1 {
-	color: var(--theme-02);
-	font-family: var(--title-font);
-	font-size: 90px;
-}
-
-div.category h2 {
-	margin-bottom: 50px;
-	color: var(--theme-03);
-}
-
-div.category p {
-	font-size: 20px;
-}
-
-div.sidebyside {
-	border-radius: 15px;
-	overflow: hidden;
-	display: flex;
-  	flex-direction: row;
-	width: 900px;
-	height: 450px;
-	background: var(--theme-04);
-}
-
-div.sidebyside div.sideL, div.sidebyside div.sideR {
-	display: flex;
-	justify-content: center;
-	overflow: hidden;
-	margin: 20px;
-	width: 50%;
-}
-
-div.sidebyside div.sideL img {
-	border-radius: 10px;
-	height: 100%;
-	width: auto;
-}
-
-div.portfolioGrid {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr); 
-	grid-template-rows: repeat(2, 1fr); 
-	gap: 30px 15px; 
-	margin-bottom: 50px;
-}
-
-div.portfolioGrid div.portfolioEl {
-	background: var(--theme-01);
-	border-radius: 5px;
-	padding: 15px;
-	width: 300px;
-	height: 380px;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	text-align: center;
-}
-
-div.portfolioGrid div.portfolioEl * {
-	width: 100%;
-}
-
-div.portfolioGrid div.portfolioEl img {
-	border-radius: 5px;
-	box-shadow: 0px 0px 5px black;
-}
-
-div.portfolioGrid div.portfolioEl a {
-	font-family: var(--title-font);
-	font-size: 45px;
-}
-
-div#socialdiv {
-	width: 600px;
-	height: auto;
-	background: var(--theme-01);
-	border-radius: 10px;
-}
-
-div.socialChoice {
-	border: 2px solid var(--theme-02);
+#finder button {
 	padding: 5px;
-	border-radius: 10px;
-	margin: 10px 10px;
-	background: var(--theme-04);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-  	height: 70px;
+	cursor: pointer;
+	height: 100%;
+	background: none;
+	border: none;
+	border-radius: 5px;
 	transition: 0.2s ease-in-out background;
-}
-
-div.socialChoice img {
-  	height: 100%;
-	margin-right: 20px;
-	scale: 0.6;
-	transition: 0.2s ease-in-out scale;
-}
-
-div.socialChoice a {
-	font-size: 40px;
-	font-family: var(--title-font);
+	margin-right: 10px;
+	font-family: 'SF Pro';
 	color: white;
-	transition: 0.2s ease-in-out color;
-	text-decoration: none;
+	font-size: 14px;
 }
 
-div.socialChoice:has(a:hover) img {
-	scale: 1;
+#finder div.functions {
+	display: flex;
+	flex-direction: row;
+	flex: 1 1 auto;
 }
 
-div.socialChoice:has(a:hover) {
-	background: var(--hover-bg);
+#finder button.boldAppName {
+	font-weight: 800;
 }
 
-div.socialChoice a:hover {
-	color: var(--hover-color);
+#finder button:hover {
+	background: #ffffff65;
+}
+
+#finder button img {
+	height: 100%;
+	aspect-ratio: 1;
+}
+
+#taskbar {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -10px);
+    background: #ffffff65;
+	backdrop-filter: blur(5px);
+    height: 80px;
+	min-width: 80px;
+	max-width: 90%;
+	border-radius: 20px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1000;
+}
+
+#taskbar button {
+	position: relative;
+	cursor: pointer;
+    background: transparent;
+    padding: 0;
+    display: flex;
+    height: 80px;
+	aspect-ratio: 1;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+#taskbar div.taskbarDivider {
+	width: 2px;
+	border-radius: 90px;
+	margin: 0 10px;
+	height: 80%;
+	background: #d8d8d86c;
+}
+
+#taskbar button img {
+	height: 100%;
+    transition: all 0.2s ease;
+}
+
+#taskbar button:hover img {
+	transform: translate(0, -25px) scale(1.2);
+}
+
+#taskbar button.trash img {
+	height: 90%;
+}
+
+#taskbar button.trash:active img {
+	height: 80%;
+}
+
+#taskbar button:active img {
+    height: 90%;
+}
+
+#taskbar button.opened::after {
+	content: '';
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	background: #373737;
+	border-radius: 50%;
+	bottom: 1px;
+}
+
+#desktop {
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: calc(100vh - 46px);
+    color: white;
+    font-family: 'Segoe UI Variable'
+}
+
+#desktop .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 110px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 1px;
+}
+
+#desktop .icon p {
+    text-align: center;
+    margin: 0;
+}
+
+#desktop .icon img {
+    width: 48px;
+    height: 48px;
+}
+
+#desktop .icon:hover {
+    background: rgb(128 128 128 / 30%);;
+}
+
+@media screen and (max-width: 992px) {
+    .mobileDIb {
+        display: block;
+    }
 }

@@ -1,0 +1,82 @@
+.find-win {
+    resize:both;
+    overflow:auto;
+    /*display: none;*/
+    top: 10px;
+    left: 10px;
+    min-width: 260px;
+    min-height: 300px;
+    width: 1100px;
+    height: 600px;
+    position: absolute;
+    background: #191919;
+    border-radius: 10px;
+    border: #3b3b3b 1px solid;
+    transition: transform 0.2s ease;
+}
+
+.find-top {
+    cursor: move;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 10px 10px 0px 0px;
+    background: #202020;
+    height: 60px;
+    width: 100%;
+}
+
+.find-top .find-top-label img {
+    margin: 10px;
+    width: 16px;
+}
+
+.find-top .find-top-label p {
+    display: inline;
+    margin: 0;
+    font-family: 'Segoe UI Variable';
+    color: white;
+}
+
+.find-top .find-top-btns {
+    display: flex;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.find-top .find-top-btns button {
+    position: relative;
+    width: 35px;
+    height: 100%;
+    color: white;
+    background: #202020;
+    border: none;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.find-top .find-top-btns button div.find-top-btns-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.find-top .find-top-btns button:nth-child(1) div.find-top-btns-icon {
+    background: rgb(231, 5, 5);
+}
+
+.find-top .find-top-btns button:nth-child(2) div.find-top-btns-icon {
+    background: rgb(192, 182, 36);
+}
+
+.find-top .find-top-btns button:nth-child(3) div.find-top-btns-icon {
+    background: rgb(89, 196, 3);
+}
+
+.find-mid {
+    height: 43px;
+    background: #202020;
+    width: -webkit-fill-available;
+}

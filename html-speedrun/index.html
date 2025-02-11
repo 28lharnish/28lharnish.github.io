@@ -27,7 +27,10 @@
         </div>
 
         <div id="appleMenu">
-            <button>About This Mac</button>
+            <button onclick="darkMode(this)">Try Dark Mode</button>
+            <button onclick="monterey(this)">Try Monterey BGs</button>
+            <div class="appleDivider"></div>
+            <button onclick="newWindow('aboutThisMac')">About This Mac</button>
             <div class="appleDivider"></div>
             <button>System Settings...</button>
             <button>App Store...</button>
@@ -77,7 +80,7 @@
 
             <div class="finderShowcase">
                 <button onclick="showControl()">
-                    <img draggable="false" src="./sources/image/icons/Control_Center_(Apple).png">
+                    <img draggable="false" src="./sources/image/icons/settings/controlcenter.png">
                 </button>
             </div>
         </div>
@@ -149,26 +152,23 @@
             <button>
                 <img draggable="false" src="./sources/image/icons/launchpad.png">
             </button>
-            <button>
-                <img draggable="false" src="./sources/image/icons/safari.png">
+            <button onclick="openLink(1)">
+                <img draggable="false" src="./sources/image/icons/steam.png">
             </button>
-            <button>
+            <button onclick="openLink(2)">
                 <img draggable="false" src="./sources/image/icons/maps.png">
             </button>
-            <button>
+            <button onclick="openLink(3)">
                 <img draggable="false" src="./sources/image/icons/photos.png">
             </button>
-            <button>
-                <img draggable="false" src="./sources/image/icons/contacts.png">
-            </button>
-            <button>
+            <button onclick="openLink(4)">
                 <img draggable="false" src="./sources/image/icons/applemusic.png">
             </button>
-            <button>
+            <button onclick="openLink(5)">
                 <img draggable="false" src="./sources/image/icons/podcasts.png">
             </button>
-            <button>
-                <img draggable="false" src="./sources/image/icons/appstroe.png">
+            <button onclick="openLink(6)">
+                <img draggable="false" src="./sources/image/icons/appstore.png">
             </button>
             <button>
                 <img draggable="false" src="./sources/image/icons/settings.png">

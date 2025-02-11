@@ -58,6 +58,10 @@ button p {
   font-size: 14px;
 }
 
+#finder button:has(img) {
+	width: 25px;
+}
+
 #finder div.functions {
   display: flex;
   flex-direction: row;

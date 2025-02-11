@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('./SFProDisplay-UltralightItalic.ttf') format('truetype');
+    src: url('./SFPRODISPLAYULTRALIGHTITALIC.OTF');
     font-weight: 200;
     font-style: italic;
     
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('./SFProDisplay-Regular.ttf') format('truetype');
+    src: url('./SFPRODISPLAYREGULAR.OTF');
     font-weight: normal;
     font-style: normal;
     
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('./SFProDisplay-Medium.ttf') format('truetype');
+    src: url('./SFPRODISPLAYMEDIUM.OTF');
     font-weight: 500;
     font-style: normal;
     
@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('./SFProDisplay-LightItalic.ttf') format('truetype');
+    src: url('./SFPRODISPLAYLIGHTITALIC.OTF');
     font-weight: 200;
     font-style: italic;
     
@@ -32,7 +32,7 @@
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('./SFProDisplay-HeavyItalic.ttf') format('truetype');
+    src: url('./SFPRODISPLAYHEAVYITALIC.OTF');
     font-weight: 900;
     font-style: italic;
     
@@ -40,7 +40,7 @@
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('./SFProDisplay-SemiboldItalic.ttf') format('truetype');
+    src: url('./SFPRODISPLAYSEMIBOLDITALIC.OTF');
     font-weight: 600;
     font-style: italic;
     
@@ -48,7 +48,7 @@
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('./SFProDisplay-ThinItalic.ttf') format('truetype');
+    src: url('./SFPRODISPLAYTHINITALIC.OTF');
     font-weight: 100;
     font-style: italic;
     
@@ -56,7 +56,7 @@
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('./SFProDisplay-BlackItalic.ttf') format('truetype');
+    src: url('./SFPRODISPLAYBLACKITALIC.OTF');
     font-weight: 900;
     font-style: italic;
     
@@ -64,7 +64,7 @@
 
 @font-face {
     font-family: 'SF Pro Display';
-    src: url('./SFProDisplay-Bold.ttf') format('truetype');
+    src: url('./SFPRODISPLAYBOLD.OTF');
     font-weight: bold;
     font-style: normal;
     

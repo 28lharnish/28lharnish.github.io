@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=2" />
         <title>macOS For The Web</title>
         <!-- CSS -->
 
+        <link rel="stylesheet" href="./sources/fonts/sf-pro-display.css" />
         <link rel="stylesheet" href="./sources/css/styles/finder.css" />
         <link rel="stylesheet" href="./sources/css/style.css" />
     </head>
@@ -21,9 +22,27 @@
 				</div>-->
 			</div>
 	
+            <div id="appleMenu">
+                <button>About This Mac</button>
+                <div class="appleDivider"></div>
+                <button>System Settings...</button>
+                <button>App Store...</button>
+                <div class="appleDivider"></div>
+                <button>Recent Items</button>
+                <div class="appleDivider"></div>
+                <button>Force Quit...</button>
+                <div class="appleDivider"></div>
+                <button>Sleep...</button>
+                <button>Restart...</button>
+                <button>Shut Down...</button>
+                <div class="appleDivider"></div>
+                <button>Lock Screen</button>
+                <button>Log Out...</button>
+            </div>
+
 			<div id="finder">
 				<div class="functions">
-					<button>
+					<button onclick="showApple()">
 						<img draggable="false" src="./sources/image/icons/settings/appleicon.png">
 					</button>
 					<button class="boldAppName">
@@ -50,11 +69,71 @@
 				</div>
 
 				<div class="finderShowcase">
-					<button>
-						<!--! ADD RIGHT SIDE -->
+					<button onclick="showControl()">
+						<img draggable="false" src="./sources/image/icons/Control_Center_(Apple).png">
 					</button>
 				</div>
 			</div>
+
+            <div id="controlCenter">
+                <div class="bigStuff">
+                    <div class="onebyone">
+                        <div class="controlSetting">
+                            <div class="icon selected">
+                                <img draggable='false' src="./sources/image/icons/settings/wifi.png" alt="" style="width: 100%;scale: 1.25;filter: brightness(0) invert(1);">
+                            </div>
+                            <div class="text">
+                                <h1>Wi-Fi</h1>
+                                <p>YTECH-Win</p>
+                            </div>
+                        </div>
+                        <div class="controlSetting">
+                            <div class="icon">
+                                <img draggable='false' src="./sources/image/icons/settings/bluetooth.png" alt="" style="height: 60%;filter: brightness(0) invert(1);">
+                            </div>
+                            <div class="text">
+                                <h1>Bluetooth</h1>
+                                <p>YTECH-Win</p>
+                            </div>
+                        </div>
+                        <div class="controlSetting">
+                            <div class="icon">
+                                <img draggable='false' src="./sources/image/icons/settings/airdrop.png" alt="" style="width: 60%;filter: brightness(0) invert(1);">
+                            </div>
+                            <div class="text">
+                                <h1>AirDrop</h1>
+                                <p>YTECH-Win</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ontop">
+                        <div class="donotdisturb">
+                            <div class="controlSetting">
+                                <div class="icon">
+                                    <img draggable='false' src="./sources/image/icons/settings/donotdisturb.png" alt="" style="height: 60%;filter: brightness(0) invert(1);">
+                                </div>
+                                <div class="text">
+                                    <h1>Do Not</h1>
+                                    <h1>Disturb</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="smallWidgets">
+                            <div class="keyboard">
+                                <img src="./sources/image/icons/settings/brightness-keyboard.svg" alt="">
+                                <h1>Keyboard Brightness</h1>
+                            </div>
+                            <div class="mirroring">
+                                <img src="./sources/image/icons/settings/screen-mirroring.png" alt="">
+                                <h1>Screen Mirroring</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="smallWidget"></div>
+                <div class="smallWidget"></div>
+                <div class="smallWidget"></div>-->
+            </div>
 
 			<div id="taskbar">
 				<button onclick="newWindow('finder')">
@@ -67,34 +146,13 @@
 					<img draggable="false" src="./sources/image/icons/safari.png">
 				</button>
 				<button>
-					<img draggable="false" src="./sources/image/icons/iMessage.png">
-				</button>
-				<button>
-					<img draggable="false" src="./sources/image/icons/mail.png">
-				</button>
-				<button>
 					<img draggable="false" src="./sources/image/icons/maps.png">
 				</button>
 				<button>
 					<img draggable="false" src="./sources/image/icons/photos.png">
 				</button>
 				<button>
-					<img draggable="false" src="./sources/image/icons/facetime.png">
-				</button>
-				<button>
 					<img draggable="false" src="./sources/image/icons/contacts.png">
-				</button>
-				<button>
-					<img draggable="false" src="./sources/image/icons/calendar.png">
-				</button>
-				<button>
-					<img draggable="false" src="./sources/image/icons/reminders.png">
-				</button>
-				<button>
-					<img draggable="false" src="./sources/image/icons/notes.png">
-				</button>
-				<button>
-					<img draggable="false" src="./sources/image/icons/appletv.png">
 				</button>
 				<button>
 					<img draggable="false" src="./sources/image/icons/applemusic.png">
@@ -115,9 +173,7 @@
 					<img draggable="false" src="./sources/image/icons/trashcan.png">
 				</button>
 			</div>
-			<script src="./main.js" async="" defer=""></script>
 		
-	</body>
 	</body>
     <!-- JS -->
 

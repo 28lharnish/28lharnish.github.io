@@ -32,6 +32,24 @@ function openWindow(window) {
 
 let winNum = 0;
 
+function showApple() {
+    let cc = document.getElementById('appleMenu');
+    if(cc.classList.contains('open')) {
+        cc.classList.remove('open');
+    } else {
+        cc.classList.add('open');
+    }
+}
+
+function showControl() {
+    let cc = document.getElementById('controlCenter');
+    if(cc.classList.contains('open')) {
+        cc.classList.remove('open');
+    } else {
+        cc.classList.add('open');
+    }
+}
+
 function newWindow(window) {
     if(window === 'finder') {
         finder = document.createElement('div');

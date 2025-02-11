@@ -1,178 +1,447 @@
 * {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-html, body { margin: 0; overflow: hidden; background-image: url('../image/background.jpg'); background-repeat: no-repeat; background-size: cover; }
-@import url(./sources/fonts/sf-pro-display.css);
+:root {
+  --unselected-icon: #aaa;
+  --selected-icon: #4b85ff;
+}
 
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+  background-image: url("../image/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-p, img {
-    pointer-events: none;
-    -webkit-user-select: none;      
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none; 
+p,
+img {
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 button p {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 #finder {
-	backdrop-filter: blur(5px);
-	display: flex;
-	flex-direction: row;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 25px;
-	padding: 0 20px;
-	background: #ffffff65;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 25px;
+  padding: 0 20px;
+  background: #ffffff65;
 }
 
 #finder button {
-	padding: 5px;
-	cursor: pointer;
-	height: 100%;
-	background: none;
-	border: none;
-	border-radius: 5px;
-	transition: 0.2s ease-in-out background;
-	margin-right: 10px;
-	font-family: 'SF Pro';
-	color: white;
-	font-size: 14px;
+  padding: 5px;
+  cursor: pointer;
+  height: 100%;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in-out background;
+  margin-right: 10px;
+  font-family: "SF Pro Display";
+  color: white;
+  font-size: 14px;
 }
 
 #finder div.functions {
-	display: flex;
-	flex-direction: row;
-	flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
 }
 
 #finder button.boldAppName {
-	font-weight: 800;
+  font-weight: 800;
 }
 
 #finder button:hover {
-	background: #ffffff65;
+  background: #ffffff65;
 }
 
 #finder button img {
-	height: 100%;
-	aspect-ratio: 1;
+  height: 100%;
+  aspect-ratio: 1;
+}
+
+#finder div.finderShowcase {
+  flex: 0;
+}
+
+#appleMenu.open {
+    top: 30px;
+}
+
+#appleMenu {
+    backdrop-filter: blur(5px);
+    border: 1px solid #00000080;
+    font-family: 'SF Pro Display';
+z-index: 20;
+  padding: 10px 20px;
+  top: -500px;
+  left: 10px;
+  position: absolute;
+  width: 190px;
+  min-height: 140px;
+  max-height: 400px;
+  background: #ffffff65;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  transition: top 0.2s ease-in-out;
+}
+
+#appleMenu button {
+    cursor: pointer;
+    font-family: 'SF Pro Display';
+    font-weight: 100;
+    font-size: 14px;
+    border: none;
+    background: none;
+    padding: 5px;
+    width: 100%;
+    text-align: left;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out background;
+}
+
+#appleMenu button:hover {
+    background: #ffffff65;
+}
+
+#appleMenu div.appleDivider {
+    height: 1px;
+    background: #00000020;
+    width: 100%;
+    margin: 5px 0;
+}
+
+#controlCenter {
+  z-index: 20;
+  padding: 10px;
+  top: -200px;
+  right: 10px;
+  position: absolute;
+  width: 270px;
+  min-height: 140px;
+  max-height: 340px;
+  background: #ffffff65;
+  border-radius: 10px;
+  transition: top 0.5s ease-in-out;
+}
+
+#controlCenter.open {
+    top: 30px;
+}
+
+#controlCenter div.bigStuff {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#controlCenter div.bigStuff div.onebyone {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5px;
+  aspect-ratio: 1;
+  height: 100%;
+  background: #ffffff65;
+  border-radius: 5px;
+}
+
+#controlCenter div.bigStuff div.onebyone div.controlSetting {
+  cursor: pointer;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#controlCenter div.bigStuff div.onebyone div.controlSetting div.icon {
+  height: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  overflow: clip;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  background: var(--unselected-icon);
+  border-radius: 100%;
+}
+
+#controlCenter div.bigStuff div.onebyone div.controlSetting div.icon.selected {
+  background: var(--selected-icon);
+}
+
+#controlCenter div.bigStuff div.onebyone div.controlSetting div.text {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  height: 100%;
+}
+
+#controlCenter div.bigStuff div.onebyone div.controlSetting div.text h1 {
+  font-family: "SF Pro Display";
+  font-size: 14px;
+}
+
+#controlCenter div.bigStuff div.onebyone div.controlSetting div.text p {
+  font-size: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: "SF Pro Display";
+}
+
+#controlCenter div.bigStuff div.ontop {
+  aspect-ratio: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#controlCenter div.bigStuff div.ontop div.donotdisturb {
+  width: 100%;
+  height: 50%;
+  margin-bottom: 5px;
+  background: #ffffff65;
+  border-radius: 5px;
+}
+
+#controlCenter div.bigStuff div.ontop div.donotdisturb div.controlSetting {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#controlCenter
+  div.bigStuff
+  div.ontop
+  div.donotdisturb
+  div.controlSetting
+  div.icon {
+  height: 35px;
+  aspect-ratio: 1;
+  display: flex;
+  overflow: clip;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  background: var(--unselected-icon);
+  border-radius: 100%;
+}
+
+#controlCenter
+  div.bigStuff
+  div.ontop
+  div.donotdisturb
+  div.controlSetting
+  div.icon.selected {
+  background: var(--selected-icon);
+}
+
+#controlCenter
+  div.bigStuff
+  div.ontop
+  div.donotdisturb
+  div.controlSetting
+  div.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5px;
+  height: 100%;
+}
+
+#controlCenter
+  div.bigStuff
+  div.ontop
+  div.donotdisturb
+  div.controlSetting
+  div.text
+  h1 {
+  font-family: "SF Pro Display";
+  font-size: 14px;
+}
+
+#controlCenter
+  div.bigStuff
+  div.ontop
+  div.donotdisturb
+  div.controlSetting
+  div.text
+  p {
+  font-size: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: "SF Pro Display";
+}
+
+#controlCenter div.bigStuff div.ontop div.smallWidgets {
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#controlCenter div.bigStuff div.ontop div.smallWidgets div {
+  width: 48%;
+  height: 100%;
+  border-radius: 5px;
+  background: #ffffff65;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#controlCenter div.bigStuff div.ontop div.smallWidgets div img {
+  width: 30px;
+}
+
+#controlCenter div.bigStuff div.ontop div.smallWidgets div h1 {
+  font-size: 10px;
+  text-align: center;
+  font-family: "SF Pro Display";
+  font-weight: 100;
 }
 
 #taskbar {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%, -10px);
-    background: #ffffff65;
-	backdrop-filter: blur(5px);
-    height: 80px;
-	min-width: 80px;
-	max-width: 90%;
-	border-radius: 20px;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    z-index: 1000;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -10px);
+  background: #ffffff65;
+  backdrop-filter: blur(5px);
+  height: 80px;
+  min-width: 80px;
+  max-width: 90%;
+  border-radius: 20px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1000;
 }
 
 #taskbar button {
-	position: relative;
-	cursor: pointer;
-    background: transparent;
-    padding: 0;
-    display: flex;
-    height: 80px;
-	aspect-ratio: 1;
-    align-items: center;
-    justify-content: center;
-    margin: 2px;
-    border: none;
-    transition: all 0.2s ease;
+  position: relative;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  height: 80px;
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  margin: 2px;
+  border: none;
+  transition: all 0.2s ease;
 }
 
 #taskbar div.taskbarDivider {
-	width: 2px;
-	border-radius: 90px;
-	margin: 0 10px;
-	height: 80%;
-	background: #d8d8d86c;
+  width: 2px;
+  border-radius: 90px;
+  margin: 0 10px;
+  height: 80%;
+  background: #d8d8d86c;
 }
 
 #taskbar button img {
-	height: 100%;
-    transition: all 0.2s ease;
+  height: 100%;
+  transition: all 0.2s ease;
 }
 
 #taskbar button:hover img {
-	transform: translate(0, -25px) scale(1.2);
+  transform: translate(0, -25px) scale(1.2);
 }
 
 #taskbar button.trash img {
-	height: 90%;
+  height: 90%;
 }
 
 #taskbar button.trash:active img {
-	height: 80%;
+  height: 80%;
 }
 
 #taskbar button:active img {
-    height: 90%;
+  height: 90%;
 }
 
 #taskbar button.opened::after {
-	content: '';
-	position: absolute;
-	width: 4px;
-	height: 4px;
-	background: #373737;
-	border-radius: 50%;
-	bottom: 1px;
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #373737;
+  border-radius: 50%;
+  bottom: 1px;
 }
 
 #desktop {
-    width: -webkit-fill-available;
-    width: -moz-available;
-    height: calc(100vh - 46px);
-    color: white;
-    font-family: 'Segoe UI Variable'
+  width: -webkit-fill-available;
+  width: -moz-available;
+  height: calc(100vh - 46px);
+  color: white;
+  font-family: "SF Pro Display";
 }
 
 #desktop .icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 110px;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 110px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 1px;
 }
 
 #desktop .icon p {
-    text-align: center;
-    margin: 0;
+  text-align: center;
+  margin: 0;
 }
 
 #desktop .icon img {
-    width: 48px;
-    height: 48px;
+  width: 48px;
+  height: 48px;
 }
 
 #desktop .icon:hover {
-    background: rgb(128 128 128 / 30%);;
+  background: rgb(128 128 128 / 30%);
 }
 
 @media screen and (max-width: 992px) {
-    .mobileDIb {
-        display: block;
-    }
+  .mobileDIb {
+    display: block;
+  }
 }

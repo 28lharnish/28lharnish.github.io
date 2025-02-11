@@ -198,6 +198,7 @@ z-index: 20;
   display: flex;
   flex-direction: column;
   margin: 5px;
+  width: 63px;
   height: 100%;
 }
 
@@ -381,6 +382,14 @@ z-index: 20;
   height: 100%;
   transition: all 0.2s ease;
 }
+
+#taskbar button:has(+ button:hover) {
+    transform: translate(0, -15px) scale(1.05);
+  }
+
+#taskbar button:hover + button img {
+    transform: translate(0, -15px) scale(1.05);
+  }
 
 #taskbar button:hover img {
   transform: translate(0, -25px) scale(1.2);

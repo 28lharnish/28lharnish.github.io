@@ -57,31 +57,7 @@ function openWindow(window) {
 let winNum = 0;
 
 function openLink(param) {
-    let url = ''
-    switch(param){
-        case 1: 
-            url = 'https://store.steampowered.com';
-            break;
-        case 2:
-            url = 'https://www.apple.com/maps';
-            break;
-        case 3:
-            url = 'https://www.icloud.com/photos/';
-            break;
-        case 4:
-            url = 'https://www.spotify.con';
-            break;
-        case 5:
-            url = 'https://podcasts.apple.com/us/browse';
-            break;
-        case 6:
-            url = 'https://www.apple.com/app-store/';
-            break;
-        default:
-            url = '';
-            break;
-    }
-    if(url!=='') window.open(url, '_blank').focus();
+    if(param != '') window.open(param, '_blank').focus();
 }
 
 function darkMode(btn) {

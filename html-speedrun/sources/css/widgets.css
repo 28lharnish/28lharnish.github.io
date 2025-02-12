@@ -390,3 +390,11 @@ body.dark
     p {
     font-size: 14px;
 }
+
+#musicWidget.spotify {
+    background: linear-gradient(to bottom, #0E6A2F, #157B39);
+}
+
+#musicWidget.spotify div.musicPlaying {
+    background: linear-gradient(to bottom, #1DB954, #20A44E);
+}

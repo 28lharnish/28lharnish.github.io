@@ -23,8 +23,11 @@ const allImages = [
     './sources/image/icons/controlcenter.png',
     './sources/image/icons/facetime.png',
     './sources/image/icons/FinderBigSur.png',
+    './sources/image/icons/githubdesktop.png',
     './sources/image/icons/iMessage.png',
     './sources/image/icons/launchpad.png',
+    './sources/image/icons/ljharnish.png',
+    './sources/image/icons/ljharnish2.png',
     './sources/image/icons/mail.png',
     './sources/image/icons/maps.png',
     './sources/image/icons/notes.png',
@@ -35,6 +38,7 @@ const allImages = [
     './sources/image/icons/settings.png',
     './sources/image/icons/steam.png',
     './sources/image/icons/trashcan.png',
+    './sources/image/icons/vscode.png',
 
     //? Control Center Icons
     './sources/image/icons/settings/airdrop.png',
@@ -130,7 +134,7 @@ window.onload = function() {
     }
 
     function showDockIcons() {
-        const icons = Array.from(document.getElementById('dock').children);
+        const icons = Array.from(document.getElementById('dock').children).filter(e => !e.classList.contains('dockDivider'));
         for(let i=0;i<icons.length;i++) {
             setTimeout(() => {
                 icons[i].classList.add('visible');

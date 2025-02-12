@@ -117,7 +117,6 @@ window.onload = function() {
     {
         var img=new Image();
         img.src=url;
-        console.log(img)
     }
 
     for (var i=0;i<allImages.length;i++) {

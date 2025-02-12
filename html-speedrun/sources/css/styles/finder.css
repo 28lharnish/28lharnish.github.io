@@ -1,7 +1,6 @@
 .find-win {
     resize:both;
     overflow:auto;
-    /*display: none;*/
     top: 10px;
     left: 10px;
     min-width: 260px;
@@ -64,15 +63,18 @@
 }
 
 .find-top .find-top-btns button:nth-child(1) div.find-top-btns-icon {
-    background: rgb(231, 5, 5);
+    background: var(--close);
+    border: 2px solid var(--close-outer);
 }
 
 .find-top .find-top-btns button:nth-child(2) div.find-top-btns-icon {
-    background: rgb(192, 182, 36);
+    background: var(--min);
+    border: 2px solid var(--min-outer);
 }
 
 .find-top .find-top-btns button:nth-child(3) div.find-top-btns-icon {
-    background: rgb(89, 196, 3);
+    background: var(--max);
+    border: 2px solid var(--max-outer);
 }
 
 .find-mid {

@@ -1,54 +1,63 @@
-.find-win {
-    resize:both;
+.abtMac-win {
     overflow:auto;
-    /*display: none;*/
     top: 10px;
     left: 10px;
-    min-width: 260px;
-    min-height: 300px;
-    width: 1100px;
-    height: 600px;
+    width: 750px;
+    height: 400px;
     position: absolute;
-    background: #191919;
+    background: #f6f6f6;
     border-radius: 10px;
-    border: #3b3b3b 1px solid;
+    box-shadow: 0px 0px 10px #00000080;
+    border: #dbdbdb 1px solid;
     transition: transform 0.2s ease;
 }
 
-.find-top {
+body.dark .abtMac-win {
+    background: #333;
+    border: #555 1px solid;
+}
+
+.abtMac-top {
+    position: relative;
     cursor: move;
     display: flex;
     align-items: flex-start;
     border-radius: 10px 10px 0px 0px;
-    background: #202020;
-    height: 60px;
+    background: white;
+    height: 50px;
     width: 100%;
+    border-bottom: 1px solid #dbdbdb;
 }
 
-.find-top .find-top-label img {
+body.dark .abtMac-top {
+    background: #111;
+    border-bottom: 1px solid #919191;
+}
+
+.abtMac-top .abtMac-top-label img {
     margin: 10px;
     width: 16px;
 }
 
-.find-top .find-top-label p {
+.abtMac-top .abtMac-top-label p {
     display: inline;
     margin: 0;
     font-family: 'Segoe UI Variable';
     color: white;
 }
 
-.find-top .find-top-btns {
+.abtMac-top .abtMac-top-btns {
     display: flex;
     height: 100%;
     margin-left: 10px;
 }
 
-.find-top .find-top-btns button {
+.abtMac-top .abtMac-top-btns button {
     position: relative;
     width: 35px;
     height: 100%;
     color: white;
-    background: #202020;
+    background: none;
     border: none;
     transition: all 0.2s ease;
     display: flex;
@@ -56,27 +65,141 @@
     align-items: center;
 }
 
-.find-top .find-top-btns button div.find-top-btns-icon {
+.abtMac-top .abtMac-top-btns button div.abtMac-top-btns-icon {
     width: 20px;
     height: 20px;
     border-radius: 100%;
     cursor: pointer;
 }
 
-.find-top .find-top-btns button:nth-child(1) div.find-top-btns-icon {
-    background: rgb(231, 5, 5);
+
+.abtMac-top .abtMac-top-btns button:nth-child(1) div.abtMac-top-btns-icon {
+    background: var(--close);
+    border: 2px solid var(--close-outer);
 }
 
-.find-top .find-top-btns button:nth-child(2) div.find-top-btns-icon {
-    background: rgb(192, 182, 36);
+.abtMac-top .abtMac-top-btns button:nth-child(2) div.abtMac-top-btns-icon {
+    background: var(--min);
+    border: 2px solid var(--min-outer);
 }
 
-.find-top .find-top-btns button:nth-child(3) div.find-top-btns-icon {
-    background: rgb(89, 196, 3);
+.abtMac-top .abtMac-top-btns button:nth-child(3) div.abtMac-top-btns-icon {
+    background: #bbb
 }
 
-.find-mid {
-    height: 43px;
-    background: #202020;
-    width: -webkit-fill-available;
+.abtMac-topSelector {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    border: 1px #bbb solid;
+    border-radius: 5px;
+  }
+
+body.dark .abtMac-topSelector {
+    border: 1px #555 solid;
+}
+
+body.dark .abtMac-topSelector button {
+    color: #aaa;
+}
+
+.abtMac-topSelector button {
+    cursor: pointer;
+    color: #555;
+    padding: 2px 5px;
+    border: none;
+    font-family: 'SF Pro Display';
+    font-weight: 100;
+    background: none;
+}
+
+
+body.dark .abtMac-topSelector button.abtMac-selected {
+    background: #555;
+    color: #fff;
+}
+
+
+.abtMac-topSelector button.abtMac-selected {
+    background: #eee;
+    color: black;
+}
+
+div.abtMacInfo {
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+div.abtMacOverview {
+    width: 100%;
+    height: 100%;
+    padding: 65px;
+    display: flex;
+    flex-direction: row;
+}
+
+div.abtMacOverviewLogo {
+    height: 100%;
+    aspect-ratio: 1;
+    margin-right: 65px;
+}
+
+div.abtMacOverviewLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+div.abtMacOverviewText {
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+body.dark div.abtMacOverviewText {
+    color: white;
+}
+
+div.abtMacOverviewText h1 {
+    font-weight: 100;
+}
+
+div.abtMacOverviewText h1 span {
+    font-weight: 800;
+}
+
+div.abtMacOverviewText p {
+    font-weight: 100;
+}
+
+div.abtMacOverviewSpecs {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div.abtMacOverviewSpecs p {
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+
+body.dark div.abtMacOverviewSpecs span{
+    color: #bbb;
+}
+
+div.abtMacOverviewSpecs span {
+    margin-left: 12px;
+    color: #555;
+}
+
+div.abtMacOverviewButtons button {
+    cursor: pointer;
+    background: #fff;
+    border: 1px #eee solid;
+    padding: 2px 10px;
+    box-shadow: 0px 0px 1px #00000080;
+    border-radius: 5px;
+    margin-right: 10px;
 }

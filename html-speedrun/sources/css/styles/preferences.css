@@ -1,0 +1,293 @@
+.settings-win {
+    overflow: hidden;
+    top: 10px;
+    left: 10px;
+    width: 750px;
+    height: 700px;
+    position: absolute;
+    background: #ededee;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #00000080;
+    border: #dbdbdb 1px solid;
+    transition: transform 0.2s ease;
+}
+
+body.dark .settings-win {
+    background: #333;
+    border: #555 1px solid;
+}
+
+.settings-top {
+    position: relative;
+    cursor: move;
+    display: flex;
+    align-items: center;
+    border-radius: 10px 10px 0px 0px;
+    background: white;
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+body.dark .settings-top {
+    background: #111;
+    border-bottom: 1px solid #919191;
+}
+
+.settings-top .settings-top-label img {
+    margin: 10px;
+    width: 16px;
+}
+
+.settings-top .settings-top-label p {
+    display: inline;
+    margin: 0;
+    font-family: "Segoe UI Variable";
+    color: white;
+}
+
+.settings-top .settings-top-btns {
+    display: flex;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.settings-top .settings-top-btns button {
+    position: relative;
+    width: 35px;
+    height: 100%;
+    color: white;
+    background: none;
+    border: none;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.settings-top .settings-top-btns button div.settings-top-btns-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.settings-top
+    .settings-top-btns
+    button:nth-child(1)
+    div.settings-top-btns-icon {
+    background: var(--close);
+    border: 2px solid var(--close-outer);
+}
+
+.settings-top
+    .settings-top-btns
+    button:nth-child(2)
+    div.settings-top-btns-icon {
+    background: var(--min);
+    border: 2px solid var(--min-outer);
+}
+
+.settings-top
+    .settings-top-btns
+    button:nth-child(3)
+    div.settings-top-btns-icon {
+    background: var(--max);
+    border: 2px solid var(--max-outer);
+}
+
+div.settingsInfo {
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+div.settingsProfileSection {
+    height: 120px;
+    border-bottom: 1px solid #b5b5b566;
+}
+
+body.dark div.settingsSection {
+    background: #202020;
+}
+
+div.settingsSection {
+    border-bottom: 1px solid #b5b5b566;
+    background: #e6e6e7;
+}
+
+body.dark div.settingsSection:nth-child(3) {
+    background: none;
+    border: none;
+}
+
+div.settingsSection:nth-child(3) {
+    background: none;
+    border: none;
+}
+
+body.dark div.settings-labelnbuttons {
+    color: white;
+}
+
+div.settings-labelnbuttons {
+    flex: 1 1 auto;
+    display: flex;
+    height: 100%;
+    margin-left: 10px;
+    align-items: center;
+}
+
+div.settings-labelnbuttons button {
+    height: 100%;
+    margin: 0px 10px;
+    background: none;
+    border-style: none;
+    color: var(--unselected-icon);
+    width: 25px;
+    cursor: pointer;
+}
+
+div.settings-labelnbuttons button ion-icon {
+    width: 100%;
+    height: 100%;
+}
+
+div.settings-labelnbuttons h1 {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+div.settings-search {
+    margin-right: 10px;
+    padding: 0 5px;
+    width: 180px;
+    border-radius: 5px;
+    border: 1px solid #b5b5b5;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.settings-search:has(input:focus) {
+    outline: 3px solid #0078d4;
+}
+
+div.settings-search ion-icon {
+    color: #b5b5b5;
+    width: auto;
+    margin: 5px;
+    height: 80%;
+    aspect-ratio: 1;
+}
+
+div.settings-search input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    font-size: 16px;
+    outline: none;
+}
+
+div.settingsProfileSection {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+}
+
+div.settingsProfile {
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+}
+
+div.settingsProfile div.profilePicture {
+    height: 100%;
+    aspect-ratio: 1;
+    padding: 10px;
+}
+
+div.settingsProfile div.profilePicture img {
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+}
+
+div.settingsProfile div.profileText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    margin-left: 10px;
+}
+
+body.dark div.settingsProfile div.profileText {
+    color: white;
+}
+
+div.settingsProfile div.profileText * {
+    font-weight: 100;
+}
+
+div.settingsButton {
+    text-align: center;
+    cursor: pointer;
+    height: 100%;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+}
+
+div.settingsButton img {
+    aspect-ratio: 1;
+    height: 50%;
+}
+
+div.settingsButton div.settingsButtonIcon img {
+    aspect-ratio: 1;
+    height: 50%;
+    scale: 0.75;
+}
+
+div.settingsSection {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+div.settingsSection div.settingsButton {
+    margin-bottom: 10px;
+    height: 120px;
+    padding: 0;
+    text-align: center;
+}
+
+div.settingsSection div.settingsButton div.settingsButtonIcon {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.settingsSection div.settingsButton div.settingsButtonIcon img {
+    height: 80%;
+}
+
+div.settingsSection div.settingsButton div.settingsButtonText {
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

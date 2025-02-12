@@ -1,121 +1,155 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "SF Pro Display";
 }
 
 :root {
-  --unselected-icon: #aaa;
-  --selected-icon: #4b85ff;
-  --white-bg: #ffffff65;
-  --dark-bg:#33333365;
+    --unselected-icon: #aaa;
+    --selected-icon: #4b85ff;
+    --white-bg: #ffffff65;
+    --dark-bg: #18181865;
+
+    --close: #ff5d55;
+    --close-outer: #c74842;
+    --min: #febb2e;
+    --min-outer: #c99321;
+    --max: #00cc4b;
+    --max-outer: #009737;
 }
 
 html,
 body {
-  margin: 0;
-  overflow: hidden;
-  background-image: url("../image/backgrounds/bigsur/light.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background-image: url("../image/backgrounds/bigsur/light.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
 }
 
 body.dark {
-	background-image: url("../image/backgrounds/bigsur/dark.jpg");
+    background-image: url("../image/backgrounds/bigsur/dark.jpg");
 }
 
 body.monterey:not(.dark) {
-	background-image: url("../image/backgrounds/monterey/light.jpg");
+    background-image: url("../image/backgrounds/monterey/light.jpg");
 }
 
 body.monterey.dark {
-	background-image: url("../image/backgrounds/monterey/dark.jpg");
+    background-image: url("../image/backgrounds/monterey/dark.jpg");
 }
 
+*::webkit-resizer {
+    display: none;
+}
+
+h1,
 p,
 img {
-  pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 button p {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
+}
+
+body.dark div#buttonNoFunction {
+    background: var(--dark-bg);
+	color: white;
+}
+
+div#buttonNoFunction.open {
+    top: 30px;
+}
+
+div#buttonNoFunction {
+	transition: top 0.5s cubic-bezier(.18,.89,.32,1.28);
+	color: black;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 10px;
+    border-radius: 5px;
+    background: var(--white-bg);
 }
 
 body.dark #finder {
-	background: var(--dark-bg);
+    background: var(--dark-bg);
 }
 
 #finder {
-  backdrop-filter: blur(5px);
-  display: flex;
-  flex-direction: row;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 25px;
-  padding: 0 20px;
-  background: var(--white-bg);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 25px;
+    padding: 0 20px;
+    background: var(--white-bg);
 }
 
 #finder button {
-  padding: 5px;
-  cursor: pointer;
-  height: 100%;
-  background: none;
-  border: none;
-  border-radius: 5px;
-  transition: 0.2s ease-in-out background;
-  margin-right: 10px;
-  font-family: "SF Pro Display";
-  color: black;
-  font-size: 14px;
+    padding: 5px;
+    cursor: pointer;
+    height: 100%;
+    background: none;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out background;
+    margin-right: 10px;
+    font-family: "SF Pro Display";
+    color: black;
+    font-size: 14px;
 }
 
 body.dark #finder button {
-  color: white;
+    color: white;
 }
 
 #finder button:has(img) {
-	width: 25px;
-  filter: invert(1);
+    width: 25px;
+    filter: invert(1);
 }
 
 body.dark #finder button:has(img) {
-  filter: none;
+    filter: none;
 }
 
 #finder div.functions {
-  display: flex;
-  flex-direction: row;
-  flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
 }
 
 #finder button.boldAppName {
-  font-weight: 800;
+    font-weight: 800;
 }
 
 body.dark #finder button:hover {
-background: var(--dark-bg);
+    background: var(--dark-bg);
 }
 
 #finder button:hover {
-  background: var(--white-bg);
+    background: var(--white-bg);
 }
 
 #finder button img {
-  height: 100%;
-  aspect-ratio: 1;
+    height: 100%;
+    aspect-ratio: 1;
 }
 
 #finder div.finderShowcase {
-  flex: 0;
+    flex: 0;
 }
 
 #appleMenu.open {
@@ -123,38 +157,38 @@ background: var(--dark-bg);
 }
 
 body.dark #appleMenu {
-	background: var(--dark-bg);
+    background: var(--dark-bg);
 }
 
 #appleMenu {
     backdrop-filter: blur(5px);
     box-shadow: 0px 0px 3px #00000080;
-  border: 1px solid #00000080;
-    font-family: 'SF Pro Display';
-z-index: 20;
-  padding: 10px;
-  top: -500px;
-  left: 10px;
-  position: absolute;
-  width: 190px;
-  min-height: 140px;
-  max-height: 450px;
-  background: var(--white-bg);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
-  transition: top 0.2s ease-in-out;
+    border: 1px solid #00000080;
+    font-family: "SF Pro Display";
+    z-index: 20;
+    padding: 10px;
+    top: -500px;
+    left: 10px;
+    position: absolute;
+    width: 190px;
+    min-height: 140px;
+    max-height: 450px;
+    background: var(--white-bg);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    transition: top 0.2s ease-in-out;
 }
 
 body.dark #appleMenu button {
-	color: white;
+    color: white;
 }
 
 #appleMenu button {
     cursor: pointer;
-	margin: 2px 0px;
-    font-family: 'SF Pro Display';
+    margin: 2px 0px;
+    font-family: "SF Pro Display";
     font-weight: 100;
     font-size: 14px;
     border: none;
@@ -167,7 +201,7 @@ body.dark #appleMenu button {
 }
 
 body.dark #appleMenu button:hover {
-	background: var(--dark-bg);
+    background: var(--dark-bg);
 }
 
 #appleMenu button:hover {
@@ -182,23 +216,23 @@ body.dark #appleMenu button:hover {
 }
 
 body.dark #controlCenter {
-	background: var(--dark-bg);
+    background: var(--dark-bg);
 }
 
 #controlCenter {
-  box-shadow: 0px 0px 3px #00000080;
-  border: 1px solid #00000080;
-  z-index: 20;
-  padding: 10px;
-  top: -200px;
-  right: 10px;
-  position: absolute;
-  width: 270px;
-  min-height: 140px;
-  max-height: 340px;
-  background: var(--white-bg);
-  border-radius: 10px;
-  transition: top 0.5s ease-in-out;
+    box-shadow: 0px 0px 3px #00000080;
+    border: 1px solid #00000080;
+    z-index: 20;
+    padding: 10px;
+    top: -200px;
+    right: 10px;
+    position: absolute;
+    width: 270px;
+    min-height: 140px;
+    max-height: 340px;
+    background: var(--white-bg);
+    border-radius: 10px;
+    transition: top 0.5s ease-in-out;
 }
 
 #controlCenter.open {
@@ -206,355 +240,355 @@ body.dark #controlCenter {
 }
 
 #controlCenter div.bigStuff {
-  width: 100%;
-  height: 120px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 body.dark #controlCenter div.bigStuff div.onebyone {
-	background: var(--dark-bg);
+    background: var(--dark-bg);
 }
 
 #controlCenter div.bigStuff div.onebyone {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 5px;
-  aspect-ratio: 1;
-  height: 100%;
-  background: var(--white-bg);
-  border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+    aspect-ratio: 1;
+    height: 100%;
+    background: var(--white-bg);
+    border-radius: 5px;
 }
 
 #controlCenter div.bigStuff div.onebyone div.controlSetting {
-  cursor: pointer;
-  width: 100%;
-  height: 30%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    cursor: pointer;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #controlCenter div.bigStuff div.onebyone div.controlSetting div.icon {
-  height: 100%;
-  aspect-ratio: 1;
-  display: flex;
-  overflow: clip;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
-  background: var(--unselected-icon);
-  border-radius: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    overflow: clip;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background: var(--unselected-icon);
+    border-radius: 100%;
 }
 
 #controlCenter div.bigStuff div.onebyone div.controlSetting div.icon.selected {
-  background: var(--selected-icon);
+    background: var(--selected-icon);
 }
 
 body.dark #controlCenter div.bigStuff div.onebyone div.controlSetting div.text {
-	color: white;
+    color: white;
 }
 
 #controlCenter div.bigStuff div.onebyone div.controlSetting div.text {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  width: 63px;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    width: 63px;
+    height: 100%;
 }
 
 #controlCenter div.bigStuff div.onebyone div.controlSetting div.text h1 {
-  font-family: "SF Pro Display";
-  font-size: 14px;
+    font-family: "SF Pro Display";
+    font-size: 14px;
 }
 
 #controlCenter div.bigStuff div.onebyone div.controlSetting div.text p {
-  font-size: 12px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  font-family: "SF Pro Display";
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: "SF Pro Display";
 }
 
 #controlCenter div.bigStuff div.ontop {
-  aspect-ratio: 1;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    aspect-ratio: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 body.dark #controlCenter div.bigStuff div.ontop div.donotdisturb {
-	background: var(--dark-bg);
+    background: var(--dark-bg);
 }
 
 #controlCenter div.bigStuff div.ontop div.donotdisturb {
-  width: 100%;
-  height: 50%;
-  margin-bottom: 5px;
-  background: var(--white-bg);
-  border-radius: 5px;
+    width: 100%;
+    height: 50%;
+    margin-bottom: 5px;
+    background: var(--white-bg);
+    border-radius: 5px;
 }
 
 #controlCenter div.bigStuff div.ontop div.donotdisturb div.controlSetting {
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 #controlCenter
-  div.bigStuff
-  div.ontop
-  div.donotdisturb
-  div.controlSetting
-  div.icon {
-  height: 35px;
-  aspect-ratio: 1;
-  display: flex;
-  overflow: clip;
-  justify-content: center;
-  align-items: center;
-  margin: 5px;
-  background: var(--unselected-icon);
-  border-radius: 100%;
-}
-
-#controlCenter
-  div.bigStuff
-  div.ontop
-  div.donotdisturb
-  div.controlSetting
-  div.icon.selected {
-  background: var(--selected-icon);
+    div.bigStuff
+    div.ontop
+    div.donotdisturb
+    div.controlSetting
+    div.icon {
+    height: 35px;
+    aspect-ratio: 1;
+    display: flex;
+    overflow: clip;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background: var(--unselected-icon);
+    border-radius: 100%;
 }
 
 #controlCenter
-  div.bigStuff
-  div.ontop
-  div.donotdisturb
-  div.controlSetting
-  div.text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 5px;
-  height: 100%;
+    div.bigStuff
+    div.ontop
+    div.donotdisturb
+    div.controlSetting
+    div.icon.selected {
+    background: var(--selected-icon);
+}
+
+#controlCenter
+    div.bigStuff
+    div.ontop
+    div.donotdisturb
+    div.controlSetting
+    div.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5px;
+    height: 100%;
 }
 
 body.dark
-#controlCenter
-div.bigStuff
-div.ontop
-div.donotdisturb
-div.controlSetting
-div.text {
-	color: white;
+    #controlCenter
+    div.bigStuff
+    div.ontop
+    div.donotdisturb
+    div.controlSetting
+    div.text {
+    color: white;
 }
 
 #controlCenter
-  div.bigStuff
-  div.ontop
-  div.donotdisturb
-  div.controlSetting
-  div.text
-  h1 {
-  font-family: "SF Pro Display";
-  font-size: 14px;
+    div.bigStuff
+    div.ontop
+    div.donotdisturb
+    div.controlSetting
+    div.text
+    h1 {
+    font-family: "SF Pro Display";
+    font-size: 14px;
 }
 
 #controlCenter
-  div.bigStuff
-  div.ontop
-  div.donotdisturb
-  div.controlSetting
-  div.text
-  p {
-  font-size: 12px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  font-family: "SF Pro Display";
+    div.bigStuff
+    div.ontop
+    div.donotdisturb
+    div.controlSetting
+    div.text
+    p {
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: "SF Pro Display";
 }
 
 #controlCenter div.bigStuff div.ontop div.smallWidgets {
-  width: 100%;
-  height: 50%;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+    width: 100%;
+    height: 50%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 body.dark #controlCenter div.bigStuff div.ontop div.smallWidgets div {
-	background: var(--dark-bg);
+    background: var(--dark-bg);
 }
 
 #controlCenter div.bigStuff div.ontop div.smallWidgets div {
-  width: 48%;
-  height: 100%;
-  border-radius: 5px;
-  background: var(--white-bg);
-  aspect-ratio: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    width: 48%;
+    height: 100%;
+    border-radius: 5px;
+    background: var(--white-bg);
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 body.dark #controlCenter div.bigStuff div.ontop div.smallWidgets div {
-	color: white;
+    color: white;
 }
 
 #controlCenter div.bigStuff div.ontop div.smallWidgets div img {
-  width: 30px;
+    width: 30px;
 }
 
 body.dark #controlCenter div.bigStuff div.ontop div.smallWidgets div img {
-	filter: invert(1);
+    filter: invert(1);
 }
 
 #controlCenter div.bigStuff div.ontop div.smallWidgets div h1 {
-  font-size: 10px;
-  text-align: center;
-  font-family: "SF Pro Display";
-  font-weight: 100;
+    font-size: 10px;
+    text-align: center;
+    font-family: "SF Pro Display";
+    font-weight: 100;
 }
 
-body.dark #taskbar {
-	background: var(--dark-bg);
+body.dark #dock {
+    background: var(--dark-bg);
 }
 
-#taskbar {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -10px);
-  background: var(--white-bg);
-  backdrop-filter: blur(5px);
-  height: 80px;
-  min-width: 80px;
-  max-width: 90%;
-  border-radius: 20px;
-  position: fixed;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  z-index: 1000;
-  box-shadow: 0px 0px 3px #00000080;
-  border: 1px solid #00000080;
+#dock {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    background: var(--white-bg);
+    backdrop-filter: blur(5px);
+    height: 80px;
+    min-width: 80px;
+    max-width: 90%;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0px 0px 3px #00000080;
+    border: 1px solid #00000080;
 }
 
-#taskbar button {
-  position: relative;
-  cursor: pointer;
-  background: transparent;
-  padding: 2px;
-  display: flex;
-  height: 80px;
-  aspect-ratio: 1;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  transition: all 0.2s ease;
+#dock button {
+    position: relative;
+    cursor: pointer;
+    background: transparent;
+    padding: 2px;
+    display: flex;
+    height: 80px;
+    aspect-ratio: 1;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    transition: all 0.2s ease;
 }
 
-#taskbar div.taskbarDivider {
-  width: 2px;
-  border-radius: 90px;
-  margin: 0 10px;
-  height: 80%;
-  background: #d8d8d86c;
+#dock div.dockDivider {
+    width: 2px;
+    border-radius: 90px;
+    margin: 0 10px;
+    height: 80%;
+    background: #d8d8d86c;
 }
 
-#taskbar button img {
-  height: 100%;
-  transition: all 0.2s ease;
+#dock button img {
+    height: 100%;
+    transition: all 0.2s ease;
 }
 
-#taskbar button:has(+ button + button:hover) {
+#dock button:has(+ button + button:hover) {
     transform: translate(0, -5px);
 }
 
-#taskbar button:has(+ button:hover) {
+#dock button:has(+ button:hover) {
     transform: translate(0, -15px) scale(1.05);
 }
 
-#taskbar button:hover + button img {
+#dock button:hover + button img {
     transform: translate(0, -15px) scale(1.05);
 }
 
-#taskbar button:hover + button + button img {
-	transform: translate(0, -5px)
+#dock button:hover + button + button img {
+    transform: translate(0, -5px);
 }
 
-#taskbar button:hover img {
-  transform: translate(0, -25px) scale(1.2);
+#dock button:hover img {
+    transform: translate(0, -25px) scale(1.2);
 }
 
-#taskbar button.trash img {
-  height: 90%;
+#dock button.trash img {
+    height: 90%;
 }
 
-#taskbar button.trash:active img {
-  height: 80%;
+#dock button.trash:active img {
+    height: 80%;
 }
 
-#taskbar button:active img {
-  height: 90%;
+#dock button:active img {
+    height: 90%;
 }
 
-#taskbar button.opened::after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: #373737;
-  border-radius: 50%;
-  bottom: 1px;
+#dock button.opened::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #373737;
+    border-radius: 50%;
+    bottom: 1px;
 }
 
 #desktop {
-  width: -webkit-fill-available;
-  width: -moz-available;
-  height: calc(100vh - 46px);
-  color: white;
-  font-family: "SF Pro Display";
+    width: 100vw;
+    height: 100vh;
+    height: calc(100vh - 46px);
+    color: white;
+    font-family: "SF Pro Display";
 }
 
 #desktop .icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 110px;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 110px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 1px;
 }
 
 #desktop .icon p {
-  text-align: center;
-  margin: 0;
+    text-align: center;
+    margin: 0;
 }
 
 #desktop .icon img {
-  width: 48px;
-  height: 48px;
+    width: 48px;
+    height: 48px;
 }
 
 #desktop .icon:hover {
-  background: rgb(128 128 128 / 30%);
+    background: rgb(128 128 128 / 30%);
 }
 
 @media screen and (max-width: 992px) {
-  .mobileDIb {
-    display: block;
-  }
+    .mobileDIb {
+        display: block;
+    }
 }

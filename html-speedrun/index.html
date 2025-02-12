@@ -3,12 +3,17 @@
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>macOS For The Web</title>
+        <meta name="viewport" content="width=device-width, initipal-scale=1" />
+        <title>macOS Big Sur</title>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
         <!-- CSS -->
 
         <link rel="stylesheet" href="./sources/fonts/sf-pro-display.css" />
+        <link rel="stylesheet" href="./sources/css/styles/aboutThisMac.css" />
         <link rel="stylesheet" href="./sources/css/styles/finder.css" />
+        <link rel="stylesheet" href="./sources/css/styles/preferences.css" />
         <link rel="stylesheet" href="./sources/css/style.css" />
 
         <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
@@ -17,34 +22,34 @@
         <link rel="manifest" href="/site.webmanifest">
     </head>
     <body>
-        <div id="mobileDIb" style="display: none; font-size: xxx-large; width: -webkit-fill-available; width: -moz-available; height: 100vh; background: black; color: white;">you are on mobile, this no work :(</div>
-        
+    
+        <div id="buttonNoFunction">
+            <p>Sorry, this item has no function yet.</p>
+        </div>
+
         <div id="desktop">
-            <!--<div class="icon" ondblclick="newWindow('explorer')">
-                <img draggable="false" src="">
-                <p>File Explorer</p>
-            </div>-->
+            
         </div>
 
         <div id="appleMenu">
-            <button onclick="darkMode(this)">Try Dark Mode</button>
-            <button onclick="monterey(this)">Try Monterey BGs</button>
+            <button class="appleMenuButton" onclick="darkMode(this)">Try Dark Mode</button>
+            <button class="appleMenuButton" onclick="monterey(this)">Try Monterey BGs</button>
             <div class="appleDivider"></div>
             <button onclick="newWindow('aboutThisMac')">About This Mac</button>
             <div class="appleDivider"></div>
-            <button>System Settings...</button>
-            <button>App Store...</button>
+            <button class="appleMenuButton">System Settings...</button>
+            <button class="appleMenuButton">App Store...</button>
             <div class="appleDivider"></div>
-            <button>Recent Items</button>
+            <button class="appleMenuButton">Recent Items</button>
             <div class="appleDivider"></div>
-            <button>Force Quit...</button>
+            <button class="appleMenuButton">Force Quit...</button>
             <div class="appleDivider"></div>
-            <button>Sleep...</button>
-            <button>Restart...</button>
-            <button>Shut Down...</button>
+            <button class="appleMenuButton">Sleep...</button>
+            <button class="appleMenuButton">Restart...</button>
+            <button class="appleMenuButton">Shut Down...</button>
             <div class="appleDivider"></div>
-            <button>Lock Screen</button>
-            <button>Log Out...</button>
+            <button class="appleMenuButton">Lock Screen</button>
+            <button class="appleMenuButton">Log Out...</button>
         </div>
 
         <div id="finder">
@@ -145,7 +150,7 @@
             <div class="smallWidget"></div>-->
         </div>
 
-        <div id="taskbar">
+        <div id="dock">
             <button onclick="newWindow('finder')">
                 <img draggable="false" src="./sources/image/icons/FinderBigSur.png">
             </button>
@@ -170,11 +175,11 @@
             <button onclick="openLink(6)">
                 <img draggable="false" src="./sources/image/icons/appstore.png">
             </button>
-            <button>
+            <button onclick="newWindow('settings')">
                 <img draggable="false" src="./sources/image/icons/settings.png">
             </button>
 
-            <div class="taskbarDivider"></div>
+            <div class="dockDivider"></div>
 
             <button class="trash">
                 <img draggable="false" src="./sources/image/icons/trashcan.png">

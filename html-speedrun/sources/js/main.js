@@ -1,32 +1,26 @@
 const buttonError = 'Sorry, this item does not have a function yet.';
 
-window.onload = function() {
-    window.addEventListener('click', function(e) {
-        console.log(e.target)
-        if(
-            e.target !== document.getElementById('appleMenu') 
-            && e.target !== document.querySelector('[onclick="showApple()"]')
-            && !e.target.classList.contains('appleMenuButton')) {
-            document.getElementById('appleMenu').classList.remove('open');
-        }
-        if(e.target !== document.getElementById('controlCenter') && e.target !== document.querySelector('[onclick="showControl()"]')) {
-            document.getElementById('controlCenter').classList.remove('open');
-        }
-    });
+function setMagnify(low = 1, high = 1.2, lowdistance = -5, highdistance = -25) {
+    const root = document.documentElement;
 
+    if (low > high) {
+        [low, high] = [high, low];
+    }
+    
+    if (lowdistance < highdistance) {
+        [lowdistance, highdistance] = [highdistance, lowdistance];
+    }
 
-    //make all buttons without a function alert the user that they don't work
-    let buttons = document.querySelectorAll('button');
-    buttons.forEach(button => {
-        if(button.getAttribute('onclick') === null && document.getElementById(button.id) === null) {
-            button.onclick = function() {
-                document.getElementById('buttonNoFunction').classList.add('open');
-                setTimeout(() => { document.getElementById('buttonNoFunction').classList.remove('open'); }, 1500);
-            }
-            
-        }
-    });
+    root.style.setProperty('--base-magnify-scale', low);
+    root.style.setProperty('--sibling-magnify-scale', (low + high) / 2);
+    root.style.setProperty('--full-magnify-scale', high);
+
+    root.style.setProperty('--base-magnify-distance', lowdistance + 'px');
+    root.style.setProperty('--sibling-magnify-distance', ((lowdistance + highdistance) / 2) + 'px');
+    root.style.setProperty('--full-magnify-distance', highdistance + 'px');
 }
+
+setMagnify(1, 1.2, -5, -25);
 
 function dragElement(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -129,7 +123,7 @@ function showControl() {
 }
 
 function newWindow(window) {
-    // Make windows by innerHTML instead of creating elements
+    //! Make windows by innerHTML instead of creating elements
     if(window === 'finder') {
         finder = document.createElement('div');
         finder.classList.add('find-win');
@@ -145,7 +139,7 @@ function newWindow(window) {
         aboutThisMac.classList.add('abtMac-win');
         aboutThisMac.id = `win${winNum}`
 
-        aboutThisMac.innerHTML = `<div class="abtMac-top"><div class="abtMac-top-btns"><button onclick="this.parentElement.parentElement.parentElement.remove()"><div class="abtMac-top-btns-icon"></div></button> <button><div class="abtMac-top-btns-icon"></div></button> <button><div class="abtMac-top-btns-icon"></div></button></div><div class="abtMac-topSelector"><button class="abtMac-selected"><p>Overview</p></button> <button><p>Displays</p></button> <button><p>Storage</p></button> <button><p>Support</p></button> <button><p>Resources</p></button></div></div><div class="abtMacInfo"><div class="abtMacOverview"><div class="abtMacOverviewLogo"><img src="./sources/image/logos/big_sur.png" alt="Big Sur Logo"></div><div class="abtMacOverviewText"><h1><span>macOS</span> Big Sur</h1><p>Version 11.7.10 (20G1427) (WebVersion 1.0.3)</p><div class="abtMacOverviewSpecs"><p>MacBook Web (W1, 2025)</p><p>Chip<span>Apple W1</span></p><p>Memory<span>8 GB</span></p><p>Serial Number<span>1234567890</span></p></div><div class="abtMacOverviewButtons"><button>System Report...</button> <button>Software Update...</button></div></div></div></div>`
+        aboutThisMac.innerHTML = `<div class="abtMac-top"><div class="abtMac-top-btns"><button onclick="this.parentElement.parentElement.parentElement.remove()"><div class="abtMac-top-btns-icon"></div></button> <button><div class="abtMac-top-btns-icon"></div></button> <button><div class="abtMac-top-btns-icon"></div></button></div><div class="abtMac-topSelector"><button class="abtMac-selected"><p>Overview</p></button> <button><p>Displays</p></button> <button><p>Storage</p></button> <button><p>Support</p></button> <button><p>Resources</p></button></div></div><div class="abtMacOverview"><div class="abtMacOverviewLogo"><img src="./sources/image/logos/big_sur.png" alt="Big Sur Logo"></div><div class="abtMacOverviewText"><h1><span>macOS</span> Big Sur</h1><p>Version 11.7.10 (20G1427) (WebVersion 1.1.0)</p><div class="abtMacOverviewSpecs"><p>MacBook Web (W1, 2025)</p><p>Chip<span>Apple W1</span></p><p>Memory<span>8 GB</span></p><p>Serial Number<span>1234567890</span></p></div><div class="abtMacOverviewButtons"><button>System Report...</button> <button>Software Update...</button></div></div></div>`
         document.body.appendChild(aboutThisMac)
         dragElement(aboutThisMac);
         winNum++;

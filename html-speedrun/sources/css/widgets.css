@@ -1,0 +1,391 @@
+#widgets {
+    width: 400px;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button.editWidgets {
+    margin-top: 20px;
+    border-radius: 900px;
+    border: none;
+    padding: 3px 10px;
+    background: var(--white-bg);
+    box-shadow: 0px 0px 5px #00000080;
+    color: #00000080;
+    cursor: pointer;
+}
+
+#widgets div.widgetNotifications {
+    width: 100%;
+}
+
+body.dark #widgets div.widgetNotifications div.widgetNoti {
+    background: var(--dark-bg);
+    color: white;
+}
+
+#widgets div.widgetNotifications div.widgetNoti {
+    backdrop-filter: blur(5px);
+    height: 90px;
+    background: var(--white-bg);
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px #00000080;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#widgets div.widgetNotifications div.widgetNoti div.widgetNotiTopLabel {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+}
+
+#widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiTopLabel
+    div.widgetNotiIconName {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    align-items: center;
+}
+
+#widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiTopLabel
+    div.widgetNotiIconName
+    img {
+    height: 100%;
+    padding: 5px;
+}
+
+#widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiTopLabel
+    div.widgetNotiIconName
+    h1 {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 16px;
+    color: #444;
+}
+
+body.dark
+    #widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiTopLabel
+    div.widgetNotiIconName
+    h1 {
+    color: #bbb;
+}
+
+#widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiTopLabel
+    div.widgetNotiTime {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+#widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiTopLabel
+    div.widgetNotiTime
+    p {
+    font-size: 16px;
+    color: #444;
+}
+
+body.dark
+    #widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiTopLabel
+    div.widgetNotiTime
+    p {
+    color: #bbb;
+}
+
+#widgets div.widgetNotifications div.widgetNoti div.widgetNotiInformation {
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+}
+
+#widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiInformation
+    div.widgetNotiInformationText {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    flex: 1 1 auto;
+    padding: 0 5px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body.dark
+    #widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiInformation
+    div.widgetNotiInformationText {
+    color: white;
+}
+
+#widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiInformation
+    div.widgetNotiInformationText
+    * {
+    font-size: 16px;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiInformation
+    div.widgetNotiInformationImage {
+    height: 100%;
+    aspect-ratio: 1;
+    width: auto;
+}
+
+#widgets
+    div.widgetNotifications
+    div.widgetNoti
+    div.widgetNotiInformation
+    div.widgetNotiInformationImage
+    img {
+    height: 100%;
+}
+
+#widgets div.widgetSquare {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px #00000080;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    height: 450px;
+}
+
+#musicWidget {
+    background: linear-gradient(to bottom, #ca5265, #971f32);
+}
+
+#musicWidget div.musicPlaying {
+    height: 40%;
+    background: linear-gradient(to bottom, #fb5c75, #dd3d56);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#musicWidget div.musicPlaying div.musicPlayingIcon {
+    height: 100%;
+    padding: 15px;
+}
+
+#musicWidget div.musicPlaying div.musicPlayingIcon img {
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #00000080;
+}
+
+#musicWidget div.musicPlaying div.musicPlayingText {
+    padding: 10px;
+    margin-right: 50px;
+}
+
+#musicWidget div.musicPlaying div.musicPlayingText h1#widgetMusicSongName {
+    font-size: 18px;
+}
+
+#musicWidget div.musicPlaying div.musicPlayingText p#widgetMusicArtist {
+    font-size: 14px;
+    padding: 5px 0;
+}
+
+#musicWidget
+    div.musicPlaying
+    div.musicPlayingText
+    div.musicPlayingControl
+    input:not(:disabled) {
+    cursor: pointer;
+}
+
+#musicWidget
+    div.musicPlaying
+    div.musicPlayingText
+    div.musicPlayingControl
+    input:disabled {
+    cursor: not-allowed;
+}
+
+#musicWidget
+    div.musicPlaying
+    div.musicPlayingText
+    div.musicPlayingControl
+    div.widgetMusicControls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 25px;
+}
+
+#musicWidget
+    div.musicPlaying
+    div.musicPlayingText
+    div.musicPlayingControl
+    div.widgetMusicControls
+    button {
+    background: none;
+    border: none;
+    color: white;
+    aspect-ratio: 1;
+    height: 100%;
+    cursor: pointer;
+}
+
+#musicWidget
+    div.musicPlaying
+    div.musicPlayingText
+    div.musicPlayingControl
+    div.widgetMusicControls
+    button
+    ion-icon {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+#musicWidget div.musicPlaying div.musicIcon {
+    height: 45px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    filter: invert(1);
+}
+
+#musicWidget div.musicPlaying div.musicIcon img {
+    width: 100%;
+}
+
+#musicWidget div.widgetMusicGradient {
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: linear-gradient(to bottom, transparent 80%, #0000004a);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#musicWidget div.widgetMusicUpNext {
+    overflow: scroll;
+    padding: 5px 10px;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#musicWidget div.widgetMusicUpNext h1 {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+#musicWidget div.widgetMusicUpNext div.widgetMusicNextSongs {
+    margin-top: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#musicWidget
+    div.widgetMusicUpNext
+    div.widgetMusicNextSongs
+    div.widgetMusicSong {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+#musicWidget
+    div.widgetMusicUpNext
+    div.widgetMusicNextSongs
+    div.widgetMusicSong
+    div.widgetMusicSongIcon {
+    height: 100%;
+    margin-right: 10px;
+}
+
+#musicWidget
+    div.widgetMusicUpNext
+    div.widgetMusicNextSongs
+    div.widgetMusicSong
+    div.widgetMusicSongIcon
+    img {
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px #00000080;
+}
+
+#musicWidget
+    div.widgetMusicUpNext
+    div.widgetMusicNextSongs
+    div.widgetMusicSong
+    div.musicPlayingText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#musicWidget
+    div.widgetMusicUpNext
+    div.widgetMusicNextSongs
+    div.widgetMusicSong
+    div.musicPlayingText 
+    h1 {
+    font-size: 18px;
+}
+
+#musicWidget
+    div.widgetMusicUpNext
+    div.widgetMusicNextSongs
+    div.widgetMusicSong
+    div.musicPlayingText 
+    p {
+    font-size: 14px;
+}

@@ -17,6 +17,13 @@
     --min-outer: #c99321;
     --max: #00cc4b;
     --max-outer: #009737;
+
+    --full-magnify-scale: 1.2;
+    --full-magnify-distance: -25px;
+    --sibling-magnify-scale: 1.05;
+    --sibling-magnify-distance: -15px;
+    --base-magnify-scale: 1;
+    --base-magnify-distance: -5px;
 }
 
 html,
@@ -26,6 +33,11 @@ body {
     background-image: url("../image/backgrounds/bigsur/light.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+div.homeScreen {
     width: 100vw;
     height: 100vh;
 }
@@ -63,7 +75,7 @@ button p {
 
 body.dark div#buttonNoFunction {
     background: var(--dark-bg);
-	color: white;
+    color: white;
 }
 
 div#buttonNoFunction.open {
@@ -71,8 +83,8 @@ div#buttonNoFunction.open {
 }
 
 div#buttonNoFunction {
-	transition: top 0.5s cubic-bezier(.18,.89,.32,1.28);
-	color: black;
+    transition: top 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    color: black;
     position: absolute;
     top: -30px;
     left: 50%;
@@ -220,6 +232,7 @@ body.dark #controlCenter {
 }
 
 #controlCenter {
+    backdrop-filter: blur(5px);
     box-shadow: 0px 0px 3px #00000080;
     border: 1px solid #00000080;
     z-index: 20;
@@ -256,7 +269,6 @@ body.dark #controlCenter div.bigStuff div.onebyone {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding: 5px;
     aspect-ratio: 1;
     height: 100%;
     background: var(--white-bg);
@@ -271,6 +283,7 @@ body.dark #controlCenter div.bigStuff div.onebyone {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 5px;
 }
 
 #controlCenter div.bigStuff div.onebyone div.controlSetting div.icon {
@@ -303,11 +316,11 @@ body.dark #controlCenter div.bigStuff div.onebyone div.controlSetting div.text {
 
 #controlCenter div.bigStuff div.onebyone div.controlSetting div.text h1 {
     font-family: "SF Pro Display";
-    font-size: 14px;
+    font-size: 12px;
 }
 
 #controlCenter div.bigStuff div.onebyone div.controlSetting div.text p {
-    font-size: 12px;
+    font-size: 10px;
     text-overflow: ellipsis;
     overflow: hidden;
     font-family: "SF Pro Display";
@@ -440,6 +453,7 @@ body.dark #controlCenter div.bigStuff div.ontop div.smallWidgets div {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 5px;
 }
 
 body.dark #controlCenter div.bigStuff div.ontop div.smallWidgets div {
@@ -497,7 +511,16 @@ body.dark #dock {
     align-items: center;
     justify-content: center;
     border: none;
-    transition: all 0.2s ease;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform: translate(0, -50px) scale(1.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+#dock button.visible {
+    opacity: 1;
+    transform: none;
+    pointer-events: all;
 }
 
 #dock div.dockDivider {
@@ -513,24 +536,36 @@ body.dark #dock {
     transition: all 0.2s ease;
 }
 
+/* Magnify */
+
 #dock button:has(+ button + button:hover) {
-    transform: translate(0, -5px);
+    transform: translate(0, var(--base-magnify-distance))
+        scale(var(--base-magnify-scale));
+    z-index: 1;
 }
 
 #dock button:has(+ button:hover) {
-    transform: translate(0, -15px) scale(1.05);
-}
-
-#dock button:hover + button img {
-    transform: translate(0, -15px) scale(1.05);
-}
-
-#dock button:hover + button + button img {
-    transform: translate(0, -5px);
+    transform: translate(0, var(--sibling-magnify-distance))
+        scale(var(--sibling-magnify-scale));
+    z-index: 2;
 }
 
 #dock button:hover img {
-    transform: translate(0, -25px) scale(1.2);
+    transform: translate(0, var(--full-magnify-distance))
+        scale(var(--full-magnify-scale));
+    z-index: 3;
+}
+
+#dock button:hover + button img {
+    transform: translate(0, var(--sibling-magnify-distance))
+        scale(var(--sibling-magnify-scale));
+    z-index: 2;
+}
+
+#dock button:hover + button + button img {
+    transform: translate(0, var(--base-magnify-distance))
+        scale(var(--base-magnify-scale));
+    z-index: 1;
 }
 
 #dock button.trash img {
@@ -585,10 +620,4 @@ body.dark #dock {
 
 #desktop .icon:hover {
     background: rgb(128 128 128 / 30%);
-}
-
-@media screen and (max-width: 992px) {
-    .mobileDIb {
-        display: block;
-    }
 }

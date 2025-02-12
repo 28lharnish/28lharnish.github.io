@@ -9,11 +9,13 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
         <!-- CSS -->
+        <script src="./sources/js/loading.js"></script>
 
         <link rel="stylesheet" href="./sources/fonts/sf-pro-display.css" />
         <link rel="stylesheet" href="./sources/css/styles/aboutThisMac.css" />
         <link rel="stylesheet" href="./sources/css/styles/finder.css" />
         <link rel="stylesheet" href="./sources/css/styles/preferences.css" />
+        <link rel="stylesheet" href="./sources/css/widgets.css" />
         <link rel="stylesheet" href="./sources/css/style.css" />
 
         <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
@@ -23,167 +25,285 @@
     </head>
     <body>
     
-        <div id="buttonNoFunction">
-            <p>Sorry, this item has no function yet.</p>
-        </div>
-
-        <div id="desktop">
-            
-        </div>
-
-        <div id="appleMenu">
-            <button class="appleMenuButton" onclick="darkMode(this)">Try Dark Mode</button>
-            <button class="appleMenuButton" onclick="monterey(this)">Try Monterey BGs</button>
-            <div class="appleDivider"></div>
-            <button onclick="newWindow('aboutThisMac')">About This Mac</button>
-            <div class="appleDivider"></div>
-            <button class="appleMenuButton" onclick="newWindow('settings')">System Settings...</button>
-            <button class="appleMenuButton">App Store...</button>
-            <div class="appleDivider"></div>
-            <button class="appleMenuButton">Recent Items</button>
-            <div class="appleDivider"></div>
-            <button class="appleMenuButton">Force Quit...</button>
-            <div class="appleDivider"></div>
-            <button class="appleMenuButton">Sleep...</button>
-            <button class="appleMenuButton">Restart...</button>
-            <button class="appleMenuButton">Shut Down...</button>
-            <div class="appleDivider"></div>
-            <button class="appleMenuButton">Lock Screen</button>
-            <button class="appleMenuButton">Log Out...</button>
-        </div>
-
-        <div id="finder">
-            <div class="functions">
-                <button onclick="showApple()">
-                    <img draggable="false" src="./sources/image/icons/settings/appleicon.png">
-                </button>
-                <button class="boldAppName">
-                    Finder
-                </button>
-                <button>
-                    -
-                </button>
-                <button>
-                    macOS
-                </button>
-                <button>
-                    Big
-                </button>
-                <button>
-                    Sur
-                </button>
-                <button>
-                    by
-                </button>
-                <button>
-                    Landon
-                </button>
-                <button>
-                    Harnish
-                </button>
+        <div class="homeScreen">
+            <div id="buttonNoFunction">
+                <p>Sorry, this item has no function yet.</p>
             </div>
-
-            <div class="finderShowcase">
-                <button onclick="showControl()">
-                    <img draggable="false" src="./sources/image/icons/settings/controlcenter.png">
-                </button>
-            </div>
-        </div>
-
-        <div id="controlCenter">
-            <div class="bigStuff">
-                <div class="onebyone">
-                    <div class="controlSetting">
-                        <div class="icon selected">
-                            <img draggable='false' src="./sources/image/icons/settings/wifi.png" alt="" style="width: 100%;scale: 1.25;filter: brightness(0) invert(1);">
+    
+            <div id="desktop">
+                <div id="widgets">
+                    <div class="widgetNotifications">
+                        <div class="widgetNoti">
+                            <div class="widgetNotiTopLabel">
+                                <div class="widgetNotiIconName">
+                                    <img src="./sources/image/icons/photos.png" alt="">
+                                    <h1>Photos</h1>
+                                </div>
+                                <div class="widgetNotiTime">
+                                    <p>25m ago</p>
+                                </div>
+                            </div>
+                            <div class="widgetNotiInformation">
+                                <div class="widgetNotiInformationText">
+                                    <h1>You have a new memory</h1>
+                                    <p>Year in Review - 2025</p>
+                                </div>
+                                <div class="widgetNotiInformationImage">
+                                    <img src="./sources/image/icons/FinderBigSur.png" alt="">
+                                </div>
+                            </div>
                         </div>
-                        <div class="text">
-                            <h1>Wi-Fi</h1>
-                            <p>YTECH-Win</p>
+                        <div class="widgetNoti">
+                            <div class="widgetNotiTopLabel">
+                                <div class="widgetNotiIconName">
+                                    <img src="./sources/image/icons/iMessage.png" alt="">
+                                    <h1>messages</h1>
+                                </div>
+                                <div class="widgetNotiTime">
+                                    <p>4:12 AM</p>
+                                </div>
+                            </div>
+                            <div class="widgetNotiInformation">
+                                <div class="widgetNotiInformationText">
+                                    <h1>Apple</h1>
+                                    <p>yo why you doin that shit</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="controlSetting">
-                        <div class="icon">
-                            <img draggable='false' src="./sources/image/icons/settings/bluetooth.png" alt="" style="height: 60%;filter: brightness(0) invert(1);">
+                    <div class="widgetSquare" id="musicWidget">
+                        <div class="musicPlaying">
+                            <div class="musicPlayingIcon">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png" alt="">
+                            </div>
+                            <div class="musicPlayingText">
+                                <h1 id="widgetMusicSongName">HUMBLE.</h1>
+                                <p id="widgetMusicArtist">Kendrick Lamar</p>
+                                <div class="musicPlayingControl">
+                                    <input type="range" id="musicWidgetSlider" value="90" autocomplete="off" disabled="">
+                                    <div class="widgetMusicControls">
+                                        <button><ion-icon name="play-back" role="img" class="md hydrated"></ion-icon></button>
+                                        <button><ion-icon name="pause" role="img" class="md hydrated"></ion-icon></button>
+                                        <button><ion-icon name="play-forward" role="img" class="md hydrated"></ion-icon></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="musicIcon">
+                                <img src="./sources/image/icons/widgets/applemusic.png" alt="">
+                            </div>
                         </div>
-                        <div class="text">
-                            <h1>Bluetooth</h1>
-                            <p>Off</p>
+                        <div class="widgetMusicUpNext">
+                            <h1>Up Next:</h1>
+                            <div class="widgetMusicNextSongs">
+                                <div class="widgetMusicSong">
+                                    <div class="widgetMusicSongIcon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png" alt="">
+                                    </div>
+                                    <div class="musicPlayingText">
+                                        <h1>LUST.</h1>
+                                        <p>Kendrick Lamar</p>
+                                    </div>
+                                </div>
+                                <div class="widgetMusicSong">
+                                    <div class="widgetMusicSongIcon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png" alt="">
+                                    </div>
+                                    <div class="musicPlayingText">
+                                        <h1>LOVE.</h1>
+                                        <p>Kendrick Lamar</p>
+                                    </div>
+                                </div>
+                                <div class="widgetMusicSong">
+                                    <div class="widgetMusicSongIcon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png" alt="">
+                                    </div>
+                                    <div class="musicPlayingText">
+                                        <h1>XXX.</h1>
+                                        <p>Kendrick Lamar</p>
+                                    </div>
+                                </div>
+                                <div class="widgetMusicSong">
+                                    <div class="widgetMusicSongIcon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png" alt="">
+                                    </div>
+                                    <div class="musicPlayingText">
+                                        <h1>FEAR.</h1>
+                                        <p>Kendrick Lamar</p>
+                                    </div>
+                                </div>
+                                <div class="widgetMusicSong">
+                                    <div class="widgetMusicSongIcon">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png" alt="">
+                                    </div>
+                                    <div class="musicPlayingText">
+                                        <h1>GOD.</h1>
+                                        <p>Kendrick Lamar</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <div class="widgetMusicGradient"></div>
                     </div>
-                    <div class="controlSetting">
-                        <div class="icon">
-                            <img draggable='false' src="./sources/image/icons/settings/airdrop.png" alt="" style="width: 60%;filter: brightness(0) invert(1);">
-                        </div>
-                        <div class="text">
-                            <h1>AirDrop</h1>
-                            <p>Off</p>
-                        </div>
-                    </div>
+                    <button class="editWidgets">
+                        Edit Widgets
+                    </button>
                 </div>
-                <div class="ontop">
-                    <div class="donotdisturb">
+            </div>
+    
+            <div id="appleMenu">
+                <button class="appleMenuButton" onclick="darkMode(this)">Try Dark Mode</button>
+                <button class="appleMenuButton" onclick="monterey(this)">Try Monterey BGs</button>
+                <div class="appleDivider"></div>
+                <button onclick="newWindow('aboutThisMac')">About This Mac</button>
+                <div class="appleDivider"></div>
+                <button class="appleMenuButton" onclick="newWindow('settings')">System Settings...</button>
+                <!--<button class="appleMenuButton">App Store...</button>
+                <div class="appleDivider"></div>
+                <button class="appleMenuButton">Recent Items</button>-->
+                <div class="appleDivider"></div>
+                <button class="appleMenuButton">Patch Notes...</button>
+                <div class="appleDivider"></div>
+                <button class="appleMenuButton">Sleep...</button>
+                <button class="appleMenuButton">Restart...</button>
+                <button class="appleMenuButton">Shut Down...</button>
+                <div class="appleDivider"></div>
+                <button class="appleMenuButton">Lock Screen</button>
+                <button class="appleMenuButton">Log Out...</button>
+            </div>
+    
+            <div id="finder">
+                <div class="functions">
+                    <button onclick="showApple()">
+                        <img draggable="false" src="./sources/image/icons/settings/appleicon.png">
+                    </button>
+                    <button class="boldAppName">
+                        Finder
+                    </button>
+                    <button>
+                        -
+                    </button>
+                    <button>
+                        macOS
+                    </button>
+                    <button>
+                        Big
+                    </button>
+                    <button>
+                        Sur
+                    </button>
+                    <button>
+                        by
+                    </button>
+                    <button>
+                        Landon
+                    </button>
+                    <button>
+                        Harnish
+                    </button>
+                </div>
+    
+                <div class="finderShowcase">
+                    <button onclick="showControl()">
+                        <img draggable="false" src="./sources/image/icons/settings/controlcenter.png">
+                    </button>
+                </div>
+            </div>
+    
+            <div id="controlCenter">
+                <div class="bigStuff">
+                    <div class="onebyone">
                         <div class="controlSetting">
-                            <div class="icon">
-                                <img draggable='false' src="./sources/image/icons/settings/donotdisturb.png" alt="" style="height: 60%;filter: brightness(0) invert(1);">
+                            <div class="icon selected">
+                                <img draggable='false' src="./sources/image/icons/settings/wifi.png" alt="" style="width: 100%;scale: 1.25;filter: brightness(0) invert(1);">
                             </div>
                             <div class="text">
-                                <h1>Do Not</h1>
-                                <h1>Disturb</h1>
+                                <h1>Wi-Fi</h1>
+                                <p>YTECH-Win</p>
+                            </div>
+                        </div>
+                        <div class="controlSetting">
+                            <div class="icon">
+                                <img draggable='false' src="./sources/image/icons/settings/bluetooth.png" alt="" style="height: 60%;filter: brightness(0) invert(1);">
+                            </div>
+                            <div class="text">
+                                <h1>Bluetooth</h1>
+                                <p>Off</p>
+                            </div>
+                        </div>
+                        <div class="controlSetting">
+                            <div class="icon">
+                                <img draggable='false' src="./sources/image/icons/settings/airdrop.png" alt="" style="width: 60%;filter: brightness(0) invert(1);">
+                            </div>
+                            <div class="text">
+                                <h1>AirDrop</h1>
+                                <p>Off</p>
                             </div>
                         </div>
                     </div>
-                    <div class="smallWidgets">
-                        <div class="keyboard">
-                            <img src="./sources/image/icons/settings/brightness-keyboard.svg" alt="">
-                            <h1>Keyboard Brightness</h1>
+                    <div class="ontop">
+                        <div class="donotdisturb">
+                            <div class="controlSetting">
+                                <div class="icon">
+                                    <img draggable='false' src="./sources/image/icons/settings/donotdisturb.png" alt="" style="height: 60%;filter: brightness(0) invert(1);">
+                                </div>
+                                <div class="text">
+                                    <h1>Do Not</h1>
+                                    <h1>Disturb</h1>
+                                </div>
+                            </div>
                         </div>
-                        <div class="mirroring">
-                            <img src="./sources/image/icons/settings/screen-mirroring.png" alt="">
-                            <h1>Screen Mirroring</h1>
+                        <div class="smallWidgets">
+                            <div class="keyboard">
+                                <img src="./sources/image/icons/settings/brightness-keyboard.svg" alt="">
+                                <h1>Keyboard Brightness</h1>
+                            </div>
+                            <div class="mirroring">
+                                <img src="./sources/image/icons/settings/screen-mirroring.png" alt="">
+                                <h1>Screen Mirroring</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!--<div class="smallWidget"></div>
+                <div class="smallWidget"></div>
+                <div class="smallWidget"></div>-->
             </div>
-            <!--<div class="smallWidget"></div>
-            <div class="smallWidget"></div>
-            <div class="smallWidget"></div>-->
-        </div>
-
-        <div id="dock">
-            <button onclick="newWindow('finder')">
-                <img draggable="false" src="./sources/image/icons/FinderBigSur.png">
-            </button>
-            <button>
-                <img draggable="false" src="./sources/image/icons/launchpad.png">
-            </button>
-            <button onclick="openLink(1)">
-                <img draggable="false" src="./sources/image/icons/steam.png">
-            </button>
-            <button onclick="openLink(2)">
-                <img draggable="false" src="./sources/image/icons/maps.png">
-            </button>
-            <button onclick="openLink(3)">
-                <img draggable="false" src="./sources/image/icons/photos.png">
-            </button>
-            <button onclick="openLink(4)">
-                <img draggable="false" src="./sources/image/icons/applemusic.png">
-            </button>
-            <button onclick="openLink(5)">
-                <img draggable="false" src="./sources/image/icons/podcasts.png">
-            </button>
-            <button onclick="openLink(6)">
-                <img draggable="false" src="./sources/image/icons/appstore.png">
-            </button>
-            <button onclick="newWindow('settings')">
-                <img draggable="false" src="./sources/image/icons/settings.png">
-            </button>
-
-            <div class="dockDivider"></div>
-
-            <button class="trash">
-                <img draggable="false" src="./sources/image/icons/trashcan.png">
-            </button>
+    
+            <div id="dock">
+                <button onclick="newWindow('finder')">
+                    <img draggable="false" src="./sources/image/icons/FinderBigSur.png">
+                </button>
+                <button>
+                    <img draggable="false" src="./sources/image/icons/launchpad.png">
+                </button>
+                <button onclick="openLink(1)">
+                    <img draggable="false" src="./sources/image/icons/steam.png">
+                </button>
+                <button onclick="openLink(2)">
+                    <img draggable="false" src="./sources/image/icons/maps.png">
+                </button>
+                <button onclick="openLink(3)">
+                    <img draggable="false" src="./sources/image/icons/photos.png">
+                </button>
+                <button onclick="openLink(4)">
+                    <img draggable="false" src="./sources/image/icons/applemusic.png">
+                </button>
+                <button onclick="openLink(5)">
+                    <img draggable="false" src="./sources/image/icons/podcasts.png">
+                </button>
+                <button onclick="openLink(6)">
+                    <img draggable="false" src="./sources/image/icons/appstore.png">
+                </button>
+                <button onclick="newWindow('settings')">
+                    <img draggable="false" src="./sources/image/icons/settings.png">
+                </button>
+    
+                <div class="dockDivider"></div>
+    
+                <button class="trash">
+                    <img draggable="false" src="./sources/image/icons/trashcan.png">
+                </button>
+            </div>
         </div>
 	</body>
     <!-- JS -->

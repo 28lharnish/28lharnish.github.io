@@ -128,14 +128,9 @@ body.dark .abtMac-topSelector button.abtMac-selected {
     color: black;
 }
 
-div.abtMacInfo {
-    width: 100%;
-    height: calc(100% - 50px);
-}
-
 div.abtMacOverview {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 50px);
     padding: 65px;
     display: flex;
     flex-direction: row;

@@ -95,8 +95,13 @@ window.onload = function() {
             && !e.target.classList.contains('appleMenuButton')) {
             document.getElementById('appleMenu').classList.remove('open');
         }
+
         if(e.target !== document.getElementById('controlCenter') && e.target !== document.querySelector('[onclick="showControl()"]')) {
             document.getElementById('controlCenter').classList.remove('open');
+        }
+
+        if(e.target.parentElement.id.indexOf('win') > -1) {
+            e.target.parentElement.classList.add('activeWindow');
         }
     });
 

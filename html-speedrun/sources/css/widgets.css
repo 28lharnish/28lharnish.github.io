@@ -9,6 +9,7 @@
 }
 
 button.editWidgets {
+    backdrop-filter: blur(5px);
     margin-top: 20px;
     border-radius: 900px;
     border: none;
@@ -308,7 +309,7 @@ body.dark
 }
 
 #musicWidget div.widgetMusicUpNext {
-    overflow: scroll;
+    overflow: hidden scroll;
     padding: 5px 10px;
     height: 60%;
     display: flex;

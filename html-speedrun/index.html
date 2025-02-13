@@ -10,6 +10,8 @@
 
         <!-- CSS -->
         <script src="./sources/js/loading.js"></script>
+        <script src="./sources/js/creation.js"></script>
+        <script src="./sources/js/apps.js"></script>
 
         <link rel="stylesheet" href="./sources/fonts/sf-pro-display.css" />
         <link rel="stylesheet" href="./sources/css/styles/aboutThisMac.css" />
@@ -71,7 +73,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="widgetSquare" id="musicWidget">
+                    <div class="widgetSquare musicWidget">
                         <div class="musicPlaying">
                             <div class="musicPlayingIcon">
                                 <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png" alt="">
@@ -144,12 +146,37 @@
                         </div>
                         <div class="widgetMusicGradient"></div>
                     </div>
+                    <div class="widgetRectangle musicWidget spotify">
+                        <div class="musicPlaying">
+                            <div class="musicPlayingIcon">
+                                <img src="https://i.scdn.co/image/ab67616d0000b2732e02117d76426a08ac7c174f" alt="">
+                            </div>
+                            <div class="musicPlayingText">
+                                <h1 id="widgetMusicSongName">United In Grief</h1>
+                                <p id="widgetMusicArtist">Kendrick Lamar</p>
+                                <div class="musicPlayingControl">
+                                    <input type="range" id="musicWidgetSlider" value="0" autocomplete="off" disabled="">
+                                    <div class="widgetMusicControls">
+                                        <button><ion-icon name="play-back" role="img" class="md hydrated"></ion-icon></button>
+                                        <button><ion-icon name="play" role="img" class="md hydrated"></ion-icon></button>
+                                        <button><ion-icon name="play-forward" role="img" class="md hydrated"></ion-icon></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="musicIcon">
+                                <img src="./sources/image/icons/widgets/spotify.png" style="filter:invert(1)" alt="">
+                            </div>
+                        </div>
+                    </div>
                     <button class="editWidgets">
                         Edit Widgets
                     </button>
                 </div>
             </div>
     
+            <div id="launchpad">
+            </div>
+
             <div id="appleMenu">
                 <button class="appleMenuButton" onclick="darkMode(this)">Try Dark Mode</button>
                 <button class="appleMenuButton" onclick="monterey(this)">Try Monterey BGs</button>
@@ -270,50 +297,6 @@
             </div>
     
             <div id="dock">
-                <button onclick="newWindow('finder')">
-                    <img draggable="false" src="./sources/image/icons/FinderBigSur.png">
-                </button>
-                <button>
-                    <img draggable="false" src="./sources/image/icons/launchpad.png">
-                </button>
-                <button onclick="openLink('https://store.steampowered.com')">
-                    <img draggable="false" src="./sources/image/icons/steam.png">
-                </button>
-                <button onclick="openLink('https://www.github.com/apps/desktop')">
-                    <img draggable="false" src="./sources/image/icons/githubdesktop.png">
-                </button>
-                <button onclick="openLink('https://vscode.dev/')">
-                    <img draggable="false" src="./sources/image/icons/vscode.png">
-                </button>
-                <button onclick="openLink('https://www.icloud.com/photos/')">
-                    <img draggable="false" src="./sources/image/icons/photos.png">
-                </button>
-                <button onclick="openLink('https://www.spotify.com')">
-                    <img draggable="false" src="./sources/image/icons/applemusic.png">
-                </button>
-                <button onclick="openLink('https://podcasts.apple.com/us/browse')">
-                    <img draggable="false" src="./sources/image/icons/podcasts.png">
-                </button>
-                <button onclick="openLink('https://www.apple.com/app-store/')">
-                    <img draggable="false" src="./sources/image/icons/appstore.png">
-                </button>
-                <button onclick="newWindow('settings')">
-                    <img draggable="false" src="./sources/image/icons/settings.png">
-                </button>
-    
-                <div class="dockDivider"></div>
-
-                <button onclick="openLink('https://github.com/28lharnish')">
-                    <img draggable="false" src="./sources/image/icons/ljharnish2.png">
-                </button>
-
-                <button onclick="openLink('https://github.com/ljharnish')">
-                    <img draggable="false" src="./sources/image/icons/ljharnish.png">
-                </button>
-    
-                <button class="trash">
-                    <img draggable="false" src="./sources/image/icons/trashcan.png">
-                </button>
             </div>
         </div>
 	</body>

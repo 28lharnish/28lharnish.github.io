@@ -18,27 +18,42 @@ const allImages = [
     './sources/image/icons/applemusic.png',
     './sources/image/icons/appletv.png',
     './sources/image/icons/appstore.png',
+    './sources/image/icons/books.png',
     './sources/image/icons/calendar.png',
+    './sources/image/icons/calculator.png',
+    './sources/image/icons/clock.png',
     './sources/image/icons/contacts.png',
     './sources/image/icons/controlcenter.png',
     './sources/image/icons/facetime.png',
     './sources/image/icons/FinderBigSur.png',
+    './sources/image/icons/findmy.png',
+    './sources/image/icons/freeform.png',
     './sources/image/icons/githubdesktop.png',
+    './sources/image/icons/home.png',
     './sources/image/icons/iMessage.png',
+    './sources/image/icons/keynote.png',
     './sources/image/icons/launchpad.png',
     './sources/image/icons/ljharnish.png',
     './sources/image/icons/ljharnish2.png',
     './sources/image/icons/mail.png',
     './sources/image/icons/maps.png',
+    './sources/image/icons/news.png',
     './sources/image/icons/notes.png',
-    './sources/image/icons/photos.png',,
+    './sources/image/icons/numbers.png',
+    './sources/image/icons/pages.png',
+    './sources/image/icons/photobooth.png',
+    './sources/image/icons/photos.png',
     './sources/image/icons/podcasts.png',
     './sources/image/icons/reminders.png',
     './sources/image/icons/safari.png',
     './sources/image/icons/settings.png',
+    './sources/image/icons/siri.png',
     './sources/image/icons/steam.png',
+    './sources/image/icons/stocks.png',
     './sources/image/icons/trashcan.png',
+    './sources/image/icons/voicememos.png',
     './sources/image/icons/vscode.png',
+    './sources/image/icons/weather.png',
 
     //? Control Center Icons
     './sources/image/icons/settings/airdrop.png',
@@ -86,13 +101,64 @@ const allImages = [
 
     //? Widget Icons
     './sources/image/icons/widgets/applemusic.png',
+    './sources/image/icons/widgets/spotify.png',
 
 ];
+
+const dockApps = [
+    { icon: './sources/image/icons/FinderBigSur.png',   onClickFunction: "newWindow('finder')", appName: 'Finder' },
+    { icon: './sources/image/icons/launchpad.png',      onClickFunction: "launchpad()", appName: 'Launchpad' },
+    { icon: './sources/image/icons/steam.png',          onClickFunction: "openLink('https://store.steampowered.com/')", appName: 'Steam' },
+    { icon: './sources/image/icons/githubdesktop.png',  onClickFunction: "openLink('https://github.com/apps/desktop/')", appName: 'GitHub Desktop' },
+    { icon: './sources/image/icons/vscode.png',         onClickFunction: "openLink('https://vscode.dev/')", appName: 'Visual Studio Code' },
+    { icon: './sources/image/icons/photos.png',         onClickFunction: "openLink('https://www.icloud.com/photos/')", appName: 'Photos' },
+    { icon: './sources/image/icons/applemusic.png',     onClickFunction: "openLink('https://music.apple.com/us/new')", appName: 'Music' },
+    { icon: './sources/image/icons/podcasts.png',       onClickFunction: "openLink('https://podcasts.apple.com/us/browse')", appName: 'Podcasts' },
+    { icon: './sources/image/icons/appstore.png',       onClickFunction: "openLink('https://www.apple.com/app-store/')", appName: 'App Store' },
+    { icon: './sources/image/icons/settings.png',       onClickFunction: "newWindow('settings')", appName: 'Settings' },
+    { divider: true, class: 'trashDivider' },
+    { icon: './sources/image/icons/ljharnish2.png',     onClickFunction: "openLink('https://github.com/28lharnish')", appName: '28lharnish\'s Github' },
+    { icon: './sources/image/icons/ljharnish.png',      onClickFunction: "openLink('https://github.com/ljharnish')", appName: 'ljharnish\'s Github' },
+    { icon: './sources/image/icons/trashcan.png',       onClickFunction: "", class: 'trash', appName: 'Trash' },
+];
+
+const launchpadApps = [
+    { icon: './sources/image/icons/FinderBigSur.png',   name: 'Finder'},
+    { icon: './sources/image/icons/safari.png',         name: 'Safari'},
+    { icon: './sources/image/icons/mail.png',           name: 'Mail'},
+    { icon: './sources/image/icons/contacts.png',       name: 'Contacts'},
+    { icon: './sources/image/icons/calendar.png',       name: 'Calendar'},
+    { icon: './sources/image/icons/reminders.png',      name: 'Reminders'},
+    { icon: './sources/image/icons/notes.png',          name: 'Notes'},
+    { icon: './sources/image/icons/facetime.png',       name: 'FaceTime'},
+    { icon: './sources/image/icons/iMessage.png',       name: 'Messages'},
+    { icon: './sources/image/icons/Maps.png',           name: 'Maps'},
+    { icon: './sources/image/icons/findmy.png',         name: 'Find My'},
+    { icon: './sources/image/icons/photobooth.png',     name: 'Photo Booth'},
+    { icon: './sources/image/icons/photos.png',         name: 'Photos'},
+    { icon: './sources/image/icons/applemusic.png',     name: 'Music'},
+    { icon: './sources/image/icons/podcasts.png',       name: 'Podcasts'},
+    { icon: './sources/image/icons/facetime.png',       name: 'FaceTime'},
+    { icon: './sources/image/icons/appletv.png',        name: 'Apple TV'},
+    { icon: './sources/image/icons/voicememos.png',     name: 'Voice Memos'},
+    { icon: './sources/image/icons/keynote.png',        name: 'Keynote'},
+    { icon: './sources/image/icons/numbers.png',        name: 'Numbers'},
+    { icon: './sources/image/icons/pages.png',          name: 'Pages'},
+    { icon: './sources/image/icons/weather.png',        name: 'Weather'},
+    { icon: './sources/image/icons/news.png',           name: 'News'},
+    { icon: './sources/image/icons/stocks.png',         name: 'Stocks'},
+    { icon: './sources/image/icons/books.png',          name: 'Books'},
+    { icon: './sources/image/icons/clock.png',          name: 'Clock'},
+    { icon: './sources/image/icons/calculator.png',     name: 'Calculator'},
+    { icon: './sources/image/icons/freeform.png',       name: 'Freeform'},
+    { icon: './sources/image/icons/home.png',           name: 'Home'},
+    { icon: './sources/image/icons/siri.png',           name: 'Siri'},
+    { icon: './sources/image/icons/settings.png',       name: 'System Settings'},
+]
 
 
 window.onload = function() {
     window.addEventListener('click', function(e) {
-        console.log(e.target)
         if(
             e.target !== document.getElementById('appleMenu') 
             && e.target !== document.querySelector('[onclick="showApple()"]')
@@ -133,14 +199,28 @@ window.onload = function() {
         preloadImage(allImages[i]);
     }
 
-    function showDockIcons() {
-        const icons = Array.from(document.getElementById('dock').children).filter(e => !e.classList.contains('dockDivider'));
-        for(let i=0;i<icons.length;i++) {
-            setTimeout(() => {
-                icons[i].classList.add('visible');
-            }, i * 150);
+    for(let i=0;i<dockApps.length;i++) {
+        if(dockApps[i].divider) {
+            let divider = document.createElement('div');
+            divider.classList.add('dockDivider');
+            divider.classList.add(dockApps[i].class);
+            document.getElementById('dock').appendChild(divider);
+        } else {
+            createDockApp(dockApps[i].icon, dockApps[i].onClickFunction, dockApps[i].appName, dockApps[i].class);
         }
     }
 
-    showDockIcons();
+    const dockIcons = Array.from(document.getElementById('dock').children).filter(e => !e.classList.contains('dockDivider'));
+    for(let i=0;i<dockIcons.length;i++) {
+        setTimeout(() => {
+            dockIcons[i].classList.add('visible');
+        }, i * 150);
+    }
+
+    for(let i=0;i<launchpadApps.length;i++) {
+        createLaunchpadApp(launchpadApps[i].icon, launchpadApps[i].name);
+    }
+
+    
 }
+

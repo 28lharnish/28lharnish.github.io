@@ -132,7 +132,7 @@ const launchpadApps = [
     { icon: './sources/image/icons/notes.png',          name: 'Notes'},
     { icon: './sources/image/icons/facetime.png',       name: 'FaceTime'},
     { icon: './sources/image/icons/iMessage.png',       name: 'Messages'},
-    { icon: './sources/image/icons/Maps.png',           name: 'Maps'},
+    { icon: './sources/image/icons/maps.png',           name: 'Maps'},
     { icon: './sources/image/icons/findmy.png',         name: 'Find My'},
     { icon: './sources/image/icons/photobooth.png',     name: 'Photo Booth'},
     { icon: './sources/image/icons/photos.png',         name: 'Photos'},

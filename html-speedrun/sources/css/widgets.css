@@ -219,6 +219,7 @@ body.dark
 
 #widgets div.widgetRectangle.musicWidget div.musicPlaying {
     height: 100%;
+    position: relative;
 }
 
 div.musicWidget {

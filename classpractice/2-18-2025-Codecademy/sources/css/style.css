@@ -1,0 +1,65 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 22px;
+	color: seashell !important;
+}
+
+body {
+	background: black;
+}
+
+header {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 22px;
+	color: seashell !important;
+	background-color: black;
+	opacity: 0.9;
+	text-align: center;
+
+	padding: 0 10px;
+	width: 100%;
+	height: 69px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid seashell;
+}
+
+header a {
+	color: seashell;
+	text-decoration: underline;
+	margin: 0px 10px;
+}
+
+header div.logo {
+	height: 50px;
+	flex: 1 0 auto;
+}
+
+header div.logo img {
+	display: flex;
+	height: 100%;
+}
+
+div.bigBanner {
+	margin: auto;
+	background-image: url(https://content.codecademy.com/courses/freelance-1/unit-4/img-mission-background.jpg?_gl=1*18y1mw8*_gcl_au*MTMyMTY1NDM5MC4xNzM3MTM4OTQ5*_ga*NTA3OTEyODM5Ni4xNzM3MTM4ODA4*_ga_3LRZM6TM9L*MTczOTg5MzU1OS4xMC4xLjE3Mzk4OTQ3NzMuNDkuMC4w);
+	height: 700px;
+	width: 1200px;
+	display: flex;
+	align-items: center;
+}
+
+div.bigBanner div.information {
+	padding: 10px;
+	text-align: center;
+	background: black;
+	width: 100%;
+}
+
+div.bigBanner div.information h2 {
+	font-size: 28px;
+	margin-bottom: 20px;
+}

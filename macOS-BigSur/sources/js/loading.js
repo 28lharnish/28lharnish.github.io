@@ -102,6 +102,7 @@ const allImages = [
     //? Widget Icons
     './sources/image/icons/widgets/applemusic.png',
     './sources/image/icons/widgets/spotify.png',
+    './sources/image/icons/widgets/battery/macbook.png',
 
 ];
 

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flex Test</title>
+
+        <style>
+            h1 {
+                text-align: center;
+            }
+            #content {
+                margin: auto;
+                width: 80%;
+            }
+            div {
+                border: 1px solid black;
+            }
+            #linksbar {
+                display: flex;
+                justify-content: space-around;
+                background: #aa2322;
+                margin-bottom: 5px;
+            }
+
+            #linksbar a {
+                background: #ff94ae;
+                margin: 5px;
+                padding: 5px;
+                border-radius: 5px;
+                color: white;
+                text-decoration: none;
+            }
+
+            #linksbar a:hover {
+                background-color: #ae6477;
+            }
+
+            #flexy {
+                display: flex;
+                justify-content: space-between;
+            }
+            #sidebar {
+                background-color: #fcc;
+                width: 20%;
+            }
+            #main {
+                background-color: #fee;
+                width: 70%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <h1>Banner</h1>
+            <div id="linksbar">
+                <a href="#">Link</a>
+                <a href="#">Link</a>
+                <a href="#">Link</a>
+            </div>
+            <div id="flexy">
+                <div id="sidebar">Sidebar</div>
+                <div id="main">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pharetra, nunc at vehicula bibendum, sapien felis commodo sem, quis elementum eros massa nec est. Ut cursus ac orci quis suscipit. Phasellus sit amet metus congue, mattis dolor non, molestie sapien. Proin at laoreet ipsum, in consectetur libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; In ac tellus id eros iaculis imperdiet. Maecenas fermentum non nisl vitae tincidunt. Aenean commodo enim sed suscipit congue. Nulla aliquam malesuada varius.</p>
+                    <p>Cras et augue sed magna faucibus laoreet. Sed lectus eros, sollicitudin nec sapien non, molestie pharetra nibh. Quisque dignissim velit nec rutrum auctor. Ut accumsan hendrerit ligula. Nulla sagittis, arcu eu congue varius, lorem sem cursus quam, a ultrices sapien diam quis urna. Vivamus lectus ipsum, egestas eu justo in, eleifend dignissim lacus. Morbi ipsum metus, eleifend quis ipsum non, interdum commodo mi. Nullam velit purus, fringilla nec pretium pellentesque, sagittis vitae felis. Ut laoreet tempor ante, in consectetur justo posuere vitae. Phasellus lobortis ligula a justo semper faucibus. Phasellus eleifend metus odio. Etiam sed blandit risus, dapibus aliquet enim. Nulla egestas, felis sit amet lacinia aliquet, elit ligula aliquam sapien, id condimentum odio risus tristique ante. Cras nibh nisl, accumsan quis nibh ut, pellentesque ornare mauris.</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

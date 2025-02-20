@@ -99,6 +99,9 @@ const allImages = [
     './sources/image/icons/settings/preferences/UserGroups.png',
     './sources/image/icons/settings/preferences/Wallet.png',
 
+    //? Widget Backgrounds
+    './sources/image/widgets/smallClockWidget.png',
+
     //? Widget Icons
     './sources/image/icons/widgets/applemusic.png',
     './sources/image/icons/widgets/spotify.png',
@@ -155,73 +158,4 @@ const launchpadApps = [
     { icon: './sources/image/icons/home.png',           name: 'Home'},
     { icon: './sources/image/icons/siri.png',           name: 'Siri'},
     { icon: './sources/image/icons/settings.png',       name: 'System Settings'},
-]
-
-
-window.onload = function() {
-    window.addEventListener('click', function(e) {
-        if(
-            e.target !== document.getElementById('appleMenu') 
-            && e.target !== document.querySelector('[onclick="showApple()"]')
-            && !e.target.classList.contains('appleMenuButton')) {
-            document.getElementById('appleMenu').classList.remove('open');
-        }
-
-        if(e.target !== document.getElementById('controlCenter') && e.target !== document.querySelector('[onclick="showControl()"]')) {
-            document.getElementById('controlCenter').classList.remove('open');
-        }
-
-        if(e.target.parentElement.id.indexOf('win') > -1) {
-            e.target.parentElement.classList.add('activeWindow');
-        }
-    });
-
-
-    //make all buttons without a function alert the user that they don't work
-    let buttons = document.querySelectorAll('button');
-    buttons.forEach(button => {
-        if(button.getAttribute('onclick') === null && document.getElementById(button.id) === null) {
-            button.onclick = function() {
-                document.getElementById('buttonNoFunction').classList.add('open');
-                setTimeout(() => { document.getElementById('buttonNoFunction').classList.remove('open'); }, 1500);
-            }
-            
-        }
-    });
-
-    function preloadImage(url)
-    {
-        var img=new Image();
-        img.src=url;
-    }
-
-    for (var i=0;i<allImages.length;i++) {
-        console.log(`Percentage ${Math.round((i / (allImages.length - 1)) * 100)}% | Index ${i} | Image: ${allImages[i]}`);
-        preloadImage(allImages[i]);
-    }
-
-    for(let i=0;i<dockApps.length;i++) {
-        if(dockApps[i].divider) {
-            let divider = document.createElement('div');
-            divider.classList.add('dockDivider');
-            divider.classList.add(dockApps[i].class);
-            document.getElementById('dock').appendChild(divider);
-        } else {
-            createDockApp(dockApps[i].icon, dockApps[i].onClickFunction, dockApps[i].appName, dockApps[i].class);
-        }
-    }
-
-    const dockIcons = Array.from(document.getElementById('dock').children).filter(e => !e.classList.contains('dockDivider'));
-    for(let i=0;i<dockIcons.length;i++) {
-        setTimeout(() => {
-            dockIcons[i].classList.add('visible');
-        }, i * 150);
-    }
-
-    for(let i=0;i<launchpadApps.length;i++) {
-        createLaunchpadApp(launchpadApps[i].icon, launchpadApps[i].name);
-    }
-
-    
-}
-
+];

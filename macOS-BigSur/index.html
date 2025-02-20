@@ -34,7 +34,7 @@
     
             <div id="desktop">
                 <div id="widgets">
-                    <div class="widgetNotifications">
+                    <!--<div class="widgetNotifications">
                         <div class="widgetNoti">
                             <div class="widgetNotiTopLabel">
                                 <div class="widgetNotiIconName">
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <!--<div class="widgetSquare musicWidget">
                         <div class="musicPlaying">
                             <div class="musicPlayingIcon">
@@ -178,32 +178,25 @@
                                 93%
                             </div>
                         </div>
-                        <div class="widgetSquareSmall">
-                            
-                        </div>
-                    </div>
-                    <div class="widgetRectangle musicWidget spotify">
-                        <div class="musicPlaying">
-                            <div class="musicPlayingIcon">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPI52kzRhJnioPEoNeAumL1OkGqEi3FqrqqmO6NUrbBzJz_Sc:https://i.scdn.co/image/ab67616d0000b273fa2ebd47089bdb51fa829ce1&s" alt="">
-                            </div>
-                            <div class="musicPlayingText">
-                                <h1 id="widgetMusicSongName">Super Bowl LIX Halftime Show (Live)</h1>
-                                <p id="widgetMusicArtist">Kendrick Lamar</p>
-                                <div class="musicPlayingControl">
-                                    <input type="range" id="musicWidgetSlider" value="0" autocomplete="off" disabled="">
-                                    <div class="widgetMusicControls">
-                                        <button><ion-icon name="play-back" role="img" class="md hydrated"></ion-icon></button>
-                                        <button><ion-icon name="play" role="img" class="md hydrated"></ion-icon></button>
-                                        <button><ion-icon name="play-forward" role="img" class="md hydrated"></ion-icon></button>
-                                    </div>
+                        <div class="widgetSquareSmall clockWidget">
+                            <div class="clockCircle">
+                                <div class="circle"></div>
+                                <div class="hourHand clockHand">
+                                    <div class="stem"></div>
+                                    <div class="hand"></div>
+                                </div>
+                                <div class="minuteHand clockHand" style="rotate: 90deg;">
+                                    <div class="stem"></div>
+                                    <div class="hand"></div>
+                                </div>
+                                <div class="secondHand clockHand" style="rotate: 225deg;">
+                                    <div class="stem"></div>
+                                    <div class="hand"></div>
                                 </div>
                             </div>
-                            <div class="musicIcon">
-                                <img src="./sources/image/icons/widgets/spotify.png" style="filter:invert(1)" alt="">
-                            </div>
                         </div>
                     </div>
+                    
                     <button class="editWidgets">
                         Edit Widgets
                     </button>
@@ -224,7 +217,8 @@
                 <div class="appleDivider"></div>
                 <button class="appleMenuButton">Recent Items</button>-->
                 <div class="appleDivider"></div>
-                <button class="appleMenuButton">Patch Notes...</button>
+                <button class="appleMenuButton" onclick="openClose('patchNotes')">Patch Notes...</button>
+                <button class="appleMenuButton" onclick="openClose('credits')">Credits...</button>
                 <div class="appleDivider"></div>
                 <button class="appleMenuButton">Sleep...</button>
                 <button class="appleMenuButton">Restart...</button>
@@ -236,7 +230,7 @@
     
             <div id="finder">
                 <div class="functions">
-                    <button onclick="showApple()">
+                    <button id="applebutton" onclick="openClose('appleMenu')">
                         <img draggable="false" src="./sources/image/icons/settings/appleicon.png">
                     </button>
                     <button class="boldAppName">
@@ -266,9 +260,11 @@
                 </div>
     
                 <div class="finderShowcase">
-                    <button onclick="showControl()">
+                    <button onclick="openClose('controlCenter')">
                         <img draggable="false" src="./sources/image/icons/settings/controlcenter.png">
                     </button>
+                    <p id="finderDate">Thurs Feb 20</p>
+                    <p id="finderTime">8:19 AM</p>
                 </div>
             </div>
     
@@ -334,6 +330,59 @@
     
             <div id="dock">
             </div>
+        </div>
+
+        <div id="patchNotes" class="open">
+            <button class="leave" onclick="openClose('patchNotes')">
+                <ion-icon name="exit-outline" style="rotate: 180deg"></ion-icon>
+            </button>
+            <h1>Patch Notes</h1>
+
+            <h2>Version 1.3.0</h2>
+
+            <ul>
+                <li>Clock and Battery widgets updated.</li>
+                <li>Dark Mode fixes.</li>
+                <li>Condensed some code.</li>
+            </ul>
+
+            <h2>Roadmap</h2>
+            <h3>Version 1.3.2</h3>
+
+            <ul>
+                <li>Clock will show correct time with account for seconds moving the minute hand, and minutes moving the hour hand.</li>
+                <li>macOS Mouse cursors.</li>
+                <li>Control Center Toggles.</li>
+                <li>"About This Mac" will change based on the version.</li>
+            </ul>
+
+            <h3>Version 1.4</h3>
+
+            <ul>
+                <li>Version Selector</li>
+                <li>Basic Settings.</li>
+                <li>Finder buttons change based on open app.</li>
+                <li>"About This Mac" will change based on the version.</li>
+                <li>UI will change via the selected version.</li>
+            </ul>
+
+            <h3>Version 1.4.X</h3>
+
+            <ul>
+                <li>No plans yet.</li>
+            </ul>
+        </div>
+
+        <div id="credits">
+            <button class="leave" onclick="openClose('credits')">
+                <ion-icon name="exit-outline" style="rotate: 180deg"></ion-icon>
+            </button>
+            <h1>Credits</h1>
+
+            <ul>
+                <li>Main Developer - Landon Harnish</li>
+                <li>Everything else - Landon Harnish</li>
+            </ul>
         </div>
 	</body>
     <!-- JS -->

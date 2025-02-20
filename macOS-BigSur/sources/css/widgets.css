@@ -407,7 +407,7 @@ div.musicWidget
     div.widgetMusicUpNext
     div.widgetMusicNextSongs
     div.widgetMusicSong
-    div.musicPlayingText 
+    div.musicPlayingText
     h1 {
     font-size: 18px;
 }
@@ -416,17 +416,17 @@ div.musicWidget
     div.widgetMusicUpNext
     div.widgetMusicNextSongs
     div.widgetMusicSong
-    div.musicPlayingText 
+    div.musicPlayingText
     p {
     font-size: 14px;
 }
 
 div.musicWidget.spotify {
-    background: linear-gradient(to bottom, #0E6A2F, #157B39);
+    background: linear-gradient(to bottom, #0e6a2f, #157b39);
 }
 
 div.musicWidget.spotify div.musicPlaying {
-    background: linear-gradient(to bottom, #1DB954, #20A44E);
+    background: linear-gradient(to bottom, #1db954, #20a44e);
 }
 
 div.widgetSquareSmall.batteryWidget {
@@ -462,4 +462,93 @@ div.widgetSquareSmall.batteryWidget div.batteryText {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-  }
+}
+
+div.widgetSquareSmall.clockWidget {
+    background: #e4e4e4;
+    display: flex;
+    padding: 10px;
+}
+
+body.dark div.widgetSquareSmall.clockWidget {
+    background: black;
+}
+
+div.widgetSquareSmall.clockWidget div.clockCircle {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    background: url(../image/widgets/smallClockWidget.png);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+div.widgetSquareSmall.clockWidget div.clockCircle div.circle {
+    position: absolute;
+    border-radius: 100%;
+    width: 15px;
+    aspect-ratio: 1;
+    background: rgb(255, 255, 255);
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 15%,
+        rgb(255, 154, 38) 15%,
+        rgb(255, 154, 38) 44%,
+        rgba(0, 0, 0, 1) 44%,
+        rgba(0, 0, 0, 1) 100%
+    );
+}
+
+div.widgetSquareSmall.clockWidget div.clockCircle div.clockHand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+div.widgetSquareSmall.clockWidget div.clockCircle div.clockHand:not(.secondHand) div.stem {
+    position: absolute;
+    width: 3px;
+    height: 10px;
+    background: black;
+    border-radius: 999px;
+    margin-bottom: 20px;
+}
+
+div.widgetSquareSmall.clockWidget div.clockCircle div.clockHand:not(.secondHand) div.hand {
+    position: absolute;
+    width: 5px;
+    height: 60px;
+    background: black;
+    border-radius: 999px;
+    margin-bottom: 85px;
+}
+
+div.widgetSquareSmall.clockWidget div.clockCircle div.clockHand.hourHand div.hand {
+    height: 30px;
+    margin-bottom: 55px;
+}
+
+div.widgetSquareSmall.clockWidget div.clockCircle div.clockHand.secondHand div.stem {
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: #ff9a26;
+    border-radius: 999px;
+    margin-bottom: -20px;
+}
+
+div.widgetSquareSmall.clockWidget div.clockCircle div.clockHand.secondHand div.hand {
+    position: absolute;
+    width: 2px;
+    height: 65px;
+    background: #ff9a26;
+    border-radius: 999px;
+    margin-bottom: 70px;
+}

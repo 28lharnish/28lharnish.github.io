@@ -5,6 +5,7 @@ const allImages = [
 
     //? Logos
     './sources/image/logos/big_sur.png',
+    './sources/image/logos/monterey.png',
 
     //? Big Sur BGs
     './sources/image/backgrounds/bigsur/dark.jpg',

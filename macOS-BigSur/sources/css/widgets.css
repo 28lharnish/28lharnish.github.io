@@ -17,7 +17,6 @@ button.editWidgets {
     background: var(--white-bg);
     box-shadow: 0px 0px 5px #00000080;
     color: #00000080;
-    cursor: pointer;
 }
 
 #widgets div.widgetNotifications {
@@ -266,7 +265,6 @@ div.musicWidget
     div.musicPlayingText
     div.musicPlayingControl
     input:not(:disabled) {
-    cursor: pointer;
 }
 
 div.musicWidget
@@ -274,7 +272,6 @@ div.musicWidget
     div.musicPlayingText
     div.musicPlayingControl
     input:disabled {
-    cursor: not-allowed;
 }
 
 div.musicWidget
@@ -299,7 +296,6 @@ div.musicWidget
     color: white;
     aspect-ratio: 1;
     height: 100%;
-    cursor: pointer;
 }
 
 div.musicWidget

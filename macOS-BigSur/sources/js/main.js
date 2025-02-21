@@ -1,6 +1,11 @@
 const buttonError = "Sorry, this item does not have a function yet.";
+let macVersion = 'bigsur';
 
 window.onload = function() {
+    window.addEventListener('mousemove', (e) => {
+        cursorCheck(e);
+    });
+
     window.addEventListener('click', function(e) {
         if(
             e.target !== document.getElementById('appleMenu') 
@@ -38,8 +43,12 @@ window.onload = function() {
     }
 
     for (var i=0;i<allImages.length;i++) {
-        console.log(`Percentage ${Math.round((i / (allImages.length - 1)) * 100)}% | Index ${i} | Image: ${allImages[i]}`);
+        console.log(`Image Preloading | Percentage ${Math.round((i / (allImages.length - 1)) * 100)}% | Index ${i} | Image: ${allImages[i]}`);
         preloadImage(allImages[i]);
+    }
+
+    for (var i=0;i<cursorImages.length;i++) {
+        console.log('Cursor: ' + cursorImages[i] + ' preloaded.');
     }
 
     for(let i=0;i<dockApps.length;i++) {
@@ -158,10 +167,24 @@ function darkMode(btn) {
 function monterey(btn) {
     if (document.body.classList.contains("monterey")) {
         document.body.classList.remove("monterey");
-        btn.innerText = "Try Monterey BGs";
+        btn.innerText = "Try Monterey";
+        macVersion = 'bigsur';
+        document.querySelectorAll('img.abtMacVersionIcon').forEach(e => {
+            e.src = './sources/image/logos/big_sur.png'
+        });
+        document.querySelectorAll('h1.abtMacVersionNameText').forEach(e => {
+            e.innerHTML = '<span>macOS</span> Big Sur'
+        });
     } else {
         document.body.classList.add("monterey");
-        btn.innerText = "Try Big Sur BGs";
+        btn.innerText = "Try Big Sur";
+        macVersion = 'monterey';
+        document.querySelectorAll('img.abtMacVersionIcon').forEach(e => {
+            e.src = './sources/image/logos/monterey.png'
+        });
+        document.querySelectorAll('h1.abtMacVersionNameText').forEach(e => {
+            e.innerHTML = '<span>macOS</span> Monterey'
+        });
     }
 }
 
@@ -247,7 +270,7 @@ function timeAndDate() {
         'Sat'
     ];
 
-    const ampm = 'AM';
+    let ampm = 'AM';
     const hours = date.getHours();
     let fhours = hours;
     if(hours > 12) {
@@ -273,8 +296,8 @@ function timeAndDate() {
     finderDate.innerText = dateString;
     finderTime.innerText = timeStringNoSec;
 
-    const hourRotation = (360 / 12) * fhours/* + (seconds / (360 / 60))*/;
-    const minRotation = ((360 / 60) * minutes)/* + (seconds / (360 / 60))*/;
+    const hourRotation = (360 / 12) * fhours + ((minutes / (360 / 60)) / 2);
+    const minRotation = ((360 / 60) * minutes) + ((seconds / (360 / 60)) / 2);
     const secRotation = (360 / 60) * seconds;
 
     clockWidgetHours.forEach(e => e.style.rotate = hourRotation + 'deg');
@@ -282,5 +305,63 @@ function timeAndDate() {
     clockWidgetSeconds.forEach(e => e.style.rotate = secRotation + 'deg');
 }
 
-setInterval(e => { timeAndDate() }, 1000);
+setInterval(() => { timeAndDate() }, 1000);
 
+function enableDebug() {
+    document.getElementById('debugSettings').style.display = 'flex';
+
+    console.log('----------------------------------')
+    console.log('| 28lharnish | macOS For The Web |')
+    console.log('----------------------------------')
+    console.log('|       Debug Mode: Enabled      |')
+    console.log('----------------------------------')
+
+    const magnifierVals = [
+        {
+            low: 1,
+            high: 1,
+            lowdistance: 0, 
+            highdistance: 0,
+        },
+        {
+            low: 1,
+            high: 1.1,
+            lowdistance: -2, 
+            highdistance: -10,
+        },
+        {
+            low: 1,
+            high: 1.2,
+            lowdistance: -5, 
+            highdistance: -25,
+        },
+        {
+            low: 1,
+            high: 1.3,
+            lowdistance: -10, 
+            highdistance: -30,
+        },
+        {
+            low: 1,
+            high: 1.5,
+            lowdistance: -15, 
+            highdistance: -50,
+        }
+    ]
+
+    const debugBatteryVal = document.getElementById('debug_batteryPercentVal');
+    const dockMagnifyVal = document.getElementById('debug_dockMagnify');
+    const cursorSizeVal = document.getElementById('debug_cursorSize');
+
+    debugBatteryVal.addEventListener('input', () => changeBattery(debugBatteryVal.value));
+    
+    dockMagnifyVal.addEventListener('input', () => {
+        const magData = magnifierVals[dockMagnifyVal.value];
+        setMagnify(magData.low, magData.high, magData.lowdistance, magData.highdistance);
+    });
+    
+    cursorSizeVal.addEventListener('input', () => { 
+        document.getElementById('cursor').style.width = `${cursorSizeVal.value}px`;
+        document.getElementById('cursor').style.height = `${cursorSizeVal.value}px`;
+    });
+}

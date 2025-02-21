@@ -17,8 +17,23 @@ function newWindow(window) {
         aboutThisMac.classList.add('abtMac-win');
         aboutThisMac.id = `win${winNum}`
 
-        aboutThisMac.innerHTML = `<div class="abtMac-top"><div class="abtMac-top-btns"><button onclick="this.parentElement.parentElement.parentElement.remove()"><div class="abtMac-top-btns-icon"></div></button> <button><div class="abtMac-top-btns-icon"></div></button> <button><div class="abtMac-top-btns-icon"></div></button></div><div class="abtMac-topSelector"><button class="abtMac-selected"><p>Overview</p></button> <button><p>Displays</p></button> <button><p>Storage</p></button> <button><p>Support</p></button> <button><p>Resources</p></button></div></div><div class="abtMacOverview"><div class="abtMacOverviewLogo"><img src="./sources/image/logos/big_sur.png" alt="Big Sur Logo"></div><div class="abtMacOverviewText"><h1><span>macOS</span> Big Sur</h1><p>Version 11.7.10 (20G1427) (WebVersion 1.1.0)</p><div class="abtMacOverviewSpecs"><p>MacBook Web (W1, 2025)</p><p>Chip<span>Apple W1</span></p><p>Memory<span>8 GB</span></p><p>Serial Number<span>1234567890</span></p></div><div class="abtMacOverviewButtons"><button>System Report...</button> <button>Software Update...</button></div></div></div>`
-        document.body.appendChild(aboutThisMac)
+        aboutThisMac.innerHTML = `<div class="abtMac-top"><div class="abtMac-top-btns"><button onclick="this.parentElement.parentElement.parentElement.remove()"><div class="abtMac-top-btns-icon"></div></button> <button><div class="abtMac-top-btns-icon"></div></button> <button><div class="abtMac-top-btns-icon"></div></button></div><div class="abtMac-topSelector"><button class="abtMac-selected"><p>Overview</p></button> <button><p>Displays</p></button> <button><p>Storage</p></button> <button><p>Support</p></button> <button><p>Resources</p></button></div></div><div class="abtMacOverview"><div class="abtMacOverviewLogo"><img class='abtMacVersionIcon' src="./sources/image/logos/big_sur.png" alt="Big Sur Logo"></div><div class="abtMacOverviewText"><h1 class='abtMacVersionNameText'><span>macOS</span> Big Sur</h1><p>Version 11.7.10 (20G1427)</p><div class="abtMacOverviewSpecs"><p>MacBook Web (W1, 2025)</p><p>Chip<span>Apple W1</span></p><p>Memory<span>8 GB</span></p><p>Serial Number<span>1234567890</span></p></div><div class="abtMacOverviewButtons"><button>System Report...</button> <button>Software Update...</button></div></div></div>`
+        document.body.appendChild(aboutThisMac);
+        if(macVersion == 'bigsur') {
+            document.querySelectorAll('img.abtMacVersionIcon').forEach(e => {
+                e.src = './sources/image/logos/big_sur.png'
+            });
+            document.querySelectorAll('h1.abtMacVersionNameText').forEach(e => {
+                e.innerHTML = '<span>macOS</span> Big Sur'
+            });
+        } else if(macVersion == 'monterey') {
+            document.querySelectorAll('img.abtMacVersionIcon').forEach(e => {
+                e.src = './sources/image/logos/monterey.png'
+            });
+            document.querySelectorAll('h1.abtMacVersionNameText').forEach(e => {
+                e.innerHTML = '<span>macOS</span> Monterey'
+            });
+        }
         dragElement(aboutThisMac);
         winNum++;
     } else if (window === 'settings') {

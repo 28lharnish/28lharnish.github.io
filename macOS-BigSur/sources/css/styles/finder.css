@@ -15,7 +15,6 @@
 }
 
 .find-top {
-    cursor: move;
     display: flex;
     align-items: flex-start;
     border-radius: 10px 10px 0px 0px;
@@ -59,7 +58,6 @@
     width: 20px;
     height: 20px;
     border-radius: 100%;
-    cursor: pointer;
 }
 
 .find-top .find-top-btns button:nth-child(1) div.find-top-btns-icon {

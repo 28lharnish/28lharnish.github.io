@@ -19,7 +19,6 @@ body.dark .settings-win {
 
 .settings-top {
     position: relative;
-    cursor: move;
     display: flex;
     align-items: center;
     border-radius: 10px 10px 0px 0px;
@@ -69,7 +68,6 @@ body.dark .settings-top {
     width: 20px;
     height: 20px;
     border-radius: 100%;
-    cursor: pointer;
 }
 
 .settings-top
@@ -144,7 +142,6 @@ div.settings-labelnbuttons button {
     border-style: none;
     color: var(--unselected-icon);
     width: 25px;
-    cursor: pointer;
 }
 
 div.settings-labelnbuttons button ion-icon {
@@ -235,7 +232,6 @@ div.settingsProfile div.profileText * {
 
 div.settingsButton {
     text-align: center;
-    cursor: pointer;
     height: 100%;
     padding: 5px 20px;
     display: flex;

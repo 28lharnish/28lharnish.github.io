@@ -8,15 +8,17 @@
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-        <script src="./sources/js/canvases.js" defer></script>
-        <script src="./sources/js/loading.js"></script>
+        <script src="./sources/js/cursors.js"></script>
         <script src="./sources/js/creation.js"></script>
         <script src="./sources/js/apps.js"></script>
+        <script src="./sources/js/loading.js"></script>
+        <script src="./sources/js/canvases.js" defer></script>
 
         <link rel="stylesheet" href="./sources/fonts/sf-pro-display.css" />
         <link rel="stylesheet" href="./sources/css/styles/aboutThisMac.css" />
         <link rel="stylesheet" href="./sources/css/styles/finder.css" />
         <link rel="stylesheet" href="./sources/css/styles/preferences.css" />
+        <link rel="stylesheet" href="./sources/css/debugging.css" />
         <link rel="stylesheet" href="./sources/css/widgets.css" />
         <link rel="stylesheet" href="./sources/css/style.css" />
 
@@ -27,6 +29,10 @@
     </head>
     <body class="">
     
+        <div id="cursor">
+            <img src="./sources/image/cursors/left_ptr.svg" alt="">
+        </div>
+
         <div class="homeScreen">
             <div id="buttonNoFunction">
                 <p>Sorry, this item has no function yet.</p>
@@ -197,7 +203,7 @@
                         </div>
                     </div>
                     
-                    <button class="editWidgets">
+                    <button class="editWidgets" disabled>
                         Edit Widgets
                     </button>
                 </div>
@@ -208,11 +214,12 @@
 
             <div id="appleMenu">
                 <button class="appleMenuButton" onclick="darkMode(this)">Try Dark Mode</button>
-                <button class="appleMenuButton" onclick="monterey(this)">Try Monterey BGs</button>
+                <button class="appleMenuButton" onclick="monterey(this)">Try Monterey</button>
                 <div class="appleDivider"></div>
                 <button onclick="newWindow('aboutThisMac')">About This Mac</button>
                 <div class="appleDivider"></div>
                 <button class="appleMenuButton" onclick="newWindow('settings')">System Settings...</button>
+                <button class="appleMenuButton" onclick="enableDebug()">Enable Debug Settings...</button>
                 <!--<button class="appleMenuButton">App Store...</button>
                 <div class="appleDivider"></div>
                 <button class="appleMenuButton">Recent Items</button>-->
@@ -328,6 +335,22 @@
                 <div class="smallWidget"></div>-->
             </div>
     
+            <div id="debugSettings" style="display: none;">
+                <h1>Debug Settings</h1>
+                <div class="setting">
+                    <p>Cursor Size (Buggy)</p>
+                    <input type="range" name="Cursor Size" id="debug_cursorSize" value="24" max="100" autocomplete="off">
+                </div>
+                <div class="setting">
+                    <p>Battery Percentage</p>
+                    <input type="range" name="Battery Percent" id="debug_batteryPercentVal" value="93" autocomplete="off">
+                </div>
+                <div class="setting">
+                    <p>Dock Multiplier</p>
+                    <input type="range" name="Dock Multiplier" id="debug_dockMagnify" value="2" max="4" autocomplete="off">
+                </div>
+            </div>
+
             <div id="dock">
             </div>
         </div>
@@ -338,27 +361,21 @@
             </button>
             <h1>Patch Notes</h1>
 
-            <h2>Version 1.3.0</h2>
+            <h2>Version 1.3.2</h2>
 
             <ul>
-                <li>Clock and Battery widgets updated.</li>
-                <li>Dark Mode fixes.</li>
-                <li>Condensed some code.</li>
+                <li>Debug mode added, use the enableDebug() command to try it.</li>
+                <li><b>NEEDS FIXED:</b> <strike>Clock will show correct time with account for seconds moving the minute hand, and minutes moving the hour hand.</strike></li>
+                <li>macOS Mouse cursors.</li>
+                <li>"About This Mac" will change based on the version.</li>
             </ul>
 
             <h2>Roadmap</h2>
-            <h3>Version 1.3.2</h3>
-
-            <ul>
-                <li>Clock will show correct time with account for seconds moving the minute hand, and minutes moving the hour hand.</li>
-                <li>macOS Mouse cursors.</li>
-                <li>Control Center Toggles.</li>
-                <li>"About This Mac" will change based on the version.</li>
-            </ul>
 
             <h3>Version 1.4</h3>
 
             <ul>
+                <li>Control Center Toggles.</li>
                 <li>Version Selector</li>
                 <li>Basic Settings.</li>
                 <li>Finder buttons change based on open app.</li>

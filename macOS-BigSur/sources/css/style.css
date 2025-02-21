@@ -3,6 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: "SF Pro Display";
+    cursor: none;
 }
 
 :root {
@@ -35,6 +36,27 @@ body {
     background-size: cover;
     width: 100vw;
     height: 100vh;
+}
+
+body.dark #cursor {
+    filter: invert(1) drop-shadow(0 0 1px #fff);
+}
+
+#cursor {
+    filter: drop-shadow(0 0 1px #000);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+#cursor img {
+    height: 100%;
+    width: 100%;
+    color: red;
 }
 
 div.homeScreen {
@@ -142,7 +164,6 @@ body.dark #finder {
 
 #finder button {
     padding: 5px;
-    cursor: pointer;
     height: 100%;
     background: none;
     border: none;
@@ -233,7 +254,6 @@ body.dark #appleMenu button {
 }
 
 #appleMenu button {
-    cursor: pointer;
     margin: 2px 0px;
     font-family: "SF Pro Display";
     font-weight: 100;
@@ -311,7 +331,6 @@ body.dark #controlCenter div.bigStuff div.onebyone {
 }
 
 #controlCenter div.bigStuff div.onebyone div.controlSetting {
-    cursor: pointer;
     width: 100%;
     height: 30%;
     display: flex;
@@ -383,7 +402,6 @@ body.dark #controlCenter div.bigStuff div.ontop div.donotdisturb {
 }
 
 #controlCenter div.bigStuff div.ontop div.donotdisturb div.controlSetting {
-    cursor: pointer;
     width: 100%;
     height: 100%;
     display: flex;
@@ -538,7 +556,6 @@ body.dark #dock {
 #dock button {
     filter: drop-shadow(0px 0px 3px #00000080);
     position: relative;
-    cursor: pointer;
     background: transparent;
     padding: 2px;
     display: flex;
@@ -715,7 +732,6 @@ button.launchpadApp {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    cursor: pointer;
     color: white;
     font-size: 16px;
     margin: auto;
@@ -777,7 +793,6 @@ div#patchNotes button.leave, div#credits button.leave {
     background: var(--white-bg);
     border: none;
     border-radius: 5px;
-    cursor: pointer;
 
     padding: 5px;
     font-size: 30px;

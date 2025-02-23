@@ -26,7 +26,7 @@
     margin-bottom: 0 !important;
 }
 
-#debugSettings input[type='range'] {
+#debugSettings input {
     margin-top: 5px;
     width: 100%;
 }

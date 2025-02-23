@@ -3,7 +3,6 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: "SF Pro Display";
-    cursor: none;
 }
 
 :root {
@@ -36,6 +35,18 @@ body {
     background-size: cover;
     width: 100vw;
     height: 100vh;
+}
+
+body * {
+    cursor: none;
+}
+
+body.disablecursor * {
+    cursor: auto;
+}
+
+body.disablecursor #cursor {
+    display: none;
 }
 
 body.dark #cursor {

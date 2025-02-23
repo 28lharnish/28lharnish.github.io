@@ -42,15 +42,6 @@ window.onload = function() {
         img.src=url;
     }
 
-    for (var i=0;i<allImages.length;i++) {
-        console.log(`Image Preloading | Percentage ${Math.round((i / (allImages.length - 1)) * 100)}% | Index ${i} | Image: ${allImages[i]}`);
-        preloadImage(allImages[i]);
-    }
-
-    for (var i=0;i<cursorImages.length;i++) {
-        console.log('Cursor: ' + cursorImages[i] + ' preloaded.');
-    }
-
     for(let i=0;i<dockApps.length;i++) {
         if(dockApps[i].divider) {
             let divider = document.createElement('div');
@@ -73,6 +64,20 @@ window.onload = function() {
         createLaunchpadApp(launchpadApps[i].icon, launchpadApps[i].name);
     }
     
+    //? Preload Images
+    console.log("%c" + 'Preloading Images...', 'font-size: 32px;');
+
+    for (var i=0;i<allImages.length;i++) {
+        console.log(`Image Preloading | Percentage ${Math.round((i / (allImages.length - 1)) * 100)}% | Index ${i} | Image: ${allImages[i]}`);
+        preloadImage(allImages[i]);
+    }
+
+    console.log("%c" + 'Preloading Cursors...', 'font-size: 32px;');
+
+    for (var i=0;i<cursorImages.length;i++) {
+        console.log('Cursor: ' + cursorImages[i] + ' preloaded.');
+    }
+
     timeAndDate();
     changeBattery(93);
 }
@@ -349,19 +354,28 @@ function enableDebug() {
         }
     ]
 
+    const cursorEnabled = document.getElementById('debug_cursorEnabled');
+    const cursorSizeVal = document.getElementById('debug_cursorSize');
     const debugBatteryVal = document.getElementById('debug_batteryPercentVal');
     const dockMagnifyVal = document.getElementById('debug_dockMagnify');
-    const cursorSizeVal = document.getElementById('debug_cursorSize');
+    
+    cursorSizeVal.addEventListener('input', () => { 
+        document.getElementById('cursor').style.width = `${cursorSizeVal.value}px`;
+        document.getElementById('cursor').style.height = `${cursorSizeVal.value}px`;
+    });
+
+    cursorEnabled.addEventListener('input', () => {
+        if(cursorEnabled.checked) {
+            document.body.classList.remove('disablecursor');
+        } else {
+            document.body.classList.add('disablecursor');
+        }
+    }); 
 
     debugBatteryVal.addEventListener('input', () => changeBattery(debugBatteryVal.value));
     
     dockMagnifyVal.addEventListener('input', () => {
         const magData = magnifierVals[dockMagnifyVal.value];
         setMagnify(magData.low, magData.high, magData.lowdistance, magData.highdistance);
-    });
-    
-    cursorSizeVal.addEventListener('input', () => { 
-        document.getElementById('cursor').style.width = `${cursorSizeVal.value}px`;
-        document.getElementById('cursor').style.height = `${cursorSizeVal.value}px`;
     });
 }

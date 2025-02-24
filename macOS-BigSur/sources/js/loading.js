@@ -4,6 +4,7 @@ const allImages = [
     './sources/image/icons/settings/appleicon.png',
 
     //? Logos
+    './sources/image/logos/Apple_logo_black.svg',
     './sources/image/logos/big_sur.png',
     './sources/image/logos/monterey.png',
 
@@ -160,3 +161,94 @@ const launchpadApps = [
     { icon: './sources/image/icons/siri.png',           name: 'Siri'},
     { icon: './sources/image/icons/settings.png',       name: 'System Settings'},
 ];
+
+window.onload = async function() {
+    window.addEventListener('mousemove', (e) => {
+        cursorCheck(e);
+    });
+
+    window.addEventListener('click', function(e) {
+        if(
+            e.target !== document.getElementById('appleMenu') 
+            && e.target !== document.querySelector(`[onclick="openClose('appleMenu')"]`)
+            && !e.target.classList.contains('appleMenuButton')) {
+            document.getElementById('appleMenu').classList.remove('open');
+        }
+
+        if(e.target !== document.getElementById('controlCenter') && e.target !== document.querySelector(`[onclick="openClose('controlCenter')"]`)) {
+            document.getElementById('controlCenter').classList.remove('open');
+        }
+
+        if(e.target.parentElement.id.indexOf('win') > -1) {
+            e.target.parentElement.classList.add('activeWindow');
+        }
+    });
+
+
+    //make all buttons without a function alert the user that they don't work
+    let buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        if(button.getAttribute('onclick') === null && document.getElementById(button.id) === null) {
+            button.onclick = function() {
+                document.getElementById('buttonNoFunction').classList.add('open');
+                setTimeout(() => { document.getElementById('buttonNoFunction').classList.remove('open'); }, 1500);
+            }
+            
+        }
+    });
+
+    function preloadImage(url)
+    {
+        var img=new Image();
+        img.src=url;
+    }
+
+    const timeOut = ms => new Promise(res => setTimeout(res, ms))
+
+    for(let i=0;i<dockApps.length;i++) {
+        if(dockApps[i].divider) {
+            let divider = document.createElement('div');
+            divider.classList.add('dockDivider');
+            divider.classList.add(dockApps[i].class);
+            document.getElementById('dock').appendChild(divider);
+        } else {
+            createDockApp(dockApps[i].icon, dockApps[i].onClickFunction, dockApps[i].appName, dockApps[i].class);
+        }
+    }
+
+    const dockIcons = Array.from(document.getElementById('dock').children).filter(e => !e.classList.contains('dockDivider'));
+    for(let i=0;i<dockIcons.length;i++) {
+        setTimeout(() => {
+            dockIcons[i].classList.add('visible');
+        }, i * 150);
+    }
+
+    for(let i=0;i<launchpadApps.length;i++) {
+        createLaunchpadApp(launchpadApps[i].icon, launchpadApps[i].name);
+    }
+    
+    //? Preload Images
+    console.log("%c" + 'Preloading Images...', 'font-size: 32px;');
+
+    for (var i=0;i<allImages.length;i++) {
+        console.log(`Image Preloadings | Percentage ${Math.round((i / (allImages.length - 1)) * 100)}% | Index ${i} | Image: ${allImages[i]}`);
+        preloadImage(allImages[i]);
+        document.querySelector('div#bootLoadingBar div').style.width = `${Math.round((i / (allImages.length - 1)) * 100)}%`
+        await timeOut(Math.floor(Math.random() * 100));
+    }
+
+    console.log("%c" + 'Preloading Cursors...', 'font-size: 32px;');
+
+    for (var i=0;i<cursorImages.length;i++) {
+        console.log('Cursor: ' + cursorImages[i] + ' preloaded.');
+    }
+
+    timeAndDate();
+    changeBattery(93);
+
+    if(document.querySelector('div#bootLoadingBar div').style.width == '100%') {
+        //TODO: Boot Up Sound
+        document.getElementById('bootScreen').classList.add("closing");
+        setTimeout(() => { document.getElementById('bootScreen').remove() }, 500);
+    }
+}

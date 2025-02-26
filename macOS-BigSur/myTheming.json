@@ -1,0 +1,58 @@
+{
+    "editor.tokenColorCustomizations": {
+        "[Monokai Dimmed]": {
+            "numbers": "#d0e4ff",
+            "strings": "#63c5b5",
+            "textMateRules": [
+                {
+                    "scope": "string.quoted.double.html",
+                    "settings": {
+                        "foreground": "#a859cc"
+                    }
+                },
+                {
+                    "scope": "text.html.derivative",
+                    "settings": {
+                        "foreground": "#63c5b5"
+                    }
+                },
+                {
+                    "scope": "punctuation.definition.string.begin",
+                    "settings": {
+                        "foreground": "#a859cc"
+                    }
+                },
+                {
+                    "scope": "punctuation.definition.string.end",
+                    "settings": {
+                        "foreground": "#a859cc"
+                    }
+                },
+                {
+                    "scope": "punctuation.definition.string.begin.html",
+                    "settings": {
+                        "foreground": "#a859cc"
+                    }
+                },
+                {
+                    "scope": "punctuation.definition.string.end.html",
+                    "settings": {
+                        "foreground": "#a859cc"
+                    }
+                },
+                {
+                    "scope": "punctuation.definition.string.end.html source",
+                    "settings": {
+                        "foreground": "#a859cc"
+                    }
+                },
+                {
+                    "scope": "punctuation.terminator.statement.js",
+                    "settings": {
+                        "foreground": "#ae9bb8"
+                    }
+                }
+            ]
+        }
+    }
+}

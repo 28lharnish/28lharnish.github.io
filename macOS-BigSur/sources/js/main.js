@@ -94,17 +94,19 @@ function monterey(btn) {
         btn.innerText = "Try Monterey";
         macVersion = 'bigsur';
         document.querySelectorAll('img.abtMacVersionIcon').forEach(e => {
-            e.src = './sources/image/logos/big_sur.png'
+            e.src = './sources/image/logos/big_sur.png';
+            e.alt = 'Big Sur Logo';
         });
         document.querySelectorAll('h1.abtMacVersionNameText').forEach(e => {
-            e.innerHTML = '<span>macOS</span> Big Sur'
+            e.innerHTML = '<span>macOS</span> Big Sur';
         });
     } else {
         document.body.classList.add("monterey");
         btn.innerText = "Try Big Sur";
         macVersion = 'monterey';
         document.querySelectorAll('img.abtMacVersionIcon').forEach(e => {
-            e.src = './sources/image/logos/monterey.png'
+            e.src = './sources/image/logos/monterey.png';
+            e.alt = 'Monterey Logo';
         });
         document.querySelectorAll('h1.abtMacVersionNameText').forEach(e => {
             e.innerHTML = '<span>macOS</span> Monterey'

@@ -1,0 +1,9 @@
+[
+null,
+{"id":1,"expanded":true,"name":"StartWorld","order":2,"parentId":0,"scrollX":816,"scrollY":624},
+{"id":2,"expanded":true,"name":"House_Inside","order":3,"parentId":1,"scrollX":973.1999999999999,"scrollY":539.4,"quick":false},
+{"id":3,"expanded":false,"name":"House_Basement","order":4,"parentId":2,"scrollX":973.1999999999999,"scrollY":539.4,"quick":false},
+{"id":4,"expanded":true,"name":"ATown","order":5,"parentId":0,"scrollX":982.8,"scrollY":555,"quick":false},
+{"id":5,"expanded":true,"name":"BankI","order":6,"parentId":4,"scrollX":973.1999999999999,"scrollY":539.4,"quick":false},
+{"id":6,"expanded":false,"name":"Formbeta","order":1,"parentId":0,"scrollX":973.1999999999999,"scrollY":539.4,"quick":false}
+]

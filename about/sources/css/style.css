@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #da5b92 0%, #d1842d 100%);
+}
+
+header {
+    height: 60px;
+    width: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    display: flex;
+    z-index: 2;
+}
+
+header div.name {
+    margin: 10px 20px;
+    flex: 1 0 auto;
+    font-weight: bold;
+}
+
+div.navigation {
+    height: 100%;
+}
+
+div.navigation ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+}
+
+div.navigation li {
+    background: #da5b92;
+    transition: 0.1s ease-in-out background;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-weight: 200;
+    padding: 0 10px;
+}
+
+div.navigation ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+div.navigation li:hover {
+    background: #8b3f60;
+}
+
+main {
+    height: calc(100vh - 60px);
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background 0.2s ease-in-out;
+    position: relative;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    flex-direction: column;
+}
+
+div#conversation {
+    pointer-events: none;
+    padding: 70px 40px;
+    width: 100%;
+    height: 100%;
+
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    transition-delay: 5s;
+}
+
+main div.alignLeft {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+main div.alignRight {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+
+main div.alignLeft h1 {
+    font-size: 64px;
+    filter: drop-shadow(0px 0px 2px black);
+    -webkit-text-stroke: 3px black;
+    background: linear-gradient(135deg, #da5b92 0%, #d1842d 100%);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main div.alignRight h1 {
+    font-size: 64px;
+    color: white;
+    filter: drop-shadow(0px 0px 2px white);
+}
+
+#convo4 {
+    opacity: 1;
+}
+
+#convo1 {    
+    transition-delay: 0s;
+}
+
+#convo2 {    
+    transition-delay: 1s;
+}
+
+#convo3 {    
+    transition-delay: 2s;
+}
+
+#convo-dot3 {
+    opacity: 0;
+    transition-delay: 3s;
+}
+
+#convo-dot2 {
+    opacity: 0;
+    transition-delay: 3.25s;
+}
+
+#convo-dot1 {
+    opacity: 0;
+    transition-delay: 3.5s;
+}
+
+div#aboutMe {
+    padding: 70px 40px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#aboutMe #ljharnish {
+    font-size: 80px;
+    filter: drop-shadow(0px 0px 2px black);
+    -webkit-text-stroke: 3px black;
+    background: linear-gradient(135deg, #da5b92 0%, #d1842d 100%);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#aboutMe #follow {
+    font-size: 20px;
+}
+
+#aboutMe .buttonsLR {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#aboutMe .buttonsLR button {
+    background: var(--socialColor);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 0px var(--socialColor);
+    transition: box-shadow 0.2s ease-in-out, background 0.2s ease-in-out, scale 0.2s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 10px;
+    font-weight: bolder;
+    font-size: 14px;
+    min-width: 100px;
+    padding: 10px 20px;
+}
+
+
+#aboutMe .buttonsLR button:hover {
+    scale: 1.1;
+    box-shadow: 0px 0px 5px var(--socialColor);
+}
+
+#aboutMe .buttonsLR button ion-icon {
+    aspect-ratio: 1;
+    height: 20px;
+    margin-right: 5px;
+    width: auto;
+}
+
+#aboutMe .buttonsLR button:last-of-type {
+    margin-right: 0;
+}

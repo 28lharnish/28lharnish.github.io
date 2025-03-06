@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Landon Harnish | Portfolio</title>
         <link rel="stylesheet" href="./sources/css/style.css">
+        <link rel="stylesheet" href="/sources/css/mobile.css">
         <link rel="stylesheet" href="../sources/css/poppins.css">
         <script src="./sources/js/main.js" defer></script>
 
@@ -31,11 +32,30 @@
                 </ul>
             </div>
         </header>
+        
+        <script>
+            function mobileNav() {
+                document.getElementById('mobileNav').classList.contains('closed') ? document.getElementById('mobileNav').classList.remove('closed') : document.getElementById('mobileNav').classList.add('closed')
+            }
+        </script>
+        
+        <button id="mobileNavOpen" onclick="mobileNav()">
+            <ion-icon name="menu-outline"></ion-icon>
+        </button>
+        <div id="mobileNav" class="closed">
+            <div class="name">Landon Harnish</div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About Me</a></li>
+                <li><a href="/portfolio/">Portfolio</a></li>
+            </ul>
+        </div>
 
         <main>
             <div class="portfolio">
                 <div class="section" id="beginning">
                     <h1 id="ljharnish">My Portfolio</h1>
+                    <p style="color: white;">All names are links!</p>
                     <div class="bgsplit">
                         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                             <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="#85858552"></path>
@@ -83,7 +103,7 @@
                         </svg>
                     </div>
                     <h1>Games</h1>
-                    <img src="sources/img/Logo_C_sharp.svg" alt="" style="height: 50px;margin-bottom: 10px">
+                    <p><a href="https://learn.microsoft.com/en-us/dotnet/csharp/"><img src="sources/img/Logo_C_sharp.svg" alt="C# Logo" style="height: 50px;margin-right: 10px;"></a><a href="https://isocpp.org/"><img src="sources/img/ISO_C++_Logo.svg" alt="C# Logo" style="height: 50px;"></a></p>
                     <div id="gameCarouselInner">
                         <div class="carouselImage active" id="game-gmailuno">
                             <img src="sources/img/portalize.png" alt="Portalize">
@@ -96,6 +116,14 @@
                         <div class="carouselImage" id="game-gts6">
                             <img src="sources/img/gts6.png" alt="Get To School 6">
                             <a href="/more/Get-To-School-6/" target="_blank">Get To School 6</a>
+                        </div>
+                        <div class="carouselImage" id="game-fnfa">
+                            <img style="image-rendering: pixelated;" src="sources/img/fnfa.png" alt="Get To School 6">
+                            <a href="https://github.com/ljharnish/FNF-Advanced" target="_blank">FNF Advanced (Unfinished)</a>
+                        </div>
+                        <div class="carouselImage" id="game-elem">
+                            <img style="image-rendering: pixelated;" src="sources/img/elements.png" alt="ELEMENTS">
+                            <a href="https://github.com/ljharnish/ELEMENTS" target="_blank">ELEMENTS (Game Jam)</a>
                         </div>
                     </div>
                     <div class="carouselButtons">
@@ -112,23 +140,15 @@
                 <div class="section">
                     <h1>Apps</h1>
                     <p><a href="https://www.python.org/" target="_blank"><ion-icon name="logo-python" style="color: #0173b7;"></ion-icon></a></p>
-                    <div id="gameCarouselInner">
-                        <div class="carouselImage active" id="game-gmailuno">
-                            <img src="sources/img/portalize.png" alt="Portalize">
-                            <a href="https://github.com/ljharnish/Portalize" target="_blank">Portalize (Canceled)</a>
+                    <div id="appCarouselInner">
+                        <div class="carouselImage active" id="apps-formbarDesktop">
+                            <img src="sources/img/formbarDesktop.png" alt="Portalize">
+                            <a href="https://github.com/28lharnish/FormbarDesktop" target="_blank">Formbar Desktop</a>
                         </div>
-                        <div class="carouselImage" id="game-goose">
-                            <img src="sources/img/GGSS.png" alt="Goose Grinders">
-                            <a href="https://goose-grinders.pages.dev/" target="_blank">Goose Grinders</a>
+                        <div class="carouselImage" id="apps-formbarDesktop"> <!--? fixes sizing -->
+                            <img src="sources/img/formbarDesktop.png" alt="Portalize">
+                            <a href="https://github.com/28lharnish/FormbarDesktop" target="_blank">Formbar Desktop</a>
                         </div>
-                        <div class="carouselImage" id="game-gts6">
-                            <img src="sources/img/gts6.png" alt="Get To School 6">
-                            <a href="/more/Get-To-School-6/" target="_blank">Get To School 6</a>
-                        </div>
-                    </div>
-                    <div class="carouselButtons">
-                        <button onclick="gameCarouselBackwards()">&lt;</button>
-                        <button onclick="gameCarouselForwards()">&gt;</button>
                     </div>
                 </div>
             </div>

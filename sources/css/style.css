@@ -11,6 +11,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #55a8ff 0%, #ff00ff 100%);
+    overflow: hidden;
 }
 
 header {
@@ -69,6 +70,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 main div#intro {

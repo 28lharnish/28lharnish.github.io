@@ -13,6 +13,8 @@ let gameCarouselOrder = [
     document.getElementById('game-gmailuno'),
     document.getElementById('game-goose'),
     document.getElementById('game-gts6'),
+    document.getElementById('game-fnfa'),
+    document.getElementById('game-elem'),
 ];
 
 

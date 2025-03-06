@@ -11,6 +11,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #55a8ff 0%, #ff00ff 100%);
+    overflow: hidden;
 }
 
 p {
@@ -220,13 +221,14 @@ div.portfolio {
 }
 
 div#webCarouselInner,
-div#gameCarouselInner {
+div#gameCarouselInner,
+div#appCarouselInner {
     margin: 5% 10px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 95%;
+    width: 100%;
 }
 
 div.carouselImage {
@@ -242,6 +244,9 @@ div.carouselImage {
 }
 
 div.carouselImage a {
+    text-wrap: nowrap;
+    white-space: nowrap;
+    overflow: hidden;
     text-decoration: none;
     color: white;
     margin-top: 15px;
@@ -258,6 +263,7 @@ div.carouselImage img {
 }
 
 div.carouselImage.active {
+    margin: 0 !important;
     pointer-events: all !important;
     z-index: 2;
     opacity: 1 !important;

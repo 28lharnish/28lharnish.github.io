@@ -11,6 +11,11 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(135deg, #55a8ff 0%, #ff00ff 100%);
+    overflow: hidden;
+}
+
+h1#ljharnish {
+    text-align: center;
 }
 
 p {
@@ -89,8 +94,8 @@ main {
 #skipIntro {
     z-index: 4;
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 8%;
+    right: 2%;
     padding: 10px 45px;
     font-size: 20px;
     background: linear-gradient(135deg, #da5b92 0%, #d1842d 100%);
@@ -142,6 +147,10 @@ main div.alignRight h1 {
     font-size: 64px;
     color: white;
     filter: drop-shadow(0px 0px 2px white);
+}
+
+#convo2 {
+    text-align: right;
 }
 
 #convo4 {

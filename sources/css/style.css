@@ -10,7 +10,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #da5b92 0%, #d1842d 100%);
+    background: linear-gradient(135deg, #55a8ff 0%, #ff00ff 100%);
 }
 
 header {
@@ -90,7 +90,7 @@ main div#intro h1#learnMore {
     transition: opacity 1s ease-in-out;
     transition-delay: 3.5s;
     user-select: none;
-    background: linear-gradient(135deg, #da5b92 0%, #d1842d 100%);
+    background: linear-gradient(135deg, #55a8ff 0%, #ff00ff 100%);;
     padding: 10px 20px;
     border-radius: 10px;
     top: 20px;

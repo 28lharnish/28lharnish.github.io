@@ -171,4 +171,8 @@ main div.right img {
     100% {
         border-radius: 37% 63% 50% 50% / 62% 44% 56% 38%;
     }
+}* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
 }

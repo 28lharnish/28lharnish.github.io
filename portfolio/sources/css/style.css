@@ -1,0 +1,300 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #55a8ff 0%, #ff00ff 100%);
+}
+
+p {
+    font-size: 36px;
+}
+
+header {
+    height: 60px;
+    width: 100%;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    display: flex;
+    z-index: 2;
+}
+
+ion-icon {
+    filter: drop-shadow(0px 0px 2px black);
+}
+
+ion-icon:hover {
+    scale: 1.1;
+}
+
+header div.name {
+    margin: 10px 20px;
+    flex: 1 0 auto;
+    font-weight: bold;
+}
+
+div.navigation {
+    height: 100%;
+}
+
+div.navigation ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+}
+
+div.navigation li {
+    background: #da5b92;
+    transition: 0.1s ease-in-out background;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-weight: 200;
+    padding: 0 10px;
+}
+
+div.navigation ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+div.navigation li:hover {
+    background: #8b3f60;
+}
+
+main {
+    min-height: calc(100vh - 60px);
+    overflow: hidden scroll;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background 0.2s ease-in-out;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#skipIntro {
+    z-index: 4;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 45px;
+    font-size: 20px;
+    background: linear-gradient(135deg, #da5b92 0%, #d1842d 100%);
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+div#conversation {
+    pointer-events: none;
+    padding: 70px 40px;
+    width: 100%;
+    height: 100%;
+
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+main div.alignLeft {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+main div.alignRight {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+
+main div.alignLeft h1 {
+    font-size: 64px;
+    filter: drop-shadow(0px 0px 2px black);
+    -webkit-text-stroke: 3px black;
+    background: linear-gradient(135deg, #55a8ff 0%, #ff00ff 100%);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+main div.alignRight h1 {
+    font-size: 64px;
+    color: white;
+    filter: drop-shadow(0px 0px 2px white);
+}
+
+#convo4 {
+    opacity: 1;
+}
+
+#convo-dot1, #convo-dot2, #convo-dot3 {
+    opacity: 0;
+}
+
+div.section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 80px;
+    background: #85858552;
+    padding-bottom: 20px;
+}
+
+div#beginning {
+    height: 400px;
+}
+
+div.section div.bgsplit {
+    position: absolute;
+    bottom: -192px;
+    left: 0;
+    width: 100%;
+    height: 192px;
+    transform: rotate(0) scaleX(-1);
+}
+
+div.section div.bgsplit.top {
+    position: absolute;
+    top: -192px;
+    left: 0;
+    width: 100%;
+    height: 192px;
+    transform: rotate(0) scaleX(-1);
+}
+
+h1 {
+    font-size: 120px;
+    filter: drop-shadow(0px 0px 2px black);
+    -webkit-text-stroke: 3px black;
+    background: linear-gradient(135deg, #da5b92 0%, #d1842d 100%);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+div.section:not(:first-of-type) {
+    background: transparent;
+    margin-top: 192px;
+}
+
+div.bgsplit.top {
+    position: absolute;
+    top: -192px;
+    left: 0;
+    width: 100%;
+    height: 192px;
+    transform: rotate(0) scaleX(-1);
+}
+
+div.portfolio {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+div#webCarouselInner,
+div#gameCarouselInner {
+    margin: 5% 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+}
+
+div.carouselImage {
+    pointer-events: none;
+    opacity: 0.5;
+    color: white;
+    margin: 0px 15px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.carouselImage a {
+    text-decoration: none;
+    color: white;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+div.carouselImage img {
+    transition: scale 0.2s ease-in-out;
+    scale: 1;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px white;
+    margin-bottom: 10px;
+}
+
+div.carouselImage.active {
+    pointer-events: all !important;
+    z-index: 2;
+    opacity: 1 !important;
+    width: 100% !important;
+    position: absolute;
+    backdrop-filter: blur(5px);
+    padding-top: 30px;
+}
+
+div.carouselImage.active img {
+    scale: 1.1 !important;
+    width: 35% !important;
+}
+
+div.carouselImage.active a {
+    font-size: 30px !important;
+}
+
+div.carouselButtons {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+}
+
+div.carouselButtons button {
+    filter: brightness(1);
+    transition: filter 0.2s ease-in-out;
+    background: linear-gradient(135deg, #da5b92 0%, #d1842d 100%);
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: xx-large;
+    padding: 0px 40px;
+}
+
+div.carouselButtons button:hover {
+    filter: brightness(0.5);
+}

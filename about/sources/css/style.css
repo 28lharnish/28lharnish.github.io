@@ -278,7 +278,8 @@ div.section div.sides {
 }
 
 div.section div.sides div.leftSide,
-div.section div.sides div.rightSide {
+div.section div.sides div.rightSide,
+div.section div.sides div.middleSide {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -286,6 +287,10 @@ div.section div.sides div.rightSide {
     color: white;
     min-height: 300px;
     width: 50%;
+}
+
+div.section div.sides div.middleSide {
+    text-align: center;
 }
 
 div.section div.sides div.rightSide:hover p.tooltipBottom {
@@ -405,4 +410,39 @@ div.imageFlipper:hover div.imageFlipperImage:nth-child(3) {
 
 div.imageFlipper:hover div.imageFlipperImage:nth-child(4) {
     transform: translate(25%, -140%) rotate(5deg) scale(0.7);
+}
+
+div.section#contactSect div.contactbtn {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #da5b92 0%, #d1842d 100%);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+div.section#contactSect div.middleSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+div.section#contactSect div.contactbtn a {
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 5px;
+    background: transprarent;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s ease-in-out;
+}
+
+div.section#contactSect div.contactbtn a:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+div.section#contactSect div.contactbtn a ion-icon {
+    margin-right: 10px;
 }

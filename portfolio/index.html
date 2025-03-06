@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Landon Harnish | Portfolio</title>
+        <link rel="stylesheet" href="./sources/css/style.css">
+        <link rel="stylesheet" href="../sources/css/poppins.css">
+        <script src="./sources/js/main.js" defer></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/sources/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/sources/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/sources/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/sources/favicon/site.webmanifest">
+
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="name">Landon Harnish</div>
+            <div class="navigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About Me</a></li>
+                    <li><a href="/portfolio/">Portfolio</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <div class="portfolio">
+                <div class="section" id="beginning">
+                    <h1 id="ljharnish">My Portfolio</h1>
+                    <div class="bgsplit">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="#85858552"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="section">
+                    <h1>Websites</h1>
+                    <p><a href="https://www.w3schools.com/html/" target="_blank"><ion-icon name="logo-html5" style="color: #e34c26;"></ion-icon></a><a href="https://www.javascript.com/" target="_blank"><ion-icon name="logo-javascript" style="color: #ffd600"></ion-icon></a><a href="https://www.w3schools.com/css/default.asp" target="_blank"><ion-icon name="logo-css3" style="color: #1d81c0;"></ion-icon></a></p>
+                    <div id="webCarouselInner">
+                        <div class="carouselImage active" id="web-gmailuno">
+                            <img src="sources/img/gmailunoSS.png" alt="Gmail-Uno">
+                            <a href="https://gmailuno.pages.dev/" target="_blank">Gmail-Uno</a>
+                        </div>
+                        <div class="carouselImage" id="web-pictocord">
+                            <img src="sources/img/PictocordSS.png" alt="Pictocord">
+                            <a href="https://pictocord.pages.dev/" target="_blank">Pictocord</a>
+                        </div>
+                        <div class="carouselImage" id="web-goose">
+                            <img src="sources/img/GGSS.png" alt="Goose Grinders">
+                            <a href="https://goose-grinders.pages.dev/" target="_blank">Goose Grinders</a>
+                        </div>
+                        <div class="carouselImage" id="web-ljhclock">
+                            <img src="sources/img/ljh-clockSS.png" alt="ljh-clock">
+                            <a href="https://ljh-clock.pages.dev/" target="_blank">LJH-Clock</a>
+                        </div>
+                        <div class="carouselImage" id="web-windows">
+                            <img src="sources/img/WindowsSS.png" alt="Windows | Built for Web">
+                            <a href="https://windows-html.pages.dev/" target="_blank">Windows | For the Web</a>
+                        </div>
+                        <div class="carouselImage" id="web-macos">
+                            <img src="sources/img/macOS.png" alt="MacOS | For The Web">
+                            <a href="/more/macOS-BigSur/" target="_blank">MacOS | For The Web</a>
+                        </div>
+                    </div>
+                    <div class="carouselButtons">
+                        <button onclick="webCarouselBackwards()">&lt;</button>
+                        <button onclick="webCarouselForwards()">&gt;</button>
+                    </div>
+                </div>
+                <div class="section" style="background: #d5576f61;">
+                    <div class="bgsplit top" style="rotate: 180deg;">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="#d5576f61"></path>
+                        </svg>
+                    </div>
+                    <h1>Games</h1>
+                    <img src="sources/img/Logo_C_sharp.svg" alt="" style="height: 50px;margin-bottom: 10px">
+                    <div id="gameCarouselInner">
+                        <div class="carouselImage active" id="game-gmailuno">
+                            <img src="sources/img/portalize.png" alt="Portalize">
+                            <a href="https://github.com/ljharnish/Portalize" target="_blank">Portalize (Canceled)</a>
+                        </div>
+                        <div class="carouselImage" id="game-goose">
+                            <img src="sources/img/GGSS.png" alt="Goose Grinders">
+                            <a href="https://goose-grinders.pages.dev/" target="_blank">Goose Grinders</a>
+                        </div>
+                        <div class="carouselImage" id="game-gts6">
+                            <img src="sources/img/gts6.png" alt="Get To School 6">
+                            <a href="/more/Get-To-School-6/" target="_blank">Get To School 6</a>
+                        </div>
+                    </div>
+                    <div class="carouselButtons">
+                        <button onclick="gameCarouselBackwards()">&lt;</button>
+                        <button onclick="gameCarouselForwards()">&gt;</button>
+                    </div>
+                    
+                    <div class="bgsplit">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="#d5576f61"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="section">
+                    <h1>Apps</h1>
+                    <img src="sources/img/Logo_C_sharp.svg" alt="" style="height: 50px;margin-bottom: 10px">
+                    <div id="gameCarouselInner">
+                        <div class="carouselImage active" id="game-gmailuno">
+                            <img src="sources/img/portalize.png" alt="Portalize">
+                            <a href="https://github.com/ljharnish/Portalize" target="_blank">Portalize (Canceled)</a>
+                        </div>
+                        <div class="carouselImage" id="game-goose">
+                            <img src="sources/img/GGSS.png" alt="Goose Grinders">
+                            <a href="https://goose-grinders.pages.dev/" target="_blank">Goose Grinders</a>
+                        </div>
+                        <div class="carouselImage" id="game-gts6">
+                            <img src="sources/img/gts6.png" alt="Get To School 6">
+                            <a href="/more/Get-To-School-6/" target="_blank">Get To School 6</a>
+                        </div>
+                    </div>
+                    <div class="carouselButtons">
+                        <button onclick="gameCarouselBackwards()">&lt;</button>
+                        <button onclick="gameCarouselForwards()">&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

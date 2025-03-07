@@ -5,10 +5,18 @@ if(getCookie('terminalAllowed') == 'true') {
     document.querySelector('div.navigation').children[0].appendChild(newButton);
     newButton.addEventListener("click", () => {doAnimation(document.getElementsByTagName('main')[0], true)});
     
-    let newButton2= document.createElement('li');
+    let newButton2 = document.createElement('li');
     newButton2.innerHTML = 'Hide Terminal'
     document.querySelector('div.navigation').children[0].appendChild(newButton2);
     newButton2.addEventListener("click", () => {setCookie('terminalAllowed', '', 365);location.reload()});
+
+    let mNewButton = newButton.cloneNode(true);
+    mNewButton.addEventListener('click', () => {doAnimation(document.getElementsByTagName('main')[0], true)});
+    document.getElementById('mobileNav').children[1].appendChild(mNewButton);
+
+    let mNewButton2 = newButton2.cloneNode(true);
+    mNewButton2.addEventListener('click', () => {setCookie('terminalAllowed', '', 365);location.reload()});
+    document.getElementById('mobileNav').children[1].appendChild(mNewButton2);
 } else {
     document.getElementsByTagName('main')[0].addEventListener('scroll', () => doAnimation(document.getElementsByTagName('main')[0]));
 }

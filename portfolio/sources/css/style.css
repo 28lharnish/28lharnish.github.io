@@ -178,6 +178,7 @@ div#beginning {
 }
 
 div.section div.bgsplit {
+    pointer-events: none;
     position: absolute;
     bottom: -192px;
     left: 0;
@@ -292,7 +293,6 @@ div.carouselImage.active a {
 }
 
 div.bgsplit {
-    pointer-events: none;
 }
 
 div.carouselButtons {

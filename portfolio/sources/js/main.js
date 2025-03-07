@@ -1,5 +1,17 @@
 document.getElementsByTagName('main')[0].scrollTo(0, 0);
-document.getElementsByTagName('main')[0].addEventListener('scroll', () => doAnimation(document.getElementsByTagName('main')[0]));
+if(getCookie('terminalAllowed') == 'true') {
+    let newButton = document.createElement('li');
+    newButton.innerHTML = 'Open Terminal'
+    document.querySelector('div.navigation').children[0].appendChild(newButton);
+    newButton.addEventListener("click", () => {doAnimation(document.getElementsByTagName('main')[0], true)});
+    
+    let newButton2= document.createElement('li');
+    newButton2.innerHTML = 'Hide Terminal'
+    document.querySelector('div.navigation').children[0].appendChild(newButton2);
+    newButton2.addEventListener("click", () => {setCookie('terminalAllowed', '', 365);location.reload()});
+} else {
+    document.getElementsByTagName('main')[0].addEventListener('scroll', () => doAnimation(document.getElementsByTagName('main')[0]));
+}
 
 let webCarouselOrder = [
     document.getElementById('web-gmailuno'),
@@ -69,8 +81,8 @@ function blinkCursor() {
 
 let cursorInterval = setInterval(() => { blinkCursor() }, 500)
 
-function doAnimation(main) {
-    if(main.scrollTop !== (main.scrollHeight - main.offsetHeight)) return;
+function doAnimation(main, buh) {
+    if(!buh) if(main.scrollTop !== (main.scrollHeight - main.offsetHeight)) return;
 
     const header = document.getElementsByTagName('header')[0];
     
@@ -96,8 +108,33 @@ function doAnimation(main) {
 
     setTimeout(() => { document.getElementById('terminal').style.opacity = '1'; }, 6900);
     setTimeout(() => { document.getElementById('terminal').style.pointerEvents = 'all'; }, 6900);
-    setTimeout(() => { document.getElementById('text').style.opacity = '1'; }, 7100);
+    setTimeout(() => { document.getElementById('text').style.opacity = '1'; }, 7200);
+
+    setCookie('terminalAllowed', 'true', 365);
 }
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
 
 let lastCommand = '';
 let hello = false;

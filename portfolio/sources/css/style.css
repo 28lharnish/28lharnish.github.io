@@ -61,6 +61,7 @@ div.navigation ul {
 }
 
 div.navigation li {
+    cursor: pointer;
     background: #da5b92;
     transition: 0.1s ease-in-out background;
     border-radius: 5px;

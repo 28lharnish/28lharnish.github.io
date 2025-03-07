@@ -291,7 +291,7 @@ div.carouselImage.active a {
     font-size: 30px !important;
 }
 
-svg {
+div.bgsplit {
     pointer-events: none;
 }
 

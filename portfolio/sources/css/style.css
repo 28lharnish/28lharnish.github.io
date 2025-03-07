@@ -291,6 +291,10 @@ div.carouselImage.active a {
     font-size: 30px !important;
 }
 
+svg {
+    pointer-events: none;
+}
+
 div.carouselButtons {
     width: 30%;
     display: flex;

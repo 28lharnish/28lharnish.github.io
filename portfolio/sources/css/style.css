@@ -294,9 +294,6 @@ div.carouselImage.active a {
     font-size: 30px !important;
 }
 
-div.bgsplit {
-}
-
 div.carouselButtons {
     width: 30%;
     display: flex;

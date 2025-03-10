@@ -65,6 +65,13 @@ div#mobileNav ul li a {
     color: white;
 }
 
+div#mobileNav ul li:not(:has(a)) {
+    cursor: pointer;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+}
+
 div#mobileNav li:hover {
     background: #8b3f60;
 }

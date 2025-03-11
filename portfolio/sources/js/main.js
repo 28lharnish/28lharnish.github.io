@@ -23,8 +23,15 @@ if(getCookie('terminalAllowed') == 'true') {
 
 function mouseGrid(event) {
     const grid = document.getElementById('gridShow');
+    const grid2 = document.getElementById('gridShowBehind');
     grid.style.top = `${event.clientY - (document.getElementById('gridShow').offsetHeight / 2)}px`;
     grid.style.left = `${event.clientX - (document.getElementById('gridShow').offsetWidth / 2)}px`;
+    grid2.style.top = `${event.clientY - (document.getElementById('gridShowBehind').offsetHeight / 2)}px`;
+    grid2.style.left = `${event.clientX - (document.getElementById('gridShowBehind').offsetWidth / 2)}px`;
+
+    console.log();
+
+    grid2.style.rotate = `${Math.floor((1 - ((window.innerWidth - event.clientX) / window.innerWidth))*1440)}deg`;
 }
 
 document.body.addEventListener('mousemove', mouseGrid);

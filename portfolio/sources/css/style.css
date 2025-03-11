@@ -40,17 +40,32 @@ header {
     animation-timing-function: cubic-bezier(0.95, 0.05, 0.8, 0.04) !important;
 }
 
-div#gridShow {
-    opacity: 0.25;
+div#gridShowBehind {
+    pointer-events: none;
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     top: 0;
     left: 0;
     border-radius: 100%;
-    filter: drop-shadow(0px 0px 1px white);
-    box-shadow: 0px 0px 30px 10px white;
-    width: 15vw;
-    height: 15vw;
+    width: 10vw;
+    height: 10vw;
+    filter: blur(5px);
+    background: linear-gradient(135deg, #55a8ff 0%, #ff00ff 100%);
+    border: 2px solid black;
+}
+
+div#gridShow {
+    pointer-events: none;
+    opacity: 0.25;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    filter: drop-shadow(0px 0px 1px black);
+    box-shadow: 0px 0px 30px 10px black;
+    width: 10vw;
+    height: 10vw;
     background-image: url(../img/gulp.png), linear-gradient(white, white);
     background-size: 2vw 2vw;
     background-attachment: fixed;
@@ -115,71 +130,8 @@ main {
     padding-bottom: 50px;
 }
 
-#skipIntro {
-    z-index: 4;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px 45px;
-    font-size: 20px;
-    background: linear-gradient(135deg, #da5b92 0%, #d1842d 100%);
-    border: 2px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-div#conversation {
-    pointer-events: none;
-    padding: 70px 40px;
-    width: 100%;
-    height: 100%;
-
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-}
-
-main div.alignLeft {
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-main div.alignRight {
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-}
-
-main div.alignLeft h1 {
-    font-size: 64px;
-    filter: drop-shadow(0px 0px 2px black);
-    -webkit-text-stroke: 3px black;
-    background: linear-gradient(135deg, #55a8ff 0%, #ff00ff 100%);
-    background-clip: text;
-    color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-main div.alignRight h1 {
-    font-size: 64px;
-    color: white;
-    filter: drop-shadow(0px 0px 2px white);
-}
-
-#convo4 {
-    opacity: 1;
-}
-
-#convo-dot1,
-#convo-dot2,
-#convo-dot3 {
-    opacity: 0;
+div.section p {
+    z-index: 3;
 }
 
 div.section {
@@ -219,6 +171,7 @@ div.section div.bgsplit.top {
 }
 
 h1 {
+    z-index: 3;
     font-size: 120px;
     filter: drop-shadow(0px 0px 2px black);
     -webkit-text-stroke: 3px black;
@@ -278,6 +231,7 @@ div.carouselImage {
 }
 
 div.carouselImage a {
+    z-index: 3;
     text-wrap: nowrap;
     white-space: nowrap;
     overflow: hidden;
@@ -319,6 +273,7 @@ div.carouselImage.active a {
 }
 
 div.carouselButtons {
+    z-index: 3;
     width: 30%;
     display: flex;
     justify-content: space-evenly;

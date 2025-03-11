@@ -1,84 +1,88 @@
 window.onload = () => {
-    document.getElementById('commentLanguage').selectedIndex = 0;
+    document.getElementById("commentLanguage").selectedIndex = 0;
     generateShownExcuse();
 };
 
-let betaExcuses = [
-    'I\'m surprised that was working at all.',
-    'I was told to stop working on that when something important came up.',
-    'Oh, you said you DIDN\'T want that to happen?',
-    'It must be because of a leap year!',
-    'We should have updated our software years ago.',
-    'That error means it was successful.'
-];
+let lastExcuse = "";
 
-let lastExcuse = '';
+let category = "coder";
 
 let currentJSON = {};
 
-function generateExcuse(amount=1) {
-    let arrayOfExcuses = [];
-
-    if(amount == 0) {
-        return 'Cannot generate 0 excuses... why would you try to?'
-    } else if(amount == 1) {
-        let generatedExcuse = betaExcuses[Math.floor(Math.random() * betaExcuses.length)];
-        while (generatedExcuse == lastExcuse) {
-            generatedExcuse = betaExcuses[Math.floor(Math.random() * betaExcuses.length)];
-        }
-        lastExcuse = generatedExcuse;
-        return generatedExcuse;
-    } else if(amount <= betaExcuses.length) {
-        for(let i=0;i<amount;i++) {
-            let generatedExcuse = betaExcuses[Math.floor(Math.random() * betaExcuses.length)];
-            
-            while (arrayOfExcuses.indexOf(generatedExcuse) > -1) {
-                generatedExcuse = betaExcuses[Math.floor(Math.random() * betaExcuses.length)];
-            }
-
-            lastExcuse = generatedExcuse;
-            arrayOfExcuses.push(generatedExcuse);
-        }
-
-        return arrayOfExcuses;
-    } else {
-        return 'Can\'t generate more excuses than ' + betaExcuses.length + ' at a time.'
-    }
+function categorySel() {
+    category = document.getElementById("categorySelect").value;
+    generateShownExcuse();
 }
 
-function generateShownExcuse() {
-    const bigExcuse = document.getElementById('textHolder');
-    const excuse = generateExcuse(1)
+function generateExcuse(amount = 1) {
+    let generatedExcuse =
+        excuses[category][Math.floor(Math.random() * excuses[category].length)];
+    while (generatedExcuse == lastExcuse) {
+        generatedExcuse =
+            excuses[category][Math.floor(Math.random() * excuses[category].length)];
+    }
+    lastExcuse = generatedExcuse;
 
-    bigExcuse.innerText = excuse;
+    if(generatedExcuse.includes('%FIXTIMENUM')) generatedExcuse = generatedExcuse.replace('%FIXTIMENUM', Math.floor(Math.random() * 50));
+
+    return generatedExcuse;
+}
+
+let lastTimeout;
+
+function generateShownExcuse() {
+    clearTimeout(lastTimeout);
+    const bigExcuse = document.getElementById("textHolder");
+    bigExcuse.innerHTML = '';
+    const excuse = generateExcuse(1);
+
+    for(let i=0;i<excuse.length;i++) {
+        let animatedLetter = document.createElement('span');
+        animatedLetter.classList.add('animateLetter');
+        animatedLetter.innerText = excuse[i];
+        if(excuse[i] == ' ') {
+            animatedLetter.innerHTML = '&nbsp;'
+        } else {
+            animatedLetter.style.setProperty('--animation-order', i);
+        }
+        bigExcuse.appendChild(animatedLetter);
+    }
+
+    lastTimeout = setTimeout(() => { bigExcuse.innerText = excuse }, 200 + (excuse.length * 100));
 
     currentJSON = {
-        html:           `<!-- ${excuse} -->`,
-        css:            `/* ${excuse} */`,
-        javascript:     `// ${excuse}`,
-        python:         `# ${excuse}`
+        html: `<!-- ${excuse} -->`,
+        css: `/* ${excuse} */`,
+        javascript: `// ${excuse}`,
+        python: `# ${excuse}`,
     };
 
     commentLang();
 }
 
 function commentLang() {
-    const currentLanguage = document.getElementById('commentLanguage').value;
+    const currentLanguage = document.getElementById("commentLanguage").value;
 
-    if(currentLanguage == 'custom') {
-        let customSyntax = prompt('Custom Comment Syntax | Use {excuse} for the excuse.');
-        document.getElementById('commentExcuse').innerText = customSyntax.replace('{excuse}', lastExcuse);
+    if (currentLanguage == "custom") {
+        let customSyntax = prompt(
+            "Custom Comment Syntax | Use {excuse} for the excuse."
+        );
+        document.getElementById("commentExcuse").innerText =
+            customSyntax.replace("{excuse}", lastExcuse);
         return;
     }
 
-    document.getElementById('commentExcuse').innerText = currentJSON[currentLanguage];
+    document.getElementById("commentExcuse").innerText =
+        currentJSON[currentLanguage];
 }
 
 function copyComment() {
-    const text = document.getElementById('commentExcuse').innerText;
+    const text = document.getElementById("commentExcuse").innerText;
     navigator.clipboard.writeText(text);
 
-    let alertBox = document.getElementById('copiedComment');
-    alertBox.classList.add('show');
-    setTimeout(() => { alertBox.classList.remove('show') }, 1500);
+    let alertBox = document.getElementById("copiedComment");
+    alertBox.classList.add("show");
+    setTimeout(() => {
+        alertBox.classList.remove("show");
+    }, 1500);
 }

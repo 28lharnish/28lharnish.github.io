@@ -18,8 +18,36 @@ body {
 	overflow: hidden;
 }
 
-div#textHolder {
+div#categories {
+	border-radius: 5px;
+	padding: 20px;
+	position: absolute;
+	color: white;
+	top: 20px;
+	left: 20px;
+	background: black;
+}
 
+div#categories select#categorySelect {
+	font-size: 20px !important;
+	text-align: center;
+    -moz-font-family: 'JetBrains Mono';
+	font-family: 'JetBrains Mono';
+	font-weight: 100;
+	padding: 5px 15px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 1.5em;
+	border: none;
+	background: #333;
+	border-radius: 5px;
+	color: #9A9B99;
+	margin-top: 10px;
+}
+
+div#textHolder {
+	position: relative;
+	flex-wrap: wrap;
 	display: flex;
 	align-items: center;
 	flex-direction: row;
@@ -118,4 +146,23 @@ button#generate:hover {
 
 button#generate:active {
 	background: #707b91;
+}
+
+.animateLetter {
+	opacity: 0;
+	transform: translate(0%, 0%);
+	animation: letterAnim 0.2s ease-in-out 1 forwards;
+	animation-delay: calc(var(--animation-order) * 100ms);
+}
+
+@keyframes letterAnim {
+	0% {
+		opacity: 0;
+		scale: 1.2;
+		transform: translate(0%, -50%);
+	}
+	100% {
+		opacity: 1;
+		scale: 1;
+	}
 }

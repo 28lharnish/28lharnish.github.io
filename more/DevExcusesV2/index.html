@@ -5,14 +5,24 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>DevExcusesV2</title>
-		<!-- CSS -->
 	
+		<script src="./sources/js/excuses.js"></script>
+
 		<link rel="stylesheet" href="./sources/css/style.css">
 		<link rel="stylesheet" href="./sources/fonts/JetBrainsMono.css">
 	</head>
 	<body>
+		<div id="categories">
+			<h2>Categories</h2>
+			<select name="category" id="categorySelect" oninput="categorySel()">
+				<option value="coder" selected>For Other Developers</option>
+				<option value="testers">For Testers</option>
+				<option value="consumers">For Consumers</option>
+			</select>
+		</div>
+
+
 		<div id="textHolder">
-			Developer Excuse Here
 		</div>
 
 		<div id="commentBlocks">
@@ -36,7 +46,6 @@
 
 		<button id="generate" onclick="generateShownExcuse()">Generate New Excuse</button>
 	</body>
-	<!-- JS -->
 
 	<script src="./sources/js/main.js"></script>
 </html>

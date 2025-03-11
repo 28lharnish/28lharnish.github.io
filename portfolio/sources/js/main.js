@@ -21,6 +21,20 @@ if(getCookie('terminalAllowed') == 'true') {
     document.getElementsByTagName('main')[0].addEventListener('scroll', () => doAnimation(document.getElementsByTagName('main')[0]));
 }
 
+function mouseGrid(event) {
+    const grid = document.getElementById('gridShow');
+    grid.style.top = `${event.clientY - (document.getElementById('gridShow').offsetHeight / 2)}px`;
+    grid.style.left = `${event.clientX - (document.getElementById('gridShow').offsetWidth / 2)}px`;
+}
+
+document.body.addEventListener('mousemove', mouseGrid);
+
+let showCarouselOrder = [
+    document.getElementById('show-dev2'),
+    document.getElementById('show-macos'),
+    document.getElementById('show-gts6')
+];
+
 let webCarouselOrder = [
     document.getElementById('web-dev2'),
     document.getElementById('web-gmailuno'),
@@ -38,6 +52,26 @@ let gameCarouselOrder = [
     document.getElementById('game-fnfa'),
     document.getElementById('game-elem'),
 ];
+
+function showcaseCarouselForwards() {
+    let activeImage = showCarouselOrder.find((e) => e.classList.contains('active'));
+    let activeImageIndex = showCarouselOrder.indexOf(activeImage);
+    activeImage.classList.remove('active');
+    let nextElIndex = activeImageIndex + 1;
+    if(nextElIndex > showCarouselOrder.length - 1) nextElIndex = 0;
+    showCarouselOrder[nextElIndex].classList.add('active');
+    return nextElIndex
+}
+
+function showcaseCarouselBackwards() {
+    let activeImage = showCarouselOrder.find((e) => e.classList.contains('active'));
+    let activeImageIndex = showCarouselOrder.indexOf(activeImage);
+    activeImage.classList.remove('active');
+    let nextElIndex = activeImageIndex - 1;
+    if(nextElIndex < 0) nextElIndex = showCarouselOrder.length - 1;
+    showCarouselOrder[nextElIndex].classList.add('active');
+    return nextElIndex
+}
 
 
 function webCarouselForwards() {
@@ -97,6 +131,9 @@ function doAnimation(main, buh) {
     
     main.style.overflow = 'hidden';
     setTimeout(() => { header.style.animation = 'headerFall 2s forwards' }, 500);
+
+    document.getElementById('gridShow').remove();
+    document.body.removeEventListener('mousemove', mouseGrid);
 
     setTimeout(() => { main.style.filter = 'invert(1)'; }, 2500);
     setTimeout(() => { main.style.filter = 'invert(0)'; }, 2800);

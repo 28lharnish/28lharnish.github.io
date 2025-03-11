@@ -77,6 +77,10 @@ div#mobileNav li:hover {
 }
 
 @media (max-width:641px) { 
+    html, body {
+        overflow: hidden;
+    }
+    
     h1 {
         font-size: 15vw !important;
     }
@@ -144,6 +148,9 @@ div#mobileNav li:hover {
 
 
 @media (max-width:961px) { 
+    html, body {
+        overflow: hidden;
+    }
     main {
         min-height: 100vh !important;
     }
@@ -167,6 +174,9 @@ div#mobileNav li:hover {
 
     div.carouselButtons {
         width: 100% !important;
+    }
+    div#gridShow {
+        display: none;
     }
 }
 

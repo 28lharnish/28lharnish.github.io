@@ -30,6 +30,10 @@
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </head>
     <body>
+        <div id="gridShow">
+            
+        </div>
+
         <header>
             <div class="name">Landon Harnish</div>
             <div class="navigation">
@@ -76,12 +80,38 @@
                     </div>
                 </div>
                 <div class="section">
+                    <h1>Showcase</h1>
+                    <div id="showcaseCarouselInner">
+                        <div class="carouselImage active" id="show-dev2">
+                            <img src="sources/img/devexcusesv2.png" alt="DevExcusesV2">
+                            <a href="/more/DevExcusesV2/" target="_blank">DevExcusesV2</a>
+                        </div>
+                        <div class="carouselImage" id="show-macos">
+                            <img src="sources/img/macOS.png" alt="MacOS | For The Web">
+                            <a href="/more/macOS-BigSur/" target="_blank">MacOS | For The Web</a>
+                        </div>
+                        <div class="carouselImage" id="show-gts6">
+                            <img src="sources/img/gts6.png" alt="Get To School 6">
+                            <a href="/more/Get-To-School-6/" target="_blank">Get To School 6</a>
+                        </div>
+                    </div>
+                    <div class="carouselButtons">
+                        <button onclick="showcaseCarouselBackwards()">&lt;</button>
+                        <button onclick="showcaseCarouselForwards()">&gt;</button>
+                    </div>
+                </div>
+                <div class="section" style="background: #2ba8a861;">
+                    <div class="bgsplit top" style="rotate: 180deg;">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="#2ba8a861"></path>
+                        </svg>
+                    </div>
                     <h1>Websites</h1>
                     <p><a href="https://www.w3schools.com/html/" target="_blank"><ion-icon name="logo-html5" style="color: #e34c26;"></ion-icon></a><a href="https://www.javascript.com/" target="_blank"><ion-icon name="logo-javascript" style="color: #ffd600"></ion-icon></a><a href="https://www.w3schools.com/css/default.asp" target="_blank"><ion-icon name="logo-css3" style="color: #1d81c0;"></ion-icon></a></p>
                     <div id="webCarouselInner">
                         <div class="carouselImage active" id="web-dev2">
-                            <img src="sources/img/noimage.png" alt="DevExcusesV2">
-                            <a href="/more/DevExcusesV2" target="_blank">DevExcusesV2</a>
+                            <img src="sources/img/devexcusesv2.png" alt="DevExcusesV2">
+                            <a href="/more/DevExcusesV2/" target="_blank">DevExcusesV2</a>
                         </div>
                         <div class="carouselImage" id="web-gmailuno">
                             <img src="sources/img/gmailunoSS.png" alt="Gmail-Uno">
@@ -112,8 +142,14 @@
                         <button onclick="webCarouselBackwards()">&lt;</button>
                         <button onclick="webCarouselForwards()">&gt;</button>
                     </div>
+                    
+                    <div class="bgsplit">
+                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                            <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="#2ba8a861"></path>
+                        </svg>
+                    </div>
                 </div>
-                <div class="section" style="background: #d5576f61;">
+                <div class="section" style="margin-top: 300px; background: #d5576f61;">
                     <div class="bgsplit top" style="rotate: 180deg;">
                         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
                             <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="#d5576f61"></path>

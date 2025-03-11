@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>DevExcusesV2</title>
+		<!-- CSS -->
+	
+		<link rel="stylesheet" href="./sources/css/style.css">
+		<link rel="stylesheet" href="./sources/fonts/JetBrainsMono.css">
+	</head>
+	<body>
+		<div id="textHolder">
+			Developer Excuse Here
+		</div>
+
+		<div id="commentBlocks">
+			<h2>Copy as a comment.</h2>
+			<select name="commentLanguage" id="commentLanguage" oninput="commentLang()" autocomplete="no">
+				<option value="html" selected>HTML</option>
+				<option value="css">CSS / Enclosed JS</option>
+				<option value="javascript">JavaScript</option>
+				<option value="python">Python</option>
+				<option disabled="disabled"></option>
+				<option value="custom">Custom</option>
+			</select>
+			<button id="copyComment" onclick="copyComment()">Copy Comment</button>
+
+			<p id="commentExcuse">// Developer Excuse Here</p>
+		</div>
+
+		<div id="copiedComment">
+			Copied to Clipboard!
+		</div>
+
+		<button id="generate" onclick="generateShownExcuse()">Generate New Excuse</button>
+	</body>
+	<!-- JS -->
+
+	<script src="./sources/js/main.js"></script>
+</html>

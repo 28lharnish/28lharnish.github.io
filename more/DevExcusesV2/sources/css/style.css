@@ -1,0 +1,121 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-family: 'JetBrains Mono';
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+
+	background: #1b1b20;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	overflow: hidden;
+}
+
+div#textHolder {
+
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+
+	border-radius: 5px;
+	min-width: 160px;
+	max-width: 600px;
+	min-height: 90px;
+	font-size: x-large;
+
+	padding: 10px 20px;
+	background: #000;
+	color: white;
+	
+	margin-right: 50px;
+}
+
+div#commentBlocks {
+	border-radius: 5px;
+	min-width: 160px;
+	max-width: 600px;
+	min-height: 90px;
+	
+	padding: 20px;
+	background: #000;
+	color: #9A9B99;
+}
+
+div#commentBlocks h2 {
+	text-align: center;
+	color: white;
+	margin-bottom: 10px;
+}
+
+div#commentBlocks select {
+	color: white !important;
+}
+
+body div#commentBlocks button {
+	font-size: 14px !important;
+	margin-bottom: 20px;
+}
+
+div#commentBlocks select, div#commentBlocks button {
+	font-size: 20px !important;
+	text-align: center;
+    -moz-font-family: 'JetBrains Mono';
+	font-family: 'JetBrains Mono';
+	font-weight: 100;
+	padding: 5px 15px;
+	cursor: pointer;
+	width: 100%;
+	font-size: 1.5em;
+	border: none;
+	background: #333;
+	border-radius: 5px;
+	color: #9A9B99;
+	margin-bottom: 10px;
+}
+
+div#copiedComment {
+	position: absolute;
+	color: white;
+	border-radius: 5px;
+	background: black;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 15px 20px;
+
+	right: 40px;
+	bottom: -60px;
+
+	transition: bottom 0.5s ease-in-out;
+}
+
+div#copiedComment.show {
+	bottom: 40px;
+}
+
+button#generate {
+	cursor: pointer;
+	background: white;
+	border: none;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 40px;
+	font-size: larger;
+	padding: 15px 20px;
+}
+
+button#generate:hover {
+	background: #bbb;
+}
+
+button#generate:active {
+	background: #707b91;
+}

@@ -22,6 +22,7 @@ if(getCookie('terminalAllowed') == 'true') {
 }
 
 let webCarouselOrder = [
+    document.getElementById('web-dev2'),
     document.getElementById('web-gmailuno'),
     document.getElementById('web-pictocord'),
     document.getElementById('web-goose'),

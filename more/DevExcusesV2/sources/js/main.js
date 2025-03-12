@@ -12,6 +12,9 @@ let currentJSON = {};
 function categorySel() {
     category = document.getElementById("categorySelect").value;
     generateShownExcuse();
+
+    if(category == 'coder') { document.getElementById('commentBlocks').style.display = 'block'; }
+    else document.getElementById('commentBlocks').style.display = 'none';
 }
 
 function generateExcuse(amount = 1) {

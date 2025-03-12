@@ -61,11 +61,10 @@ div#textHolder {
 	padding: 10px 20px;
 	background: #000;
 	color: white;
-	
-	margin-right: 50px;
 }
 
 div#commentBlocks {
+	margin-left: 50px;
 	border-radius: 5px;
 	min-width: 160px;
 	max-width: 600px;

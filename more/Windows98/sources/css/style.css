@@ -1,0 +1,72 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	image-rendering: pixelated;
+}
+
+div#layout {
+	pointer-events: none;
+	opacity: 0.2;
+	z-index: 1000;
+	position: absolute;
+	aspect-ratio: 4/3;
+	width: 640px;
+	height: 480px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-image: url(../image/Layouts/win98se.webp);
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#windows98-holder {
+	position: relative;
+	aspect-ratio: 4/3;
+	width: 640px;
+	height: 480px;
+	/* width: 80vw;
+	max-width: 900px; */
+	background: #008080;
+}
+
+#taskbar {
+	border-top: 2px solid #fff;
+	display: flex;
+	flex-direction: row;
+	justify-content: baseline;
+	align-items: center;
+	position: absolute;
+	height: 28px;
+	width: 100%;
+	background: #c0c0c0;
+
+	bottom: 0;
+}
+
+#startButton {
+	cursor: pointer;
+	height: 100%;
+	width: 54px;
+	border: none;
+	background-image: url(../image/GUI/Explorer/StartButton/Start1.png);
+}
+
+#startButton:active {
+	background-image: url(../image/GUI/Explorer/StartButton/Start2.png);
+}
+
+div.taskbarDivider {
+	background: #808080;
+	width: 1px;
+	height: 22px;
+	border-right: 1px solid #fff;
+}

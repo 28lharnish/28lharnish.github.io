@@ -23,6 +23,7 @@ const excuses = {
         "We didn't write that part.",
         "The compiler must've screwed something up.",
         "We should have updated our software years ago.",
+        "Oh, that's not a bug, it's a feature."
     ],
 
     consumers: [

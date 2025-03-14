@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./SFPRODISPLAYULTRALIGHTITALIC.OTF');
+    font-weight: 200;
+    font-style: italic;
+    
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./SFPRODISPLAYREGULAR.OTF');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./SFPRODISPLAYMEDIUM.OTF');
+    font-weight: 500;
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./SFPRODISPLAYLIGHTITALIC.OTF');
+    font-weight: 200;
+    font-style: italic;
+    
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./SFPRODISPLAYHEAVYITALIC.OTF');
+    font-weight: 900;
+    font-style: italic;
+    
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./SFPRODISPLAYSEMIBOLDITALIC.OTF');
+    font-weight: 600;
+    font-style: italic;
+    
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./SFPRODISPLAYTHINITALIC.OTF');
+    font-weight: 100;
+    font-style: italic;
+    
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./SFPRODISPLAYBLACKITALIC.OTF');
+    font-weight: 900;
+    font-style: italic;
+    
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('./SFPRODISPLAYBOLD.OTF');
+    font-weight: bold;
+    font-style: normal;
+    
+}
+
